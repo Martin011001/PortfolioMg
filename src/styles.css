@@ -1,0 +1,322 @@
+.fondo {
+  background-color: rgba(34, 32, 32, 0.978);
+
+}
+
+/*-------------- Estilos del Nav ---------------*/
+
+nav {
+  position: relative;
+  float: left;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(20, 19, 19, 0);
+  height: 65px;
+}
+
+.navUl {
+  list-style: none;
+  overflow: hidden;
+}
+
+.navLi {
+  font-size: 19px;
+  float: right;
+}
+
+.buttonNav2 {
+  display: block;
+  padding: 0px;
+  color: rgb(8, 8, 8);
+  text-decoration: none;
+  margin: 50px;
+  font-size: 25px;
+}
+
+.navLi {
+  font-size: 18px;
+  margin-top: 13px;
+  margin-right: 12px;
+}
+
+.navLi:hover {
+  transform: scale(1.15);
+}
+
+.liSesion {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.buttonNavRedes {
+  display: block;
+  text-decoration: none;
+}
+
+.buttonSesion {
+  background-color: rgba(0, 0, 0, 0.316);
+}
+
+.logoArgNav {
+  position: absolute;
+  left: 0%;
+  right: -10%;
+  top: -23%;
+  bottom: -10%;
+  margin: auto;
+  min-height: 10%;
+  min-width: 10%;
+}
+
+
+
+
+/*-------------- Estilos del Header ---------------*/
+
+header {
+  border-radius: 22px;
+  width: 100%;
+  height: 540px;
+  background-color: rgba(63, 65, 67, 0.712);
+}
+
+.fondoEncabezado {
+  height: 250px;
+  background-image: url(../src/Images/compu_Portada.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.imgRedonda {
+  margin-top: 20px;
+  width: 270px;
+  height: 270px;
+  border-radius: 150px;
+  border: 10px solid rgba(233, 229, 229, 0.738);
+}
+
+.columnaFotoPerfil {
+  margin-left: 50px;
+}
+
+.derecha {
+  margin-left: 150px;
+}
+
+.buttonNavRedes2 {
+  display: block;
+  /* Convertimos los elementos a en elementos bloque para manipular el padding */
+  padding: 12px;
+  text-decoration: none;
+}
+
+.tarjetaEncabezado {
+  border-radius: 22px;
+  padding: 30px;
+}
+
+
+/*-------------- Estilos del Contenido ---------------*/
+
+.tarjeta {
+  border: solid rgb(106, 103, 103);
+  border-width: 2.2px;
+  border-radius: 22px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.itemsLaboral {
+  list-style-type: '✳';
+}
+
+.tituloitems {
+  font-weight: 500px;
+}
+
+.LineaTlaboral {
+  background-color: rgb(122, 111, 111);
+  height: 3px;
+  width: 750px;
+  margin-left: 130px;
+  margin-top: 10px;
+}
+
+.contenedor {
+  margin: 20px;
+}
+
+h5 {
+  font-weight: 350;
+}
+
+a {
+  list-style: none;
+}
+
+
+/*-------------- Experiencia Laboral ---------------*/
+
+
+
+/*-------------- Contacto ---------------*/
+.lavelContacto {
+  margin-left: 10px;
+  color: rgba(162, 157, 157, 0.767);
+}
+
+.inputContacto {
+  border: solid rgb(134, 130, 130);
+  border-width: 2.2px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.form-control:focus {
+  background-color: rgb(42, 40, 40);
+  color: white;
+}
+
+
+/*-------------- Login ---------------*/
+
+.fondoLogin {
+  background-color: rgb(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  z-index: 100;
+  display: none;
+}
+
+.tarjetaLogin {
+  width: 400px;
+  padding: 15px;
+  background-color: rgb(41, 39, 39);
+}
+
+/*-------------- Estilos de barra Lateral ---------------*/
+
+.menuOpciones {
+  background-color: rgba(32, 34, 34, 0.626);
+  border-radius: 22px;
+  align-items: center;
+  border-width: 2px;
+  border: solid rgb(106, 103, 103);
+  padding: 10px;
+}
+
+.menuNavegacion {
+  margin: 20px;
+  padding: 0px;
+}
+
+.menuInformacion {
+  padding: 5px;
+}
+
+.buttonBarra {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.etiquetaALateral {
+  text-decoration: none;
+  color: white;
+}
+
+.iconosBarra {
+  margin-top: 22px;
+  margin-left: 5px;
+}
+
+
+/*-------------- Estilos del Footer ---------------*/
+
+footer {
+  position: relative;
+  overflow: hidden;
+  height: 65px;
+  padding: 5px;
+  background-color: rgba(63, 60, 60, 0.644);
+
+}
+
+ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+.logoArgFooter {
+  position: absolute;
+  left: 0%;
+  right: -10%;
+  top: -10%;
+  bottom: -10%;
+  margin: auto;
+  min-height: 10%;
+  min-width: 10%;
+}
+
+/* ul li:hover {
+  font-size: 25px;
+
+} */
+
+/*-------------- Estilos Extras ---------------*/
+
+.row {
+  margin-right: 0;
+  margin: 0;
+}
+
+
+
+/*-------------- color texto ---------------*/
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+h4 {
+  color: white;
+}
+
+h5 {
+  color: white;
+}
+
+h6 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+li {
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+/*-------------- Skills ---------------*/
+

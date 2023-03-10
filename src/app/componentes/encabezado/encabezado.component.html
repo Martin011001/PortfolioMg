@@ -1,0 +1,54 @@
+<header>
+    <div class="fondoEncabezado">
+
+        <div class="columnaFotoPerfil">
+            <img class="imgRedonda" [src]="miPorfolio.encabezado.perfilImage">
+            
+            <!-- <a class="botonEditar" style="float: right; margin-top: 200px; margin-right: 30px;"><img
+                    src="https://cdn-icons-png.flaticon.com/512/732/732212.png" height="40" width="40"></a>
+            <a class="botonEditar" style="float: right; margin-top: 200px; margin-right: 10px;"><img
+                    src="https://cdn-icons-png.flaticon.com/512/732/732190.png" height="40" width="40"></a>
+            <a class="botonEditar" style="float: right; margin-top: 195px; margin-right: 10px;"><img
+                    src="https://img.icons8.com/color/480/typescript.png" height="50" width="50"></a>
+            <a class="botonEditar" style="float: right; margin-top: 197px; margin-right: 10px;"><img
+                    src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_angular_icon_130754.png" height="50"
+                    width="50"></a>
+            <h4 style="float: right; margin-top: 205px; margin-right: 10px;">Recursos</h4> -->
+
+        </div>
+
+    </div>
+
+    <div class="row tarjetaEncabezado" style="margin-top: 100px;">
+
+        <div class="col-6">
+            <h1>{{miPorfolio.encabezado.name}}</h1><br>
+            <h5>{{miPorfolio.encabezado.descripcionUno}}</h5>
+            <h6 style="font-weight: 250;">{{miPorfolio.encabezado.descripcionDos}}</h6>
+        </div>
+
+        <div class="col-1">
+            
+        </div>
+
+        <div class="col-4" id="primerFilaLogos" style="float: right;">
+            <div class="derecha">
+                <h4>{{miPorfolio.encabezado.articulos[0].titulo}}</h4>
+                <a href="#" class="buttonNavRedes2 " style="color: black;"><img
+                        src="https://media.licdn.com/dms/image/C4E0BAQFzvKn3VLZX4A/company-logo_100_100/0/1584547893087?e=1683763200&v=beta&t=6z99dh1q01BhPFmW62edS0ceJSI5r6917jSWKBX6mSA"
+                        height="30" width="30"> {{miPorfolio.encabezado.articulos[1].articulo1}}</a>
+                <a href="#" class="buttonNavRedes2" style="color: black;"><img
+                        src="https://media.licdn.com/dms/image/C4E0BAQFago4fQ3aqjA/company-logo_100_100/0/1553259023579?e=1683763200&v=beta&t=SWNgDL41LRxu71SUZnmxPEwT-Y1GoS4Jbvq_ZKm8Go8"
+                        height="30" width="30"> {{miPorfolio.encabezado.articulos[2].articulo2}}</a>
+            </div>
+        </div>
+
+        <div class="col-1">
+            <a class="botonEditar" style="float: right;"><img src="https://cdn-icons-png.flaticon.com/512/84/84380.png" height="25"
+                    width="25"></a>
+        </div>
+
+    </div>
+
+
+</header>
