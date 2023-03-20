@@ -1,5 +1,6 @@
 .fondo {
   background-color: rgba(34, 32, 32, 0.978);
+  /* background-image: url(../src/Images/FondoPaginaOficial.png); */
 
 }
 
@@ -59,8 +60,8 @@ nav {
 }
 
 .logoArgNav {
-  position: absolute;
-  left: 0%;
+/*   position: absolute;
+ */  left: 0%;
   right: -10%;
   top: -23%;
   bottom: -10%;
@@ -83,7 +84,7 @@ header {
 
 .fondoEncabezado {
   height: 250px;
-  background-image: url(../src/Images/compu_Portada.webp);
+  background-image: url(../src/Images/portada.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -253,11 +254,10 @@ footer {
 
 ul {
   list-style: none;
-  overflow: hidden;
 }
 
 .logoArgFooter {
-  position: absolute;
+  /* position: absolute; */
   left: 0%;
   right: -10%;
   top: -10%;

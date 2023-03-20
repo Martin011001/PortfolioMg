@@ -1,6 +1,6 @@
 {
     "encabezado": {
-        "perfilImage": "https://media.licdn.com/dms/image/C4E03AQEFN8UI7WLSfA/profile-displayphoto-shrink_200_200/0/1619723741077?e=1681344000&v=beta&t=ecN73gD6nOBU_u0NiFLfI4coiUcVo9xnlPq-sILZKNE",
+        "perfilImage": "https://media.licdn.com/dms/image/D4D03AQEGGzu9sgIGeA/profile-displayphoto-shrink_800_800/0/1679245335991?e=1684972800&v=beta&t=e25ebf01mOZnQ0J5DmWYgLILiNccZ7dtPoIheO_cTZ0",
         "name": "Martin Gagliardi",
         "descripcionUno": "Support and Development Analyst en Producteca",
         "descripcionDos": "Buenos Aires CABA, Provincia de Buenos Aires, Argentina",
@@ -22,7 +22,7 @@
     "contenido": {
         "tarjeta1": {
             "titulo": "Sobre mi",
-            "descripcion": "Mi nombre es Martin Gagliardi tengo 21 años y soy estudiante de Analista de Sistemas en la institución O.R.T. Actualmente, concrete el titulo intermedio de técnico programador y 75% de la carrera (a concluir a fines de 2023). previamente obtuve el titulo de Diseño de Interiores en la Escuela Técnica Secundaria N°6 Fernando Fader. Actualmente me encuentro trabajando de Support and Development Analyst en Producteca, en la cual, utilizo herramientas como db visualizer con leguaje de SQL, mongo db, leguajes como Java Script, Type Script, Java. Me enfoco en la resolucion y analisis de errores y casos a resolver."
+            "descripcion": "Mi nombre es Martin Gagliardi tengo 21 años y soy estudiante de Analista de Sistemas en la institución O.R.T. Actualmente, concrete el titulo intermedio de técnico programador y 75% de la carrera (a concluir a fines de 2023). Previamente obtuve el titulo de Diseño de Interiores en la Escuela Técnica Secundaria N°6 Fernando Fader. Actualmente me encuentro trabajando de Support and Development Analyst en Producteca, en la cual, utilizo herramientas como db visualizer con leguaje de SQL, mongo db, leguajes como Java Script, Type Script, Java. Me enfoco en la resolucion y analisis de errores y casos a resolver."
         },
         "tarjeta2": {
             "titulo": "Experiencia Laboral",
@@ -54,7 +54,7 @@
                     "herramientas": [
                         "SketChup",
                         "Autocad",
-                        "Exel"
+                        "Excel"
                     ]
                 }
 
