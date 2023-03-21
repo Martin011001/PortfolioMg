@@ -5,9 +5,11 @@ import { SobreMiComponent } from './componentes/contenido/sobre-mi/sobre-mi.comp
 import { ExperienciaLaboralComponent } from './componentes/contenido/experiencia-laboral/experiencia-laboral.component';
 import { ConocimientoComponent } from './componentes/contenido/conocimiento/conocimiento.component';
 import { ContactoComponent } from './componentes/contenido/contacto/contacto.component';
+import { EducacionComponent } from './componentes/contenido/educacion/educacion.component';
 
  const routes: Routes =[
   {path: 'Sobre-Mi', component: SobreMiComponent},
+  {path: 'Educacion', component: EducacionComponent},
   {path: 'Experiencia', component: ExperienciaLaboralComponent},
   {path: 'Conocimientos', component: ConocimientoComponent},
   {path: 'Contacto', component: ContactoComponent},

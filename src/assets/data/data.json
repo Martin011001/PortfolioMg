@@ -59,6 +59,39 @@
                 }
 
             ]
-        }
+        },
+        "Estudios": [
+            {
+                "descripcion": "Producteca Empresa IT 2022-Actualidad",
+                "tituloPuestos": "Puesto y actividad:",
+                "puestos": [
+                    "Support and Development Analyst",
+                    "Solutions to errors and problems"
+                ],
+                "tituloHerramientas": "Herramientas:",
+                "herramientas": [
+                    "Java Script",
+                    "Type Script",
+                    "Java",
+                    "Bases de datos SQL"
+                ]
+            },
+            {
+                "descripcion": "G3 ARQ S.R.L Empresa Constructora 2019-2022",
+                "tituloPuestos": "Puesto y actividad:",
+                "puestos": [
+                    "Agente Administrativo",
+                    "Sobre estante de obra",
+                    "Dibujante de proyectos"
+                ],
+                "tituloHerramientas": "Herramientas:",
+                "herramientas": [
+                    "SketChup",
+                    "Autocad",
+                    "Excel"
+                ]
+            }
+
+        ]
     }
 }
