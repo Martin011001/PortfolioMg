@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModuleTs } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,9 @@ import { EducacionComponent } from './componentes/contenido/educacion/educacion.
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModuleTs
+    AppRoutingModuleTs,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

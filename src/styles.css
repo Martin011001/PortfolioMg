@@ -17,7 +17,7 @@ nav {
 
 .navUl {
   list-style: none;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 .navLi {
@@ -181,6 +181,12 @@ a {
   color: white;
 }
 
+.errorContacto{
+  margin-bottom: 0;
+  padding-left: 10px;
+  color: red;
+}
+
 
 /*-------------- Login ---------------*/
 
@@ -196,7 +202,7 @@ a {
   justify-content: center;
   color: black;
   z-index: 100;
-  display: none;
+  display: flex;
 }
 
 .tarjetaLogin {

@@ -1,45 +1,52 @@
 <div class="fondoLogin">
-    
 
-    <div class="row tarjeta tarjetaLogin" style="margin-top: 10px;">
+    <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
 
-        <div class="col-6 form-floating mb-3">
-            <input type="email" class="form-control inputContacto" placeholder="name@example.com">
-            <label class="lavelContacto">Email address</label>
+        <div class="row tarjeta tarjetaLogin" style="margin-top: 10px;">
+
+            <div class="form-floating mb-3" style="margin-top: 15px;">
+                <input type="email" class="form-control inputContacto" placeholder="name@example.com"
+                    formControlName="mail">
+                <label class="lavelContacto" for="mail">Email address</label>
+
+                <div *ngIf="mail?.errors  && mail?.touched">
+                    <p *ngIf="mail?.hasError('required')" class="error errorContacto">
+                        El email es requerido.
+                    </p>
+                    <p *ngIf="mail?.hasError('email')" class="error errorContacto">
+                        El formato del email debe ser válido.
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-floating mb-3" style="margin-top: 10px;">
+                <input type="email" class="form-control inputContacto" placeholder="name@example.com"
+                    formControlName="password">
+                <label class="lavelContacto" for="password">Contraseña</label>
+
+                <div *ngIf="password?.errors  && password?.touched">
+                    <p *ngIf="password?.hasError('required')" class="error errorContacto">
+                        El password es requerido.
+                    </p>
+                    <p *ngIf="password?.hasError('minLength')" class="error errorContacto">
+                        El password debe ser de 8 o más caracteres.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12" style="margin-top: 20px; padding: 0;">
+                    <button routerLink="/Contacto" aria-current="page" class="btn btn-primary buttonSesion"
+                        type="submit" style="margin-right: 10px;">Iniciar sesion</button>
+
+                    <button routerLink="/Contacto" aria-current="page" class="btn btn-primary buttonSesion"
+                        type="button">Crear cuenta</button>
+                </div>
+            </div>
+
         </div>
 
-        <div class="col-6 form-floating mb-3">
-            <input type="email" class="form-control inputContacto" placeholder="name@example.com">
-            <label class="lavelContacto">Email address</label>
-        </div>
+    </form>
 
-
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control inputContacto" placeholder="name@example.com">
-            <label class="lavelContacto">Email address</label>
-        </div>
-
-        <div class="form-floating mb-3">
-            <textarea class="form-control inputContacto" placeholder="Leave a comment here"
-                style="height: 100px"></textarea>
-            <label class="lavelContacto">Comments</label>
-        </div>
-
-        <div class="form-floating">
-            <select class="form-select inputContacto" aria-label="Floating label select example" style="color: black;">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-            <label class="lavelContacto">Works with selects</label>
-        </div>
-
-        <div style="margin-top: 20px;">
-            <button routerLink="/Contacto" aria-current="page" class="btn btn-primary buttonSesion"
-                type="button">Enviar</button>
-        </div>
-
-    </div>
 
 </div>

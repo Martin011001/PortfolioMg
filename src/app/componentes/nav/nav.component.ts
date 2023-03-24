@@ -9,18 +9,9 @@ import { LoginComponent } from '../login/login.component';
 
 export class NavComponent {
 
-  tarjetaLogin: boolean = false;
-
-  constructor(private accionarTarjeta: LoginComponent) {
+  constructor() {
 
   }
 
-  public navIniciaSesion(): void {
-    console.log("ACA ESTAMOS EN EL CICKKKKKK")
-    this.tarjetaLogin = true;
-    console.log("ACA ESTAMOS EN EL CICKKKKKK")
-    this.accionarTarjeta.loginMostrarTarjeta();
-
-  }
 
 }
