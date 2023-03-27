@@ -17,7 +17,7 @@ nav {
 
 .navUl {
   list-style: none;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .navLi {
@@ -141,7 +141,8 @@ header {
   background-color: rgb(122, 111, 111);
   height: 3px;
   width: 750px;
-  margin-left: 130px;
+  margin-left: 50px;
+  margin-right: 50px;
   margin-top: 10px;
 }
 
@@ -202,7 +203,7 @@ a {
   justify-content: center;
   color: black;
   z-index: 100;
-  display: flex;
+  display: none;
 }
 
 .tarjetaLogin {

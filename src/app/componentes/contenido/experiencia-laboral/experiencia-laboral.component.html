@@ -17,7 +17,7 @@
         </div>
 
         <div class="row" style="margin-top: 30px;">
-            <div class="col-7">
+            <div class="col-5">
                 <h6 class="tituloitems">{{experiencia.tituloPuestos}}</h6>
 
                 <div>
@@ -27,14 +27,20 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col-5">
                 <h6 class="tituloitems">{{experiencia.tituloHerramientas}}</h6>
                 <ul class="ListaLaboral">
                     <li *ngFor="let itemDos of experiencia.herramientas" class="itemsLaboral">{{itemDos}}</li>
                 </ul>
             </div>
 
+            <div class="col-2">
+                <a href=""><img src="https://www.zoologic.com.ar/zl/wp-content/uploads/2019/11/producteca.png" height="100" width="100"></a>
+            </div>
+
             <hr class="LineaTlaboral">
         </div>
+
+
     </div>
 </div>
