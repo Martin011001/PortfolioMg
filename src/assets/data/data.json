@@ -29,12 +29,13 @@
             "trabajos": [
                 {
                     "descripcion": "Producteca Empresa IT 2022-Actualidad",
-                    "tituloPuestos": "Puesto y actividad:",
+                    "tituloPuestos": "💼 Puesto y actividad:",
+                    "imgTrabajo": "https://www.zoologic.com.ar/zl/wp-content/uploads/2019/11/producteca.png",
                     "puestos": [
                         "Support and Development Analyst",
                         "Solutions to errors and problems"
                     ],
-                    "tituloHerramientas": "Herramientas:",
+                    "tituloHerramientas": "🔧 Herramientas:",
                     "herramientas": [
                         "Java Script",
                         "Type Script",
@@ -44,13 +45,14 @@
                 },
                 {
                     "descripcion": "G3 ARQ S.R.L Empresa Constructora 2019-2022",
-                    "tituloPuestos": "Puesto y actividad:",
+                    "tituloPuestos": "💼 Puesto y actividad:",
+                    "imgTrabajo": "https://www.zoologic.com.ar/zl/wp-content/uploads/2019/11/producteca.png",
                     "puestos": [
                         "Agente Administrativo",
                         "Sobre estante de obra",
                         "Dibujante de proyectos"
                     ],
-                    "tituloHerramientas": "Herramientas:",
+                    "tituloHerramientas": "🔧 Herramientas:",
                     "herramientas": [
                         "SketChup",
                         "Autocad",
