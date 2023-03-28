@@ -17,7 +17,7 @@ export class EducacionComponent {
   ngOnInit(): void{
     this.datosPorfolio.obtenerdatos().subscribe(data => {
       console.log(data)
-      this.miPorfolio = data.contenido.tarjeta2;
+      this.miPorfolio = data.contenido.tarjeta3;
     });
   }
 

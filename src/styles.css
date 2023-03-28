@@ -118,6 +118,11 @@ header {
   padding: 30px;
 }
 
+.btnHeader{
+  margin-top: 160px;
+  margin-left: 50px;
+}
+
 
 /*-------------- Estilos del Contenido ---------------*/
 
