@@ -124,6 +124,16 @@ header {
   margin-left: 50px;
 }
 
+.imgRedondaActual{
+  border-radius: 150px;
+  border: 2px solid rgba(233, 229, 229, 0.738);
+}
+
+.aImgActual{
+  color: white; 
+  padding: 0; 
+  margin-top: 10px;
+}
 
 /*-------------- Estilos del Contenido ---------------*/
 
@@ -336,3 +346,40 @@ a {
 
 /*-------------- Skills ---------------*/
 
+/*** ESTILOS BOTÓN SLIDE LEFT ***/
+.ov-btn-slide-left {
+  background: #2a3ac900; /* color de fondo */
+  color: #e8e8e9; /* color de fuente */
+  border: 2px solid #221cbe; /* tamaño y color de borde */
+  padding: 16px 20px;
+  border-radius: 8px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+.ov-btn-slide-left:hover {
+  color: #fff; /* color de fuente hover */
+}
+.ov-btn-slide-left::after {
+  content: "";
+  background: #352fe9; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.ov-btn-slide-left:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
