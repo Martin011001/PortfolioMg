@@ -9,9 +9,24 @@ import { LoginComponent } from '../login/login.component';
 
 export class NavComponent {
 
+  buttonSesion:String = "none";
+  buttonCrear:String = "none";
+
   constructor() {
 
   }
 
+  iniciaSesion(){
+    this.buttonSesion == "flex" ? this.buttonSesion = "none" : this.buttonSesion = "flex";    
+  }
+
+  crearCuenta(){
+    this.buttonCrear == "none" ? this.buttonCrear = "flex" : this.buttonCrear = "none";
+  }
+
+  crearCuentaDesdeInicio(){
+    this.iniciaSesion(); 
+    this.crearCuenta();  
+  }
 
 }

@@ -1,23 +1,17 @@
-import { Component, EventEmitter, Injectable, Input, Output } from '@angular/core';
-import { NavComponent } from '../nav/nav.component';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import { Validators} from '@angular/forms';
 
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-crear-cuenta',
+  templateUrl: './crear-cuenta.component.html',
+  styleUrls: ['./crear-cuenta.component.css']
 })
-
-export class LoginComponent {
+export class CrearCuentaComponent {
 
   @Input() estilo:String = "";
   @Output() salir = new EventEmitter;
-  @Output() irAlNav = new EventEmitter;
 
-
-  buttonCrear:String = "none";
   form: FormGroup;
 
   constructor(private formBuilder:FormBuilder) {
@@ -64,8 +58,5 @@ export class LoginComponent {
     this.salir.emit();
   }
 
-  irACrearCuenta(){
-    this.irAlNav.emit();
-  }
 
 }

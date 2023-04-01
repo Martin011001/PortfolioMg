@@ -9,12 +9,14 @@
 
     <li class="liSesion">
       <button routerLink="/Contacto" aria-current="page"
-        class="btn btn-primary buttonSesion" type="button">Crear Cuenta</button>
+        class="btn btn-primary buttonSesion" type="button"
+        (click)="crearCuenta()">Crear Cuenta</button>
     </li>
 
     <li class="liSesion">
       <button routerLink="/Contacto" aria-current="page"
-        class="btn btn-primary buttonSesion" type="button">Iniciar Sesion</button>
+        class="btn btn-primary buttonSesion" type="button"
+        (click)="iniciaSesion()">Iniciar Sesion</button>
     </li>
 
     <li class="navLi"><a href="#" class="buttonNavRedes"><img
@@ -29,7 +31,7 @@
 
   </ul>
 
+  <app-login estilo="{{buttonSesion}}" (salir)="iniciaSesion()" (irAlNav)="crearCuentaDesdeInicio()"></app-login>
 
-
-
+  <app-crear-cuenta estilo="{{buttonCrear}}" (salir)="crearCuenta()"></app-crear-cuenta>
 </nav>

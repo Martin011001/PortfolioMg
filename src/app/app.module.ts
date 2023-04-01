@@ -15,6 +15,7 @@ import { ConocimientoComponent } from './componentes/contenido/conocimiento/cono
 import { ContactoComponent } from './componentes/contenido/contacto/contacto.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { EducacionComponent } from './componentes/contenido/educacion/educacion.component';
+import { CrearCuentaComponent } from './componentes/crear-cuenta/crear-cuenta.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EducacionComponent } from './componentes/contenido/educacion/educacion.
     ConocimientoComponent,
     ContactoComponent,
     LoginComponent,
-    EducacionComponent
+    EducacionComponent,
+    CrearCuentaComponent
   ],
   imports: [
     BrowserModule,
