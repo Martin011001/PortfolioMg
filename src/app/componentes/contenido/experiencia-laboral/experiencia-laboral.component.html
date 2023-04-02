@@ -1,46 +1,13 @@
 <div class="row tarjeta">
+
     <div class="row">
+        
         <div class="col-11">
-            <h3>{{miPorfolio.titulo}}</h3>
+            <h3>Experiencia Laboral</h3>
         </div>
-        <div class="col-1">
-            <a class="botonEditar" style="float: right;"><img src="https://cdn-icons-png.flaticon.com/512/84/84380.png"
-                    height="25" width="25"></a>
-        </div>
+        
     </div>
 
-    <div *ngFor="let experiencia of miPorfolio.trabajos"  style="margin-top: 10px;">
-        <div class="row">
-            <div class="col-12">
-                <h5>{{experiencia.descripcion}}</h5>
-            </div>
-        </div>
+    <app-item-laboral *ngFor="let expe of experiencia" [itemExpe]="expe" style="margin-top: 10px;"></app-item-laboral>
 
-        <div class="row" style="margin-top: 30px;">
-            <div class="col-5">
-                <h6 class="tituloitems">{{experiencia.tituloPuestos}}</h6>
-
-                <div>
-                    <ul class="ListaLaboral">
-                        <li *ngFor="let item of experiencia.puestos" class="itemsLaboral">{{item}}</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <h6 class="tituloitems">{{experiencia.tituloHerramientas}}</h6>
-                <ul class="ListaLaboral">
-                    <li *ngFor="let itemDos of experiencia.herramientas" class="itemsLaboral">{{itemDos}}</li>
-                </ul>
-            </div>
-
-            <div class="col-3">
-                <a href=""><img class="imgTrabajo" [src]="experiencia.imgTrabajo" height="100" width="100"></a>
-            </div>
-
-            <hr class="LineaTlaboral">
-        </div>
-
-
-    </div>
 </div>

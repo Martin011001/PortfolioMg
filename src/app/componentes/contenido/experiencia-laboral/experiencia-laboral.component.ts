@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
+import { Experiencia } from './interfaz-experiencia';
 
 @Component({
   selector: 'app-experiencia-laboral',
@@ -8,7 +9,8 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
 })
 export class ExperienciaLaboralComponent {
 
-  miPorfolio:any;
+  experiencia: any;
+  miPorfolio: any;
 
   constructor(private datosPorfolio:PorfolioService){
     
@@ -17,7 +19,9 @@ export class ExperienciaLaboralComponent {
   ngOnInit(): void{
     this.datosPorfolio.obtenerdatos().subscribe(data => {
       console.log(data)
+      
       this.miPorfolio = data.contenido.tarjeta2;
+      this.experiencia = data.contenido.tarjeta2.trabajos;
     });
   }
 

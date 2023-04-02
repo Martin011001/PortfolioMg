@@ -16,6 +16,7 @@ import { ContactoComponent } from './componentes/contenido/contacto/contacto.com
 import { LoginComponent } from './componentes/login/login.component';
 import { EducacionComponent } from './componentes/contenido/educacion/educacion.component';
 import { CrearCuentaComponent } from './componentes/crear-cuenta/crear-cuenta.component';
+import { ItemLaboralComponent } from './componentes/contenido/experiencia-laboral/item-laboral/item-laboral.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CrearCuentaComponent } from './componentes/crear-cuenta/crear-cuenta.co
     ContactoComponent,
     LoginComponent,
     EducacionComponent,
-    CrearCuentaComponent
+    CrearCuentaComponent,
+    ItemLaboralComponent
   ],
   imports: [
     BrowserModule,

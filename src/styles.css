@@ -140,9 +140,9 @@ header {
 .tarjeta {
   /* border: solid rgb(106, 103, 103); */
   border-width: 2.2px;
-  border-radius: 15px;
+  border-radius: 22px;
   padding: 20px;
-  background-color: rgba(44, 46, 47, 0.712);
+  background-color: rgba(53, 54, 56, 0.712);
 }
 
 .itemsLaboral {
@@ -246,7 +246,7 @@ a {
 
 .menuOpciones {
   background-color: rgba(32, 34, 34, 0.626);
-  border-radius: 15px;
+  border-radius: 22px;
   align-items: center;
   border-width: 2px;
   /* border: solid rgb(106, 103, 103); */

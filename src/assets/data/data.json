@@ -25,9 +25,9 @@
             "descripcion": "Mi nombre es Martin Gagliardi tengo 21 años y soy estudiante de Analista de Sistemas en la institución O.R.T. Actualmente, concrete el titulo intermedio de técnico programador y 75% de la carrera (a concluir a fines de 2023). Previamente obtuve el titulo de Diseño de Interiores en la Escuela Técnica Secundaria N°6 Fernando Fader. Actualmente me encuentro trabajando de Support and Development Analyst en Producteca, en la cual, utilizo herramientas como db visualizer con leguaje de SQL, mongo db, leguajes como Java Script, Type Script, Java. Me enfoco en la resolucion y analisis de errores y casos a resolver."
         },
         "tarjeta2": {
-            "titulo": "Experiencia Laboral",
             "trabajos": [
                 {
+                    "id": 1,
                     "descripcion": "Producteca Empresa IT 2022-Actualidad",
                     "tituloPuestos": "💼 Puesto y actividad:",
                     "imgTrabajo": "https://www.zoologic.com.ar/zl/wp-content/uploads/2019/11/producteca.png",
@@ -44,6 +44,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "descripcion": "G3 ARQ S.R.L Empresa Constructora 2019-2022",
                     "tituloPuestos": "💼 Puesto y actividad:",
                     "imgTrabajo": "https://scontent.faep14-3.fna.fbcdn.net/v/t39.30808-6/337414249_588414393349666_200032743748274103_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_ohc=ioB7inmp6GsAX_l9WZM&_nc_ht=scontent.faep14-3.fna&oh=00_AfDTID5AhBTiH8bxB5-p4NS8zgJUHIJRcv0-WSizZ2s3Ag&oe=64271CCE",
@@ -64,6 +65,7 @@
         "tarjeta3": {
             "estudios": [
                 {
+                    "id": 1,
                     "descripcion": "Ort Argentina 2021 - Actualidad",
                     "imgInstitucion": "https://www.ort.edu.ar/inscripcion2024/images/logo.png",
                     "tituloPuestos": "Carrera:",
@@ -77,6 +79,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "descripcion": "Argentina Programa 2022 - 2023",
                     "imgInstitucion": "https://desa.argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674860780/APLogo-20-20.png",
                     "tituloPuestos": "Curso:",
@@ -89,6 +92,7 @@
                     ]
                 },
                 {
+                    "id": 3,
                     "descripcion": "Argentina Programa 2021 - 2022",
                     "imgInstitucion": "https://desa.argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674860780/APLogo-20-20.png",
                     "tituloPuestos": "Curso:",
