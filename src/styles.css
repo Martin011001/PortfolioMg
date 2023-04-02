@@ -138,11 +138,11 @@ header {
 /*-------------- Estilos del Contenido ---------------*/
 
 .tarjeta {
-  border: solid rgb(106, 103, 103);
+  /* border: solid rgb(106, 103, 103); */
   border-width: 2.2px;
-  border-radius: 22px;
+  border-radius: 15px;
   padding: 20px;
-  /* background-color: rgba(63, 65, 67, 0.712); */
+  background-color: rgba(44, 46, 47, 0.712);
 }
 
 .itemsLaboral {
@@ -164,6 +164,7 @@ header {
 
 .contenedor {
   margin: 20px;
+  margin-left: 5px;
 }
 
 h5 {
@@ -181,6 +182,16 @@ a {
   border-radius: 150px;
   border: 3px solid rgba(233, 229, 229, 0.738);
 }
+
+
+/*-------------- Experiencia Laboral ---------------*/
+
+.tjtConociminto{
+  margin-top: 150px;
+}
+
+
+
 
 /*-------------- Contacto ---------------*/
 .lavelContacto {
@@ -235,7 +246,7 @@ a {
 
 .menuOpciones {
   background-color: rgba(32, 34, 34, 0.626);
-  border-radius: 22px;
+  border-radius: 15px;
   align-items: center;
   border-width: 2px;
   /* border: solid rgb(106, 103, 103); */
