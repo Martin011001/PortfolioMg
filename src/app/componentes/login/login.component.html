@@ -4,8 +4,20 @@
 
         <div class="row tarjeta tarjetaLogin" style="margin-top: 10px;">
 
-            <div class="col-1" style="float: right; cursor: pointer;" (click)="salirDeLogin()">X</div>
+            <div class="row">
+                <div class="col-11" style="padding-left: 0; margin-bottom: 15px;">
+                    <h1 style="float: left;">Iniciar Sesion</h1>
+                </div>
 
+                <div class="col-1" style="text-align: center; padding: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-x-circle"
+                        viewBox="0 0 16 16" style="float: right; cursor: pointer; margin-left: 40px; margin-top: 10px;" (click)="salirDeLogin()">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                </div>
+            </div>
             <div class="form-floating mb-3" style="margin-top: 15px;">
 
                 <input type="email" class="form-control inputContacto" placeholder="name@example.com"
@@ -45,7 +57,7 @@
                     <button routerLink="/Contacto" aria-current="page" class="btn btn-primary buttonSesion"
                         type="button" (click)="irACrearCuenta()">Crear cuenta</button>
                 </div>
-            </div>  
+            </div>
 
         </div>
 
