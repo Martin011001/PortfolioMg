@@ -17,6 +17,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { EducacionComponent } from './componentes/contenido/educacion/educacion.component';
 import { CrearCuentaComponent } from './componentes/crear-cuenta/crear-cuenta.component';
 import { ItemLaboralComponent } from './componentes/contenido/experiencia-laboral/item-laboral/item-laboral.component';
+import { ItemEducacionComponent } from './componentes/contenido/educacion/item-educacion/item-educacion.component';
+import { ItemConocimientoComponent } from './componentes/contenido/conocimiento/item-conocimiento/item-conocimiento.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ItemLaboralComponent } from './componentes/contenido/experiencia-labora
     LoginComponent,
     EducacionComponent,
     CrearCuentaComponent,
-    ItemLaboralComponent
+    ItemLaboralComponent,
+    ItemEducacionComponent,
+    ItemConocimientoComponent
   ],
   imports: [
     BrowserModule,
