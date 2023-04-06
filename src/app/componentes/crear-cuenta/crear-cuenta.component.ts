@@ -18,12 +18,12 @@ export class CrearCuentaComponent {
 
     this.form = this.formBuilder.group({
       mail: ['', [Validators.required, Validators.email, Validators.maxLength(50)]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
       nombre: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
       apellido: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
       asunto: ['', [Validators.required, Validators.maxLength(100)]],
-      mensaje: ['', [Validators.required, Validators.maxLength(3000)]]
-
+      mensaje: ['', [Validators.required, Validators.maxLength(3000)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      passwordConfirm: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
 
@@ -31,30 +31,20 @@ export class CrearCuentaComponent {
     return this.form.get("password");
   }
 
+  get passwordConfirm() {
+    return this.form.get("passwordConfirm");
+  }
+
   get mail() {
     return this.form.get("mail");
-  }
-
-  get passwordValid() {
-    return this.password?.touched && !this.password?.valid;
-  }
-
-  get mailValid() {
-    return false
   }
 
   get nombre(){
     return this.form.get("nombre");
   }
-  get nombreRequired(){
-    return false;
-  }
 
   get apellido(){
     return this.form.get("apellido");
-  }
-  get apellidoRequired(){
-    return false;
   }
 
   get asunto(){
@@ -64,6 +54,10 @@ export class CrearCuentaComponent {
     return this.form.get("mensaje");
   }
 
+  confirmarPassword(){
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    return this.password != this.passwordConfirm;
+  }
 
   onEnviar(event: Event) {
     // Detenemos la propagación o ejecución del compotamiento submit de un form

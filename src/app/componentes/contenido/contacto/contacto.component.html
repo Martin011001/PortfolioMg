@@ -5,67 +5,70 @@
 
         <div class="row">
 
-            <div class="col-6 form-floating mb-3" style="padding: 0; padding-right: 8px;">
+            <div class="col-6 form-floating mb-3 inputContactoForm">
                 <input type="text" class="form-control inputContacto" placeholder="Nombre" formControlName="nombre">
                 <label class="lavelContacto" for="nombre">Nombre</label>
 
-                <div *ngIf="nombre?.errors && nombre?.touched" style="margin-top: 5px;">    
+                <div *ngIf="nombre?.errors && nombre?.touched" style="margin-top: 5px;">
                     <p *ngIf="nombre?.hasError('required')" class="error errorContacto">
                         El nombre es requerido.
                     </p>
                 </div>
             </div>
 
-            <div class="col-6 form-floating mb-3" style="padding: 0; padding-left: 8px;">
+            <div class="col-6 form-floating mb-3 inputContactoForm">
                 <input type="test" class="form-control inputContacto" placeholder="apellido" formControlName="apellido">
                 <label class="lavelContacto" for="apellido">Apellido</label>
 
                 <div *ngIf="apellido?.errors && apellido?.touched" style="margin-top: 5px;">
                     <p *ngIf="apellido?.hasError('required')" class="error errorContacto">
-                    El apellido es requerido.
+                        El apellido es requerido.
                     </p>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="form-floating mb-3">
-            <input type="email" class="form-control inputContacto" placeholder="name@example.com" formControlName="mail">
+            <input type="email" class="form-control inputContacto" placeholder="name@example.com"
+                formControlName="mail">
             <label class="lavelContacto" for="email">Email</label>
 
-            <div *ngIf="mail?.errors  && mail?.touched">    
+            <div *ngIf="mail?.errors  && mail?.touched">
                 <p *ngIf="mail?.hasError('required')" class="error errorContacto">
                     El email es requerido.
                 </p>
                 <p *ngIf="mail?.hasError('email')" class="error errorContacto">
                     El formato del email debe ser válido.
-                  </p>
+                </p>
             </div>
         </div>
 
         <div class="form-floating mb-3">
-            <input type="text" class="form-control inputContacto" placeholder="name@example.com" formControlName="asunto">
+            <input type="text" class="form-control inputContacto" placeholder="name@example.com"
+                formControlName="asunto">
             <label class="lavelContacto" for="asunto">Asunto</label>
 
             <div *ngIf="asunto?.errors && asunto?.touched" style="margin-top: 5px;">
                 <p *ngIf="asunto?.hasError('required')" class="error errorContacto">
-                El asunto es requerido.
+                    El asunto es requerido.
                 </p>
             </div>
         </div>
 
         <div class="form-floating mb-3">
-            <textarea class="form-control inputContacto" placeholder="Leave a comment here"style="height: 100px" formControlName="mensaje"></textarea>
+            <textarea class="form-control inputContacto" placeholder="Leave a comment here" style="height: 100px"
+                formControlName="mensaje"></textarea>
             <label class="lavelContacto" for="mensaje">Mensaje</label>
 
-            <div *ngIf="mensaje?.errors && mensaje?.touched" style="margin-top: 5px;">
+            <div *ngIf="mensaje?.errors && mensaje?.touched" style="margin-top: 1px;">
                 <p *ngIf="mensaje?.hasError('required')" class="error errorContacto">
-                El mensaje es requerido.
+                    El mensaje es requerido.
                 </p>
             </div>
         </div>
 
-        <div style="margin-top: 20px;">
+        <div style="margin-top: 35px;">
             <button routerLink="/Contacto" aria-current="page" class="btn btn-primary buttonSesion"
                 type="submit">Enviar</button>
         </div>

@@ -13,4 +13,8 @@ export class ItemLaboralComponent {
     
   }
 
+  onDelete(){
+    console.log("DELETE");
+    
+  }
 }

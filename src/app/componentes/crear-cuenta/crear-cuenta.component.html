@@ -21,7 +21,7 @@
             </div>
 
 
-            <div class="row">
+            <div class="row"> 
 
                 <div class="col-6 form-floating mb-3" style="padding: 0; padding-right: 8px;">
                     <input type="text" class="form-control inputContacto" placeholder="Nombre" formControlName="nombre">
@@ -79,16 +79,19 @@
             </div>
 
             <div class="form-floating mb-3" style="margin-top: 10px;">
-                <input type="email" class="form-control inputContacto" placeholder="name@example.com"
-                    formControlName="password">
+                <input type="text" class="form-control inputContacto" placeholder="name@example.com"
+                    formControlName="passwordConfirm">
                 <label class="lavelContacto" for="password">Confirmar contraseña</label>
 
-                <div *ngIf="password?.errors  && password?.touched">
-                    <p *ngIf="password?.hasError('required')" class="error errorContacto">
+                <div *ngIf="passwordConfirm?.errors  && passwordConfirm?.touched">
+                    <p *ngIf="passwordConfirm?.hasError('required')" class="error errorContacto">
                         El password es requerido.
                     </p>
-                    <p *ngIf="password?.hasError('minLength')" class="error errorContacto">
+                    <p *ngIf="passwordConfirm?.hasError('minLength')" class="error errorContacto">
                         El password debe ser de 8 o más caracteres.
+                    </p>
+                    <p *ngIf="confirmarPassword()" class="error errorContacto">
+                        El password debe ser igual.
                     </p>
                 </div>
             </div>
