@@ -258,7 +258,14 @@ a {
   padding-right: 8px;
 }
 
+.liContacto{
+  margin-bottom: 15px;
+  font-size: 12px;
+}
 
+.margenIcono{
+  margin-right: 5px;
+}
 /*-------------- Login ---------------*/
 
 .fondoLogin {
@@ -315,6 +322,13 @@ a {
 .iconosBarra {
   margin-top: 22px;
   margin-left: 5px;
+}
+
+.menuOpciones.fixed{
+  position: fixed;
+  top: 0;   
+  /* estilos que quieras ponerle pa*/
+
 }
 
 

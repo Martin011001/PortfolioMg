@@ -11,6 +11,7 @@ import { Validators} from '@angular/forms';
 export class ContactoComponent {
   miPorfolio: any;
   form: FormGroup;
+  msj:any = "";
 
   constructor(private datosPorfolio:PorfolioService, private formBuilder:FormBuilder){
     this.form = this.formBuilder.group({
@@ -66,6 +67,12 @@ export class ContactoComponent {
       this.form.markAllAsTouched(); 
     }
  
+  }
+
+  getmensaje(){
+    console.log("hyolaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    this.msj = document.getElementById("mensaje")?.innerHTML;
+    return document.getElementById("mensaje")?.innerHTML;
   }
 
 }

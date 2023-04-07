@@ -18,39 +18,41 @@
             </svg>
         </div>
 
-        <div class="col-5 floatPiso">
-            <h1>{{miPorfolio.encabezado.name}}</h1><br>
-            <h5>{{miPorfolio.encabezado.descripcionUno}}</h5>
-            <h6 style="font-weight: 250;">{{miPorfolio.encabezado.descripcionDos}}</h6>
-        </div>
+        <div class="row">
+            <div class="col-5 floatPiso">
+                <h1>{{miPorfolio.encabezado.name}}</h1><br>
+                <h5>{{miPorfolio.encabezado.descripcionUno}}</h5>
+                <h6 style="font-weight: 250;">{{miPorfolio.encabezado.descripcionDos}}</h6>
+            </div>
 
-        <div class="col-3 floatPiso">
+            <div class="col-4 floatPiso" style="padding-right: 25px;">
 
-            <h4 style="margin-bottom: 0; padding-top: 10px;">Intereses</h4>
-            <button class="btn btn-primary buttonSesion" type="submit"
-                style="border-radius: 18px; margin-top: 10px; background-color: rgb(61, 57, 57);">Leng.Programacion</button>
-            <button class="btn btn-primary buttonSesion" type="submit"
-                style="border-radius: 18px; margin-top: 10px; background-color: rgb(61, 57, 57); margin-left: 5px;">Deportes</button>
-            <button class="btn btn-primary buttonSesion" type="submit"
-                style="border-radius: 18px; margin-top: 10px; background-color: rgb(61, 57, 57);">Tecnologia</button>
-            <button class="btn btn-primary buttonSesion" type="submit"
-                style="border-radius: 18px; margin-top: 10px; background-color: rgb(61, 57, 57); margin-left: 5px;">More..</button>
+                <h4 style="margin-bottom: 0; padding-top: 10px;">Intereses</h4>
+                <button class="btn btn-primary buttonSesion" type="submit"
+                    style="border-radius: 18px; margin-top: 10px; background-color: rgb(61, 57, 57);">Leng.Programacion</button>
+                <button class="btn btn-primary buttonSesion" type="submit"
+                    style="border-radius: 18px; margin-top: 10px; background-color: rgb(61, 57, 57); margin-left: 5px;">Deportes</button>
+                <button class="btn btn-primary buttonSesion" type="submit"
+                    style="border-radius: 18px; margin-top: 10px; background-color: rgb(61, 57, 57);">Tecnologia</button>
+                <button class="btn btn-primary buttonSesion" type="submit"
+                    style="border-radius: 18px; margin-top: 10px; background-color: rgb(61, 57, 57); margin-left: 5px;">More..</button>
 
-        </div>
+            </div>
 
-        <div class="col-3 floatPiso" style="float: right; margin-left: 80px;">
+            <div class="col-3 floatPiso">
 
-            <h4 style="margin-bottom: 0; padding-top: 10px;">{{miPorfolio.encabezado.articulos[0].titulo}}</h4>
+                <h4 style="margin-bottom: 0; padding-top: 10px;">{{miPorfolio.encabezado.articulos[0].titulo}}</h4>
 
-            <a class="buttonNavRedes2 aImgActual" style="margin-top: 4px;"><img
-                    src="https://media.licdn.com/dms/image/C4E0BAQFzvKn3VLZX4A/company-logo_100_100/0/1584547893087?e=1683763200&v=beta&t=6z99dh1q01BhPFmW62edS0ceJSI5r6917jSWKBX6mSA"
-                    height="40" width="40" class="imgRedondaActual">
-                {{miPorfolio.encabezado.articulos[1].articulo1}}</a>
+                <a class="buttonNavRedes2 aImgActual" style="margin-top: 4px;"><img
+                        src="https://media.licdn.com/dms/image/C4E0BAQFzvKn3VLZX4A/company-logo_100_100/0/1584547893087?e=1683763200&v=beta&t=6z99dh1q01BhPFmW62edS0ceJSI5r6917jSWKBX6mSA"
+                        height="40" width="40" class="imgRedondaActual">
+                    {{miPorfolio.encabezado.articulos[1].articulo1}}</a>
 
-            <a class="buttonNavRedes2 aImgActual" style="margin-top: 5px;"><img
-                    src="https://media.licdn.com/dms/image/C4E0BAQFago4fQ3aqjA/company-logo_100_100/0/1553259023579?e=1683763200&v=beta&t=SWNgDL41LRxu71SUZnmxPEwT-Y1GoS4Jbvq_ZKm8Go8"
-                    height="40" width="40" class="imgRedondaActual">
-                {{miPorfolio.encabezado.articulos[2].articulo2}}</a>
+                <a class="buttonNavRedes2 aImgActual" style="margin-top: 5px;"><img
+                        src="https://media.licdn.com/dms/image/C4E0BAQFago4fQ3aqjA/company-logo_100_100/0/1553259023579?e=1683763200&v=beta&t=SWNgDL41LRxu71SUZnmxPEwT-Y1GoS4Jbvq_ZKm8Go8"
+                        height="40" width="40" class="imgRedondaActual">
+                    {{miPorfolio.encabezado.articulos[2].articulo2}}</a>
+            </div>
         </div>
 
     </div>

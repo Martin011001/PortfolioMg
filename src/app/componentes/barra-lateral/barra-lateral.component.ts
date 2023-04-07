@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-barra-lateral',
@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class BarraLateralComponent {
 
+  isFixed = false;
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event:Event) {
+    if (window.pageYOffset > 555) {
+      this.isFixed = true;
+    } else { 
+      this.isFixed = false;
+    }
+  }
 }
