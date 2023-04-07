@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PorfolioService } from 'src/app/servicios/porfolio.service';
+
 
 @Component({
   selector: 'app-item-educacion',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class ItemEducacionComponent {
 
+  @Input() itemEdu: any = "";
+
+  constructor() {
+
+  }
+
+  
 }

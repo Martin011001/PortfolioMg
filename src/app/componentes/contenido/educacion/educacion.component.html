@@ -1,4 +1,5 @@
-<div class="row tarjeta">
+<div class="container tarjeta">
+    
     <div class="row">
         <div class="col-11" style="margin-bottom: 10px;">
             <h3>Educacion</h3>
@@ -9,34 +10,7 @@
         </div>
     </div>
 
-    <div *ngFor="let experiencia of miPorfolio.estudios"  style="margin-top: 10px;">
-        <div class="row">
-            <div class="col-12">
-                <h5>{{experiencia.descripcion}}</h5>
-            </div>
-        </div>
+    <app-item-educacion *ngFor="let edu of estudio" [itemEdu]="edu"></app-item-educacion>
 
-        <div class="row" style="margin-top: 30px;">
-            <div class="col-7">
-                <h6 class="tituloitems">{{experiencia.tituloPuestos}}</h6>
-
-                <div>
-                    <ul class="ListaLaboral">
-                        <li *ngFor="let item of experiencia.puestos" class="itemsLaboral">{{item}}</li>
-                    </ul>
-                </div>
-
-                <h6 class="tituloitems">{{experiencia.tituloHerramientas}}</h6>
-                <ul class="ListaLaboral">
-                    <li *ngFor="let itemDos of experiencia.herramientas" class="itemsLaboral">{{itemDos}}</li>
-                </ul>
-            </div>
-
-            <div class="col">
-                <a href=""><img [src]="experiencia.imgInstitucion" height="120" width="200"></a>
-            </div>
-
-            <hr class="LineaTlaboral">
-        </div>
-    </div>
 </div>
+

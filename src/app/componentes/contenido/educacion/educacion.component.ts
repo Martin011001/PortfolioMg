@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
 })
 export class EducacionComponent {
 
+  estudio: any;
   miPorfolio:any;
 
   constructor(private datosPorfolio:PorfolioService){
@@ -18,6 +19,7 @@ export class EducacionComponent {
     this.datosPorfolio.obtenerdatos().subscribe(data => {
       console.log(data)
       this.miPorfolio = data.contenido.tarjeta3;
+      this.estudio = data.contenido.tarjeta3.estudios;
     });
   }
 

@@ -1,1 +1,28 @@
-<p>item-educacion works!</p>
+<div class="row">
+    <div class="col-12">
+        <h5>{{itemEdu.descripcion}}</h5>
+    </div>
+
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-7">
+            <h6 class="tituloitems">{{itemEdu.tituloPuestos}}</h6>
+
+            <div>
+                <ul class="ListaLaboral">
+                    <li *ngFor="let item of itemEdu.puestos" class="itemsLaboral">{{item}}</li>
+                </ul>
+            </div>
+
+            <h6 class="tituloitems">{{itemEdu.tituloHerramientas}}</h6>
+            <ul class="ListaLaboral">
+                <li *ngFor="let itemDos of itemEdu.herramientas" class="itemsLaboral">{{itemDos}}</li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <a href=""><img [src]="itemEdu.imgInstitucion" height="120" width="200"></a>
+        </div>
+
+        <hr class="LineaTlaboral">
+    </div>
+</div>

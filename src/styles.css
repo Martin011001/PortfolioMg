@@ -189,6 +189,7 @@ header {
 .contenedor {
   margin: 20px;
   margin-left: 5px;
+  margin-right: 20px;
 }
 
 h5 {
@@ -289,7 +290,7 @@ a {
   align-items: center;
   border-width: 2px;
   /* border: solid rgb(106, 103, 103); */
-  padding: 10px;
+  padding: 5px;
 }
 
 .menuNavegacion {
@@ -356,8 +357,8 @@ ul {
 }
 
 .section{
-  margin-left: 100px;
-  margin-right: 180px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 
