@@ -6,16 +6,19 @@
         "descripcionDos": "Buenos Aires CABA, Provincia de Buenos Aires, Argentina",
         "articulos": [
             {
-                "titulo": "Actalmente en"
+                "articulo": "Producteca",
+                "logo": "https://media.licdn.com/dms/image/C4E0BAQFzvKn3VLZX4A/company-logo_100_100/0/1584547893087?e=1683763200&v=beta&t=6z99dh1q01BhPFmW62edS0ceJSI5r6917jSWKBX6mSA"
             },
             {
-                "articulo1": "Producteca",
-                "logo": ""
-            },
-            {
-                "articulo2": "Ort Argentina",
-                "logo": ""
+                "articulo": "Ort Argentina",
+                "logo": "https://media.licdn.com/dms/image/C4E0BAQFago4fQ3aqjA/company-logo_100_100/0/1553259023579?e=1683763200&v=beta&t=SWNgDL41LRxu71SUZnmxPEwT-Y1GoS4Jbvq_ZKm8Go8"
             }
+        ],
+        "intereses":[
+            "Leng.Programacion",
+            "Deportes",
+            "Tecnologia",
+            "Aplicaciones IT"
         ]
     },
     "mail":"martingagliardi2001",

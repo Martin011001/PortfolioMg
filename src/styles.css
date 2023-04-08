@@ -107,7 +107,6 @@ header {
 }
 
 .buttonNavRedes2 {
-  display: block;
   /* Convertimos los elementos a en elementos bloque para manipular el padding */
   padding: 12px;
   text-decoration: none;
@@ -143,12 +142,13 @@ header {
   padding-top: 60px;
   padding-bottom: 20px;
   padding-left: 18px;
+  float: right;
 }
 
-.intereses{
+/* .intereses{
   border: 2px solid #221cbe;
   border-radius: 8px;
-}
+} */
 
 .tarjetaHeader{
   background-color: rgba(35, 35, 37, 0.36);
@@ -157,14 +157,25 @@ header {
 
 }
 
+.interesesheader{
+  border-radius: 18px; 
+  margin-top: 10px; 
+  background-color: rgb(61, 57, 57);
+  margin-left: 5px;
+}
 
+.articuloHeader{
+  float: right; 
+  padding-right: 70px; 
+  padding-left: 0;
+}
 /*-------------- Estilos del Contenido ---------------*/
 
 .tarjeta {
   /* border: solid rgb(106, 103, 103); */
   border-width: 2.2px;
   border-radius: 22px;
-  padding: 20px;
+  padding: 30px;
   background-color: rgba(53, 54, 56, 0.712);
 }
 
@@ -213,6 +224,7 @@ a {
   padding: 10px;
   border-radius: 22px;
   background-color: rgb(58, 57, 57);
+  margin-top: 30px;
 }
 
 .tjtConociminto{
