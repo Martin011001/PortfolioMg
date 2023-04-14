@@ -15,5 +15,8 @@ export class ItemEducacionComponent {
 
   }
 
-  
+  onDelete(){
+    console.log("DELETE");
+    
+  }
 }
