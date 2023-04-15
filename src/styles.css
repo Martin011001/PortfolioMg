@@ -339,7 +339,8 @@ a {
 
 .menuOpciones.fixed{
   position: fixed;
-  top: 0;   
+  top: 0;
+  width: 220px;   
   /* estilos que quieras ponerle pa*/
 
 }
