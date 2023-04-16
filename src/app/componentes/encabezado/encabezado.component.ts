@@ -8,6 +8,7 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
 })
 export class EncabezadoComponent {
   miPorfolio:any;
+  imagenes:any = ["hola"];
 
   constructor(private datosPorfolio:PorfolioService){
 
@@ -18,6 +19,10 @@ export class EncabezadoComponent {
       console.log(data + "Aca estamos en data")
       this.miPorfolio = data;
     });
+  }
+
+  cambioImagenes(): void{
+
   }
 
 }

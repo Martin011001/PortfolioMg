@@ -9,6 +9,7 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
 })
 export class ConocimientoComponent {
   miPorfolio:any;
+  conocieminto:any;
 
   constructor(private datosPorfolio:PorfolioService){
 
@@ -18,6 +19,7 @@ export class ConocimientoComponent {
     this.datosPorfolio.obtenerdatos().subscribe(data =>{
       console.log(data)
       this.miPorfolio = data;
+      this.conocieminto = data.contenido.tarjeta4.conocimientos;
     });
   }
 
