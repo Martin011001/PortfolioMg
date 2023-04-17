@@ -9,9 +9,11 @@ import { Validators} from '@angular/forms';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent {
+
   miPorfolio: any;
   form: FormGroup;
   msj:any = "";
+  ventanaMail:any = "";
 
   constructor(private datosPorfolio:PorfolioService, private formBuilder:FormBuilder){
     this.form = this.formBuilder.group({
@@ -69,10 +71,8 @@ export class ContactoComponent {
  
   }
 
-  getmensaje(){
-    console.log("hyolaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-    this.msj = document.getElementById("mensaje")?.innerHTML;
-    return document.getElementById("mensaje")?.innerHTML;
+  confirmarMail(){
+    this.ventanaMail == "flex" ? this.ventanaMail = "none" : this.ventanaMail = "flex";
   }
 
 }
