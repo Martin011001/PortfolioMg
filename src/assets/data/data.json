@@ -118,37 +118,37 @@
                 {
                     "logo": "https://cdn-icons-png.flaticon.com/512/732/732212.png",
                     "conocimiento":"HTML",
-                    "progreso": "80%"
+                    "progreso": "80"
                 },
                 {
                     "logo": "https://cdn-icons-png.flaticon.com/512/732/732190.png",
                     "conocimiento":"CSS",
-                    "progreso": ""
+                    "progreso": "80"
                 },
                 {
                     "logo": "https://img.icons8.com/color/480/typescript.png",
                     "conocimiento":"Type Script",
-                    "progreso": ""
+                    "progreso": "70"
                 },
                 {
                     "logo": "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_angular_icon_130754.png",
                     "conocimiento":"Angular",
-                    "progreso": ""
+                    "progreso": "50"
                 },
                 {
                     "logo": "",
                     "conocimiento":"Java Script",
-                    "progreso": ""
+                    "progreso": "40"
                 },
                 {
                     "logo": "",
                     "conocimiento":"Java",
-                    "progreso": ""
+                    "progreso": "80"
                 },
                 {
                     "logo": "",
                     "conocimiento":"NetBeans (JPA, JSP)",
-                    "progreso": ""
+                    "progreso": "25"
                 }
             ]
         }

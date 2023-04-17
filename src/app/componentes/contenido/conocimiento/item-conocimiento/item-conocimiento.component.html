@@ -1,15 +1,18 @@
-<div class="row tarjeta" style="margin-top: 15px;">
+<div class="tarjetaExpe" style="padding: 20px;">
 
-    <div class="col-1">
-        <a><img [src]="itemConocimiento.logo" height="37" width="37"></a>
-    </div>
+    <div class="row">
+        <div class="col-1" style="padding-top: 5px;">
+            <a><img [src]="itemConocimiento.logo" height="37" width="37"></a>
+        </div>
 
-    <div class="col-11">
-        <h6>{{itemConocimiento.conocimiento}}</h6>
+        <div class="col-11">
+            <h6>{{itemConocimiento.conocimiento}}</h6>
 
-        <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0"
-            aria-valuemax="100">
-            <div class="progress-bar bg-danger" style="width: 90%">{{itemConocimiento.progreso}}</div>
+            <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0"
+                aria-valuemax="100">
+                <div class={{colorProgreso()}} [ngStyle]="{'width':itemConocimiento.progreso + '%'}" style="font-size: 12px;">
+                    {{itemConocimiento.progreso}}%</div>
+            </div>
         </div>
     </div>
 
