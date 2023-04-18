@@ -6,6 +6,7 @@ import { ExperienciaLaboralComponent } from './componentes/contenido/experiencia
 import { ConocimientoComponent } from './componentes/contenido/conocimiento/conocimiento.component';
 import { ContactoComponent } from './componentes/contenido/contacto/contacto.component';
 import { EducacionComponent } from './componentes/contenido/educacion/educacion.component';
+import { ProyectosComponent } from './componentes/contenido/proyectos/proyectos.component';
 
  const routes: Routes =[
   {path: 'Sobre-Mi', component: SobreMiComponent},
@@ -13,6 +14,7 @@ import { EducacionComponent } from './componentes/contenido/educacion/educacion.
   {path: 'Experiencia', component: ExperienciaLaboralComponent},
   {path: 'Conocimientos', component: ConocimientoComponent},
   {path: 'Contacto', component: ContactoComponent},
+  {path: 'Proyectos', component: ProyectosComponent},
   {path: '', redirectTo: '/Sobre-Mi', pathMatch: 'full'},
   {path: '**', component: SobreMiComponent}
  ];

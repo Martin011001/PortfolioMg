@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-item-proyecto',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ItemProyectoComponent {
 
+  @Input() itemProyecto: any = "";
+
+
+  onDelete(){
+    console.log("DELETE");
+    
+  }
 }

@@ -1,1 +1,15 @@
-<p>proyectos works!</p>
+<div class="container tarjeta">
+    
+    <div class="row">
+        <div class="col-11" style="margin-bottom: 10px;">
+            <h3>Educacion</h3>
+        </div>
+        <div class="col-1">
+            <a class="botonEditar" style="float: right;"><img src="https://cdn-icons-png.flaticon.com/512/84/84380.png"
+                    height="25" width="25"></a>
+        </div>
+    </div>
+
+    <app-item-proyecto *ngFor="let proyectoItem of proyectos" [itemProyecto]="proyectoItem"></app-item-proyecto>
+
+</div>

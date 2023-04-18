@@ -151,6 +151,23 @@
                     "progreso": "25"
                 }
             ]
+        },
+        "tarjeta5": {
+            "proyectos": [
+                {
+                    "id": 2,
+                    "descripcion": "Argentina Programa 2022 - 2023",
+                    "imgInstitucion": "https://desa.argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674860780/APLogo-20-20.png",
+                    "tituloPuestos": "Curso:",
+                    "puestos": [
+                        "Argentina Programa Developer full stack"
+                    ],
+                    "tituloHerramientas": "Titulo:",
+                    "herramientas": [
+                        "Developer full stack Junior"
+                    ]
+                }
+            ]
         }
     }
 }
