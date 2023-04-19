@@ -75,5 +75,7 @@ export class ContactoComponent {
     this.ventanaMail == "flex" ? this.ventanaMail = "none" : this.ventanaMail = "flex";
   }
 
+
+
 }
 

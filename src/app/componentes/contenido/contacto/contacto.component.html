@@ -60,7 +60,7 @@
 
             <div class="form-floating mb-3">
                 <textarea class="form-control inputContacto" placeholder="Leave a comment here" style="height: 100px"
-                formControlName="mensaje"></textarea>
+                    formControlName="mensaje"></textarea>
                 <label class="lavelContacto" for="mensaje">Mensaje</label>
 
                 <div *ngIf="mensaje?.errors && mensaje?.touched" style="margin-top: 1px;">
@@ -71,39 +71,30 @@
             </div>
 
             <div style="margin-top: 35px;">
-                <button routerLink="/Contacto" aria-current="page" class="btn btn-primary buttonSesion"
-                    type="submit" (click)="confirmarMail()">Enviar</button>
+                <button routerLink="/Contacto" aria-current="page" class="btn btn-primary buttonSesion" type="submit"
+                    (click)="confirmarMail()">Enviar</button>
             </div>
-            
-            <div class="fondoLogin" [ngStyle]="{'display': ventanaMail}">
 
-
-
+            <div class="fondoLogin" [ngStyle]="{'display': ventanaMail}" style="background-color: rgba(0, 0, 0, 0.291);">
                 <div class="row tarjeta tarjetaLogin" style="margin-top: 10px;">
 
-                    <div class="row">
+                    <div class="row" style="padding: 4px;">
                         <div class="col-11" style="padding-left: 0; margin-bottom: 15px;">
                             <h4 style="float: left; color: white;">¿Seguro desea enviar el mail?</h4>
                         </div>
-        
-                        <div class="col-1" style="text-align: center; padding: 0;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-x-circle"
-                                viewBox="0 0 16 16" style="float: right; cursor: pointer; margin-left: 40px; margin-top: 10px;">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                <path
-                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                            </svg>
-                        </div>
 
                         <div style="margin-top: 35px;">
-                            <button aria-current="page" class="btn btn-primary buttonSesion"
-                                type="submit"><a href='mailto:martingagliardi2001@gmail.com?body={{form.value.mensaje}}&Subject={{form.value.asunto}}'>Enviar</a></button>
+                            <button aria-current="page" class="btn btn-primary buttonSesion" type="submit"><a style="text-decoration: none; color: white;"
+                                    href='mailto:martingagliardi2001@gmail.com?body={{form.value.mensaje}}&Subject={{form.value.asunto}}'>Enviar</a></button>
+
+                            <button aria-current="page" class="btn btn-primary buttonSesion" type="submit" style="margin-left: 10px;" (click)="confirmarMail()">Cancelar</button>
                         </div>
+
                     </div>
-        
                 </div>
- 
             </div>
+
+
         </form>
     </div>
 

@@ -156,16 +156,14 @@
             "proyectos": [
                 {
                     "id": 2,
-                    "descripcion": "Argentina Programa 2022 - 2023",
+                    "descripcion": "Portafolio Web",
                     "imgInstitucion": "https://desa.argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674860780/APLogo-20-20.png",
-                    "tituloPuestos": "Curso:",
+                    "tituloPuestos": "Detalle del proyecto:",
                     "puestos": [
-                        "Argentina Programa Developer full stack"
+                        "Proyecto Argentina Programa Portafolio web"
                     ],
-                    "tituloHerramientas": "Titulo:",
-                    "herramientas": [
-                        "Developer full stack Junior"
-                    ]
+                    "tituloHerramientas": "Descripcion:",
+                    "descripcionHerramienta": "El proyecto que llevé a cabo consistió en desarrollar un portafolio web personal utilizando varias tecnologías de vanguardia. En primer lugar, utilicé Angular como mi framework de front-end. Angular es una herramienta potente que me permitió crear una interfaz de usuario moderna y atractiva para mi sitio web. Con su sistema de enlace de datos y sus componentes reutilizables, pude diseñar una experiencia de usuario intuitiva y receptiva, lo cual es fundamental para un portafolio web efectivo. Por otro lado, utilicé Node.js como plataforma de servidor para el back-end de mi aplicación. Node.js es conocido por su capacidad de manejar una gran cantidad de conexiones simultáneas de forma eficiente gracias a su modelo basado en eventos. Esto me permitió desarrollar una API RESTful eficiente para gestionar las solicitudes de los clientes y manejar la lógica del servidor de manera efectiva. En cuanto a la base de datos, utilicé SQL para crear y gestionar la estructura de la base de datos de mi portafolio web. Utilicé las capacidades de SQL para crear consultas eficientes y garantizar un almacenamiento seguro y eficaz de la información en la base de datos. Además, utilicé NetBeans con Spring Boot para desarrollar la lógica del servidor y gestionar la configuración de mi aplicación."
                 }
             ]
         }
