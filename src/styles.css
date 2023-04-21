@@ -225,12 +225,10 @@ a {
   padding: 10px;
   border-radius: 22px;
   background-color: rgb(58, 57, 57);
-  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.tjtConociminto{
-  margin-top: 150px;
-}
+
 
 .btnSalidaExpe{
   float: right; 
