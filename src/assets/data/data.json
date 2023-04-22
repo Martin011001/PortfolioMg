@@ -1,17 +1,17 @@
 {
     "encabezado": {
-        "perfilImage": "https://media.licdn.com/dms/image/D4D03AQEGGzu9sgIGeA/profile-displayphoto-shrink_800_800/0/1679245335991?e=1684972800&v=beta&t=e25ebf01mOZnQ0J5DmWYgLILiNccZ7dtPoIheO_cTZ0",
+        "perfilImage": "./assets/images/imagePerfil.jpg",
         "name": "Martin Gagliardi",
         "descripcionUno": "Support and Development Analyst en Producteca",
         "descripcionDos": "Buenos Aires CABA, Provincia de Buenos Aires, Argentina",
         "articulos": [
             {
                 "articulo": "Producteca",
-                "logo": "https://media.licdn.com/dms/image/C4E0BAQFzvKn3VLZX4A/company-logo_100_100/0/1584547893087?e=1683763200&v=beta&t=6z99dh1q01BhPFmW62edS0ceJSI5r6917jSWKBX6mSA"
+                "logo": "./assets/images/logoProductecaChico.jpg"
             },
             {
                 "articulo": "Ort Argentina",
-                "logo": "https://media.licdn.com/dms/image/C4E0BAQFago4fQ3aqjA/company-logo_100_100/0/1553259023579?e=1683763200&v=beta&t=SWNgDL41LRxu71SUZnmxPEwT-Y1GoS4Jbvq_ZKm8Go8"
+                "logo": "./assets/images/logoOrtChico.jpg"
             }
         ],
         "intereses":[
@@ -29,7 +29,7 @@
     "contenido": {
         "tarjeta1": {
             "titulo": "Sobre mi",
-            "descripcion": "Mi nombre es Martin Gagliardi tengo 21 años y soy estudiante de Analista de Sistemas en la institución O.R.T. Actualmente, concrete el titulo intermedio de técnico programador y 75% de la carrera (a concluir a fines de 2023). Previamente obtuve el titulo de Diseño de Interiores en la Escuela Técnica Secundaria N°6 Fernando Fader. Actualmente me encuentro trabajando de Support and Development Analyst en Producteca, en la cual, utilizo herramientas como db visualizer con leguaje de SQL, mongo db, leguajes como Java Script, Type Script, Java. Me enfoco en la resolucion y analisis de errores y casos a resolver."
+            "descripcion": "Hola, mi nombre es Martin Gagliardi y tengo 21 años. Soy un apasionado estudiante de Analista de Sistemas en la institución O.R.T. Actualmente, me encuentro en la recta final de la carrera y he logrado concretar el título intermedio de técnico programador con éxito. Me enorgullece decir que he obtenido un 75% de la carrera y espero concluir la misma a fines del 2023. Anteriormente, también obtuve el título de Diseño de Interiores en la Escuela Técnica Secundaria N°6 Fernando Fader, lo que me ha permitido desarrollar habilidades creativas y estéticas que me han resultado de gran utilidad en mi formación como Analista de Sistemas. Actualmente, me encuentro trabajando como Support and Development Analyst en Producteca. En mi trabajo diario, hago uso de herramientas como db visualizer con lenguaje de SQL, mongo db, leguajes como Java Script, Type Script y Java, entre otros. Mi principal función en Producteca es la resolución y análisis de errores y casos a resolver. En resumen, estoy comprometido con mi educación y desarrollo profesional, y estoy seguro de que con mi experiencia, habilidades y conocimientos podré aportar mucho valor a cualquier proyecto en el que me involucre."
         },
         "tarjeta2": {
             "trabajos": [
@@ -37,7 +37,7 @@
                     "id": 1,
                     "descripcion": "Producteca Empresa IT 2022-Actualidad",
                     "tituloPuestos": "💼 Puesto y actividad:",
-                    "imgTrabajo": "https://www.zoologic.com.ar/zl/wp-content/uploads/2019/11/producteca.png",
+                    "imgTrabajo": "./assets/images/logoProductecaGrande.png",
                     "puestos": [
                         "Support and Development Analyst",
                         "Solutions to errors and problems"
@@ -54,7 +54,7 @@
                     "id": 2,
                     "descripcion": "G3 ARQ S.R.L Empresa Constructora 2019-2022",
                     "tituloPuestos": "💼 Puesto y actividad:",
-                    "imgTrabajo": "https://scontent.faep14-3.fna.fbcdn.net/v/t39.30808-6/337414249_588414393349666_200032743748274103_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_ohc=z5IwAL6LbBsAX_EB_TF&_nc_ht=scontent.faep14-3.fna&oh=00_AfD-TZ2-hFGV8W_xkxNPxM9mePAelDCgy-LnRFMQsh-bxA&oe=643CDD8E",
+                    "imgTrabajo": "./assets/images/logoG3Grande.jpg",
                     "puestos": [
                         "Agente Administrativo",
                         "Sobre estante de obra",
@@ -74,7 +74,7 @@
                 {
                     "id": 1,
                     "descripcion": "Ort Argentina 2021 - Actualidad",
-                    "imgInstitucion": "https://www.ort.edu.ar/inscripcion2024/images/logo.png",
+                    "imgInstitucion": "./assets/images/logoOrtInstitucion.png",
                     "tituloPuestos": "Carrera:",
                     "puestos": [
                         "Analista de Sistemas"
@@ -88,7 +88,7 @@
                 {
                     "id": 2,
                     "descripcion": "Argentina Programa 2022 - 2023",
-                    "imgInstitucion": "https://desa.argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674860780/APLogo-20-20.png",
+                    "imgInstitucion": "./assets/images/LogoArgentinaPrograma.png",
                     "tituloPuestos": "Curso:",
                     "puestos": [
                         "Argentina Programa Developer full stack"
@@ -101,7 +101,7 @@
                 {
                     "id": 3,
                     "descripcion": "Argentina Programa 2021 - 2022",
-                    "imgInstitucion": "https://desa.argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674860780/APLogo-20-20.png",
+                    "imgInstitucion": "./assets/images/LogoArgentinaPrograma.png",
                     "tituloPuestos": "Curso:",
                     "puestos": [
                         "Se programar"
@@ -116,22 +116,22 @@
         "tarjeta4": {
             "conocimientos": [
                 {
-                    "logo": "https://cdn-icons-png.flaticon.com/512/732/732212.png",
+                    "logo": "./assets/icons/html.png",
                     "conocimiento":"HTML",
                     "progreso": "80"
                 },
                 {
-                    "logo": "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+                    "logo": "./assets/icons/css.png",
                     "conocimiento":"CSS",
                     "progreso": "80"
                 },
                 {
-                    "logo": "https://img.icons8.com/color/480/typescript.png",
+                    "logo": "./assets/icons/typeScript.png",
                     "conocimiento":"Type Script",
                     "progreso": "70"
                 },
                 {
-                    "logo": "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_angular_icon_130754.png",
+                    "logo": "./assets/icons/angular.png",
                     "conocimiento":"Angular",
                     "progreso": "50"
                 },
@@ -157,7 +157,7 @@
                 {
                     "id": 2,
                     "descripcion": "Portafolio Web",
-                    "imgInstitucion": "https://desa.argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1674860780/APLogo-20-20.png",
+                    "imgInstitucion": "./assets/images/LogoArgentinaPrograma.png",
                     "tituloPuestos": "Detalle del proyecto:",
                     "puestos": [
                         "Proyecto Argentina Programa Portafolio web"

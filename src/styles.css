@@ -18,11 +18,7 @@ nav {
 .navUl {
   list-style: none;
   overflow: hidden;
-}
-
-.navLi {
-  font-size: 19px;
-  float: right;
+  padding-left: 5px;
 }
 
 .buttonNav2 {
@@ -35,13 +31,15 @@ nav {
 }
 
 .navLi {
-  font-size: 18px;
   margin-top: 13px;
   margin-right: 12px;
+  font-size: 19px;
+  float: right;
 }
 
 .navLi:hover {
-  transform: scale(1.15);
+  /* transform: scale(1.15); */
+  color: rgb(56, 119, 237);
 }
 
 .liSesion {
@@ -60,14 +58,10 @@ nav {
 }
 
 .logoArgNav {
-/*   position: absolute;
- */  left: 0%;
-  right: -10%;
-  top: -23%;
-  bottom: -10%;
-  margin: auto;
-  min-height: 10%;
-  min-width: 10%;
+  text-align: center;
+  float: left;
+  margin-top: 6px;
+  
 }
 
 

@@ -17,8 +17,8 @@ export class ContactoComponent {
 
   constructor(private datosPorfolio:PorfolioService, private formBuilder:FormBuilder){
     this.form = this.formBuilder.group({
-      nombre:['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-      apellido:['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+      nombre:['', [Validators.required]],
+      apellido:['', [Validators.required]],
       mail:['', [Validators.required, Validators.email, Validators.maxLength(50)]],
       asunto:['', [Validators.required, Validators.maxLength(100)]],
       mensaje:['', [Validators.required, Validators.maxLength(3000)]]
@@ -59,14 +59,18 @@ export class ContactoComponent {
   onEnviar(event: Event){
     // Detenemos la propagación o ejecución del compotamiento submit de un form
     event.preventDefault; 
- 
+
     if (this.form.valid){
       // Llamamos a nuestro servicio para enviar los datos al servidor
       // También podríamos ejecutar alguna lógica extra
-      alert("Todo salio bien ¡Enviar formuario!")
+      //alert("Todo salio bien ¡Enviar formuario!")      
+      this.confirmarMail()
+
     }else{
       // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
       this.form.markAllAsTouched(); 
+      console.log("mal");
+      
     }
  
   }
@@ -75,7 +79,9 @@ export class ContactoComponent {
     this.ventanaMail == "flex" ? this.ventanaMail = "none" : this.ventanaMail = "flex";
   }
 
-
+  getVentanaMail(){
+    return this.ventanaMail;
+  }
 
 }
 

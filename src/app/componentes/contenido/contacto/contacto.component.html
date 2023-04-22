@@ -71,11 +71,11 @@
             </div>
 
             <div style="margin-top: 35px;">
-                <button routerLink="/Contacto" aria-current="page" class="btn btn-primary buttonSesion" type="submit"
-                    (click)="confirmarMail()">Enviar</button>
+                <button type="submit" aria-current="page" class="btn btn-primary buttonSesion">Enviar</button>
             </div>
 
-            <div class="fondoLogin" [ngStyle]="{'display': ventanaMail}" style="background-color: rgba(0, 0, 0, 0.291);">
+            <div class="fondoLogin" [ngStyle]="{'display': getVentanaMail()}"
+                style="background-color: rgba(0, 0, 0, 0.291);">
                 <div class="row tarjeta tarjetaLogin" style="margin-top: 10px;">
 
                     <div class="row" style="padding: 4px;">
@@ -84,10 +84,11 @@
                         </div>
 
                         <div style="margin-top: 35px;">
-                            <button aria-current="page" class="btn btn-primary buttonSesion" type="submit"><a style="text-decoration: none; color: white;"
-                                    href='mailto:martingagliardi2001@gmail.com?body={{form.value.mensaje}}&Subject={{form.value.asunto}}'>Enviar</a></button>
+                            <a class="btn btn-primary buttonSesion" style="text-decoration: none; color: white;"
+                                href='mailto:martingagliardi2001@gmail.com?body={{form.value.mensaje}}&Subject={{form.value.asunto}}'>Enviar</a>
 
-                            <button aria-current="page" class="btn btn-primary buttonSesion" type="submit" style="margin-left: 10px;" (click)="confirmarMail()">Cancelar</button>
+                            <button aria-current="page" class="btn btn-primary buttonSesion" style="margin-left: 10px;"
+                                (click)="getVentanaMail()">Cancelar</button>
                         </div>
 
                     </div>
