@@ -1,0 +1,19 @@
+.vistaPreviaCv{
+    margin-top: 20px; 
+    border: solid 2px white; 
+    border-radius: 22px;
+    cursor: pointer;
+}
+
+.vistaPreviaCv:hover{
+    transform: scale(1.05);
+    border-color: rgb(72, 113, 215);;
+}
+
+.linkCv{
+    color: white;
+}
+
+.linkCv:hover{
+    color: rgb(72, 113, 215);
+}

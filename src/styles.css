@@ -78,7 +78,7 @@ header {
 
 .fondoEncabezado {
   height: 250px;
-  background-image: url(../src/Images/portada.jpg);
+  /* background-image: url(../src/Images/portada.jpg); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -331,7 +331,7 @@ a {
 .menuOpciones.fixed{
   position: fixed;
   top: 0;
-  width: 220px;   
+  width: 195px;   
   /* estilos que quieras ponerle pa*/
 
 }
