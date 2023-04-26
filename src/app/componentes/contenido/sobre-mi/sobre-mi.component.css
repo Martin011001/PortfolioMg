@@ -17,3 +17,9 @@
 .linkCv:hover{
     color: rgb(72, 113, 215);
 }
+
+.tarjetaCv{
+    margin-left: 20px; 
+    padding: 10px; 
+    text-align: center;
+}

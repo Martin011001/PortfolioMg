@@ -1,6 +1,6 @@
 .fondo {
   background-color: rgba(34, 32, 32, 0.978);
-  /* background-image: url(../src/Images/FondoPaginaOficial.png); */
+  /* background-image: url(../src/assets/images/imageBack.jpg); */
 
 }
 
@@ -35,6 +35,7 @@ nav {
   margin-right: 12px;
   font-size: 19px;
   float: right;
+  cursor: pointer;
 }
 
 .navLi:hover {
@@ -61,7 +62,7 @@ nav {
   text-align: center;
   float: left;
   margin-top: 6px;
-  
+
 }
 
 
@@ -77,11 +78,14 @@ header {
 }
 
 .fondoEncabezado {
-  height: 250px;
-  /* background-image: url(../src/Images/portada.jpg); */
+  height: 280px;
+  background-image: url(../src/assets/images/rectangulos.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  -webkit-box-shadow: inset 0px -35px 22px -13px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: inset 0px -35px 22px -13px rgba(0, 0, 0, 0.67);
+  box-shadow: inset 0px -35px 22px -13px rgba(0, 0, 0, 0.67);
 }
 
 .imgRedonda {
@@ -107,7 +111,7 @@ header {
 }
 
 .buttonNavRedes2:hover {
- color: white;
+  color: white;
 }
 
 .tarjetaEncabezado {
@@ -116,25 +120,25 @@ header {
   padding: 30px;
 }
 
-.btnHeader{
+.btnHeader {
   margin-top: 160px;
   margin-left: 50px;
 }
 
-.imgRedondaActual{
+.imgRedondaActual {
   border-radius: 150px;
   border: 2px solid rgba(233, 229, 229, 0.738);
   margin-right: 10px;
 }
 
-.aImgActual{
-  color: white; 
-  padding: 0; 
+.aImgActual {
+  color: white;
+  padding: 0;
   margin-top: 10px;
 }
 
-.floatPiso{
-  padding-top: 60px;
+.floatPiso {
+  padding-top: 40px;
   padding-bottom: 20px;
   padding-left: 18px;
   float: right;
@@ -145,25 +149,26 @@ header {
   border-radius: 8px;
 } */
 
-.tarjetaHeader{
+.tarjetaHeader {
   background-color: rgba(35, 35, 37, 0.36);
   border-radius: 16px;
   padding: 10px;
 
 }
 
-.interesesheader{
-  border-radius: 18px; 
-  margin-top: 10px; 
+.interesesheader {
+  border-radius: 18px;
+  margin-top: 10px;
   background-color: rgb(61, 57, 57);
   margin-left: 5px;
 }
 
-.articuloHeader{
-  float: right; 
-  padding-right: 70px; 
+.articuloHeader {
+  float: right;
+  padding-right: 70px;
   padding-left: 0;
 }
+
 /*-------------- Estilos del Contenido ---------------*/
 
 .tarjeta {
@@ -209,12 +214,12 @@ a {
 
 /*-------------- Experiencia Laboral ---------------*/
 
-.imgTrabajo{
+.imgTrabajo {
   border-radius: 150px;
   border: 3px solid rgba(233, 229, 229, 0.738);
 }
 
-.tarjetaExpe{
+.tarjetaExpe {
   /* border: solid 2px white; */
   padding: 10px;
   border-radius: 22px;
@@ -224,8 +229,8 @@ a {
 
 
 
-.btnSalidaExpe{
-  float: right; 
+.btnSalidaExpe {
+  float: right;
   cursor: pointer;
 }
 
@@ -251,25 +256,26 @@ a {
   color: white;
 }
 
-.errorContacto{
+.errorContacto {
   margin-bottom: 0;
   float: left;
   padding-left: 5px;
   color: red;
 }
 
-.inputContactoForm{
-  padding: 0; 
+.inputContactoForm {
+  padding: 0;
 }
 
-.liContacto{
+.liContacto {
   margin-bottom: 15px;
   font-size: 12px;
 }
 
-.margenIcono{
+.margenIcono {
   margin-right: 5px;
 }
+
 /*-------------- Login ---------------*/
 
 .fondoLogin {
@@ -328,10 +334,10 @@ a {
   margin-left: 5px;
 }
 
-.menuOpciones.fixed{
+.menuOpciones.fixed {
   position: fixed;
   top: 0;
-  width: 195px;   
+  width: 195px;
   /* estilos que quieras ponerle pa*/
 
 }
@@ -375,7 +381,7 @@ ul {
   margin: 0;
 }
 
-.section{
+.section {
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -384,7 +390,7 @@ ul {
 
 /*-------------- color texto ---------------*/
 
-body{
+body {
   color: white;
 }
 
@@ -392,22 +398,30 @@ body{
 
 /*** ESTILOS BOTÓN SLIDE LEFT ***/
 .ov-btn-slide-left {
-  background: #2a3ac900; /* color de fondo */
-  color: #e8e8e9; /* color de fuente */
-  border: 2px solid #221cbe; /* tamaño y color de borde */
+  background: #2a3ac900;
+  /* color de fondo */
+  color: #e8e8e9;
+  /* color de fuente */
+  border: 2px solid #221cbe;
+  /* tamaño y color de borde */
   padding: 16px 20px;
-  border-radius: 8px; /* redondear bordes */
+  border-radius: 8px;
+  /* redondear bordes */
   position: relative;
   z-index: 1;
   overflow: hidden;
   display: inline-block;
 }
+
 .ov-btn-slide-left:hover {
-  color: #fff; /* color de fuente hover */
+  color: #fff;
+  /* color de fuente hover */
 }
+
 .ov-btn-slide-left::after {
   content: "";
-  background: #352fe9; /* color de fondo hover */
+  background: #352fe9;
+  /* color de fondo hover */
   position: absolute;
   z-index: -1;
   padding: 16px 20px;
@@ -419,6 +433,7 @@ body{
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
 }
+
 .ov-btn-slide-left:hover::after {
   left: 0;
   right: 0;

@@ -20,7 +20,6 @@
                 </div>
             </div>
 
-
             <div class="row"> 
 
                 <div class="col-6 form-floating mb-3" style="padding: 0; padding-right: 8px;">
@@ -28,7 +27,7 @@
                     <label class="lavelContacto" for="nombre">Nombre</label>
 
                     <div *ngIf="nombre?.errors && nombre?.touched">
-                        <p *ngIf="nombre?.hasError('required')" class="error errorContacto" style="text-align: left;">
+                        <p *ngIf="nombre?.hasError('required')" class="errorContacto" style="text-align: left;">
                             Nombre requerido
                         </p>
                     </div>
@@ -40,7 +39,7 @@
                     <label class="lavelContacto" for="apellido">Apellido</label>
 
                     <div *ngIf="apellido?.errors && apellido?.touched">
-                        <p *ngIf="apellido?.hasError('required')" class="error errorContacto" style="text-align: left;">
+                        <p *ngIf="apellido?.hasError('required')" class="errorContacto" style="text-align: left;">
                             Apellido requerido
                         </p>
                     </div>
@@ -48,16 +47,16 @@
 
             </div>
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3" style="margin-bottom: 0px; padding-bottom: 0px;">
                 <input type="email" class="form-control inputContacto" placeholder="name@example.com"
                     formControlName="mail">
                 <label class="lavelContacto" for="email">Email</label>
 
                 <div *ngIf="mail?.errors  && mail?.touched">
-                    <p *ngIf="mail?.hasError('required')" class="error errorContacto">
+                    <p *ngIf="mail?.hasError('required')" class="errorContacto">
                         El email es requerido.
                     </p>
-                    <p *ngIf="mail?.hasError('email')" class="error errorContacto">
+                    <p *ngIf="mail?.hasError('email')" class="errorContacto">
                         El formato del email debe ser válido.
                     </p>
                 </div>
@@ -69,10 +68,10 @@
                 <label class="lavelContacto" for="password">Contraseña</label>
 
                 <div *ngIf="password?.errors  && password?.touched">
-                    <p *ngIf="password?.hasError('required')" class="error errorContacto">
+                    <p *ngIf="password?.hasError('required')" class="errorContacto">
                         El password es requerido.
                     </p>
-                    <p *ngIf="password?.hasError('minLength')" class="error errorContacto">
+                    <p *ngIf="password?.hasError('minLength')" class="errorContacto">
                         El password debe ser de 8 o más caracteres.
                     </p>
                 </div>
@@ -84,13 +83,13 @@
                 <label class="lavelContacto" for="password">Confirmar contraseña</label>
 
                 <div *ngIf="passwordConfirm?.errors  && passwordConfirm?.touched">
-                    <p *ngIf="passwordConfirm?.hasError('required')" class="error errorContacto">
+                    <p *ngIf="passwordConfirm?.hasError('required')" class="errorContacto">
                         El password es requerido.
                     </p>
-                    <p *ngIf="passwordConfirm?.hasError('minLength')" class="error errorContacto">
+                    <p *ngIf="passwordConfirm?.hasError('minLength')" class="errorContacto">
                         El password debe ser de 8 o más caracteres.
                     </p>
-                    <p *ngIf="confirmarPassword()" class="error errorContacto">
+                    <p *ngIf="confirmarPassword()" class="errorContacto">
                         El password debe ser igual.
                     </p>
                 </div>

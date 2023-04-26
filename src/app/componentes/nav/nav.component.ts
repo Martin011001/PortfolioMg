@@ -1,5 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
+import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,11 +10,19 @@ import { LoginComponent } from '../login/login.component';
 
 export class NavComponent {
 
+  miPorfolio:any;
   buttonSesion:String = "none";
   buttonCrear:String = "none";
 
-  constructor() {
+  constructor(private datosPorfolio:PorfolioService) {
 
+  }
+
+  ngOnInit(): void{
+    this.datosPorfolio.obtenerdatos().subscribe(data =>{
+      console.log(data)
+      this.miPorfolio = data.encabezado;
+    });
   }
 
   iniciaSesion(){

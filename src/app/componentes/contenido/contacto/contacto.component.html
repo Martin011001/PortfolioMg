@@ -10,8 +10,8 @@
                     <input type="text" class="form-control inputContacto" placeholder="Nombre" formControlName="nombre">
                     <label class="lavelContacto" for="nombre">Nombre</label>
 
-                    <div *ngIf="nombre?.errors && nombre?.touched" style="margin-top: 5px;">
-                        <p *ngIf="nombre?.hasError('required')" class="error errorContacto">
+                    <div *ngIf="nombre?.errors && nombre?.touched">
+                        <p *ngIf="nombre?.hasError('required')" class="errorContacto">
                             El nombre es requerido.
                         </p>
                     </div>
@@ -22,8 +22,8 @@
                         formControlName="apellido">
                     <label class="lavelContacto" for="apellido">Apellido</label>
 
-                    <div *ngIf="apellido?.errors && apellido?.touched" style="margin-top: 5px;">
-                        <p *ngIf="apellido?.hasError('required')" class="error errorContacto">
+                    <div *ngIf="apellido?.errors && apellido?.touched">
+                        <p *ngIf="apellido?.hasError('required')" class="errorContacto">
                             El apellido es requerido.
                         </p>
                     </div>
@@ -31,28 +31,28 @@
 
             </div>
 
-            <div class="form-floating mb-3">
+            <div class="row form-floating mb-3 inputContactoForm">
                 <input type="email" class="form-control inputContacto" placeholder="name@example.com"
                     formControlName="mail">
                 <label class="lavelContacto" for="email">Email</label>
 
-                <div *ngIf="mail?.errors  && mail?.touched">
-                    <p *ngIf="mail?.hasError('required')" class="error errorContacto">
+                <div *ngIf="mail?.errors  && mail?.touched" class="inputContactoForm">
+                    <p *ngIf="mail?.hasError('required')" class="errorContacto">
                         El email es requerido.
                     </p>
-                    <p *ngIf="mail?.hasError('email')" class="error errorContacto">
+                    <p *ngIf="mail?.hasError('email')" class="errorContacto">
                         El formato del email debe ser válido.
                     </p>
                 </div>
             </div>
 
-            <div class="form-floating mb-3">
+            <div class="row form-floating mb-3" >
                 <input type="text" class="form-control inputContacto" placeholder="name@example.com"
                     formControlName="asunto">
                 <label class="lavelContacto" for="asunto">Asunto</label>
 
-                <div *ngIf="asunto?.errors && asunto?.touched" style="margin-top: 5px;">
-                    <p *ngIf="asunto?.hasError('required')" class="error errorContacto">
+                <div *ngIf="asunto?.errors && asunto?.touched" class="inputContactoForm">
+                    <p *ngIf="asunto?.hasError('required')" class="errorContacto">
                         El asunto es requerido.
                     </p>
                 </div>
@@ -63,8 +63,8 @@
                     formControlName="mensaje"></textarea>
                 <label class="lavelContacto" for="mensaje">Mensaje</label>
 
-                <div *ngIf="mensaje?.errors && mensaje?.touched" style="margin-top: 1px;">
-                    <p *ngIf="mensaje?.hasError('required')" class="error errorContacto">
+                <div *ngIf="mensaje?.errors && mensaje?.touched">
+                    <p *ngIf="mensaje?.hasError('required')" class="errorContacto">
                         El mensaje es requerido.
                     </p>
                 </div>
