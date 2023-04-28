@@ -11,6 +11,7 @@ export class ExperienciaLaboralComponent {
 
   experiencia: any;
   miPorfolio: any;
+  botonEdit: boolean = false;
 
   constructor(private datosPorfolio:PorfolioService){
     
@@ -25,5 +26,8 @@ export class ExperienciaLaboralComponent {
     });
   }
 
+  EditForm(): boolean{
+    return this.botonEdit == false ? this.botonEdit = true : this.botonEdit = false;
+  }
 
 }

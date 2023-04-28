@@ -1,6 +1,6 @@
 .fondo {
-  background-color: rgba(34, 32, 32, 0.978);
-  /* background-image: url(../src/assets/images/imageBack.jpg); */
+  /* background-color: rgba(34, 32, 32, 0.978); */
+  background-image: url(../src/assets/images/rectangulos.jpg);
 
 }
 
@@ -74,7 +74,7 @@ header {
   border-radius: 22px;
   width: 100%;
   height: 540px;
-  background-color: rgba(63, 65, 67, 0.712);
+  background-color: rgba(63, 65, 67, 0.924);
 }
 
 .fondoEncabezado {
@@ -176,7 +176,7 @@ header {
   border-width: 2.2px;
   border-radius: 22px;
   padding: 30px;
-  background-color: rgba(53, 54, 56, 0.712);
+  background-color: rgba(53, 54, 56, 0.823);
 }
 
 .itemsLaboral {
@@ -211,6 +211,9 @@ a {
   list-style: none;
 }
 
+.botonEdit{
+ float: right;
+}
 
 /*-------------- Experiencia Laboral ---------------*/
 
@@ -302,7 +305,7 @@ a {
 /*-------------- Estilos de barra Lateral ---------------*/
 
 .menuOpciones {
-  background-color: rgba(32, 34, 34, 0.626);
+  background-color: rgba(32, 34, 34, 0.922);
   border-radius: 22px;
   align-items: center;
   border-width: 2px;
