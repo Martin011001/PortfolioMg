@@ -15,21 +15,24 @@
 
             <div class="botonFlitro">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" 
+                    [(ngModel)]="lenguajes" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Lenguajes</label>
                 </div>
             </div>
 
             <div class="botonFlitro">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" 
+                    [(ngModel)]="habilidadesBlandas" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Habilidades</label>
                 </div>
             </div>
 
             <div class="botonFlitro">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" 
+                    [(ngModel)]="frameworks" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Frameworks</label>
                 </div>
             </div>
@@ -38,5 +41,5 @@
     </div>
 
 
-    <app-item-conocimiento *ngFor="let item of conocieminto" [itemConocimiento]="item"></app-item-conocimiento>
+    <app-item-conocimiento *ngFor="let item of filtro()" [itemConocimiento]="item"></app-item-conocimiento>
 </div>

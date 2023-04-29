@@ -1,7 +1,7 @@
 <div class="tarjetaExpe">
     <div class="row">
         <div class="col-9">
-            <h5>{{itemExpe.descripcion}}</h5>
+            <h5>{{itemExpe.descripcion}} {{ itemExpe.inicio }}-{{ itemExpe.fin }}</h5>
         </div>
 
         <div class="col-3" style="padding-right: 0;">
@@ -17,7 +17,7 @@
 
     <div class="row" style="margin-top: 20px;">
         <div class="col-5">
-            <h6 class="tituloitems">{{itemExpe.tituloPuestos}}</h6>
+            <h6 class="tituloitems">💼 Puesto y actividad:</h6>
 
             <div>
                 <ul class="ListaLaboral">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="col-4">
-            <h6 class="tituloitems">{{itemExpe.tituloHerramientas}}</h6>
+            <h6 class="tituloitems">🔧 Herramientas:</h6>
             <ul class="ListaLaboral">
                 <li *ngFor="let itemDos of itemExpe.herramientas" class="itemsLaboral">{{itemDos}}</li>
             </ul>

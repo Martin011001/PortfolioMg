@@ -29,24 +29,25 @@
     "telefono":"+54 9 1161748612",
     "instagram":"martin_gagliardi",
     "ubicacion":"Caba, Villa Devoto",
-    "barraLateral": {},
     "contenido": {
         "tarjeta1": {
             "titulo": "Sobre mi",
-            "descripcion": "Hola, mi nombre es Martin Gagliardi y tengo 21 años. Soy un apasionado estudiante de Analista de Sistemas en la institución O.R.T. Actualmente, me encuentro en la recta final de la carrera y he logrado concretar el título intermedio de técnico programador con éxito. Me enorgullece decir que he obtenido un 75% de la carrera y espero concluir la misma a fines del 2023. Anteriormente, también obtuve el título de Diseño de Interiores en la Escuela Técnica Secundaria N°6 Fernando Fader, lo que me ha permitido desarrollar habilidades creativas y estéticas que me han resultado de gran utilidad en mi formación como Analista de Sistemas. Actualmente, me encuentro trabajando como Support and Development Analyst en Producteca. En mi trabajo diario, hago uso de herramientas como db visualizer con lenguaje de SQL, mongo db, leguajes como Java Script, Type Script y Java, entre otros. Mi principal función en Producteca es la resolución y análisis de errores y casos a resolver. En resumen, estoy comprometido con mi educación y desarrollo profesional, y estoy seguro de que con mi experiencia, habilidades y conocimientos podré aportar mucho valor a cualquier proyecto en el que me involucre."
+            "descripcion": "Hola, mi nombre es Martin Gagliardi y tengo 21 años. Soy un apasionado estudiante de Analista de Sistemas en la institución O.R.T. Actualmente, me encuentro en la recta final de la carrera y he logrado concretar el título intermedio de técnico programador con éxito. Me enorgullece decir que he obtenido un 75% de la carrera y espero concluir la misma a fines del 2023. Anteriormente, también obtuve el título de Diseño de Interiores en la Escuela Técnica Secundaria N°6 Fernando Fader, lo que me ha permitido desarrollar habilidades creativas y estéticas que me han resultado de gran utilidad en mi formación como Analista de Sistemas. Actualmente, me encuentro trabajando como Support and Development Analyst en Producteca. En mi trabajo diario, hago uso de herramientas como db visualizer con lenguaje de SQL, mongo db, leguajes como Java Script, Type Script y Java, entre otros. Mi principal función en Producteca es la resolución y análisis de errores y casos a resolver. En resumen, estoy comprometido con mi educación y desarrollo profesional, y estoy seguro de que con mi experiencia, habilidades y conocimientos podré aportar mucho valor a cualquier proyecto en el que me involucre.",
+            "imageCv":"./assets/images/MartinGagliardiCV.png",
+            "urlCv":"https://www.canva.com/design/DAEjPozLI1c/IpmSBRUyZsI-fP5QQyktSw/view"
         },
         "tarjeta2": {
             "trabajos": [
                 {
                     "id": 1,
-                    "descripcion": "Producteca Empresa IT 2022-Actualidad",
-                    "tituloPuestos": "💼 Puesto y actividad:",
+                    "descripcion": "Producteca Empresa IT",
+                    "inicio":"2022",
+                    "fin":"Actualidad",
                     "imgTrabajo": "./assets/images/logoProductecaGrande.png",
                     "puestos": [
                         "Support and Development Analyst",
                         "Solutions to errors and problems"
                     ],
-                    "tituloHerramientas": "🔧 Herramientas:",
                     "herramientas": [
                         "Java Script",
                         "Type Script",
@@ -56,15 +57,15 @@
                 },
                 {
                     "id": 2,
-                    "descripcion": "G3 ARQ S.R.L Empresa Constructora 2019-2022",
-                    "tituloPuestos": "💼 Puesto y actividad:",
+                    "descripcion": "G3 ARQ S.R.L Empresa Constructora",
+                    "inicio":"2022",
+                    "fin":"Actualidad",
                     "imgTrabajo": "./assets/images/logoG3Grande.jpg",
                     "puestos": [
                         "Agente Administrativo",
                         "Sobre estante de obra",
                         "Dibujante de proyectos"
                     ],
-                    "tituloHerramientas": "🔧 Herramientas:",
                     "herramientas": [
                         "SketChup",
                         "Autocad",
@@ -77,13 +78,13 @@
             "estudios": [
                 {
                     "id": 1,
-                    "descripcion": "Ort Argentina 2021 - Actualidad",
+                    "descripcion": "Ort Argentina",
+                    "inicio":"2021",
+                    "fin":"Actualidad",
                     "imgInstitucion": "./assets/images/logoOrtInstitucion.png",
-                    "tituloPuestos": "Carrera:",
                     "puestos": [
                         "Analista de Sistemas"
                     ],
-                    "tituloHerramientas": "Titulos:",
                     "herramientas": [
                         "Tecnico Analista de Sistemas",
                         "Tecnico Programador"
@@ -91,26 +92,26 @@
                 },
                 {
                     "id": 2,
-                    "descripcion": "Argentina Programa 2022 - 2023",
+                    "descripcion": "Argentina Programa",
+                    "inicio":"2021",
+                    "fin":"2023",
                     "imgInstitucion": "./assets/images/LogoArgentinaPrograma.png",
-                    "tituloPuestos": "Curso:",
                     "puestos": [
                         "Argentina Programa Developer full stack"
                     ],
-                    "tituloHerramientas": "Titulo:",
                     "herramientas": [
                         "Developer full stack Junior"
                     ]
                 },
                 {
                     "id": 3,
-                    "descripcion": "Argentina Programa 2021 - 2022",
+                    "descripcion": "Argentina Programa",
+                    "inicio":"2021",
+                    "fin":"2022",
                     "imgInstitucion": "./assets/images/LogoArgentinaPrograma.png",
-                    "tituloPuestos": "Curso:",
                     "puestos": [
                         "Se programar"
                     ],
-                    "tituloHerramientas": "Titulo:",
                     "herramientas": [
                         "tecnico trainee en programacion"
                     ]
@@ -122,37 +123,44 @@
                 {
                     "logo": "./assets/icons/html.png",
                     "conocimiento":"HTML",
-                    "progreso": "80"
+                    "progreso": "80",
+                    "tipo":"lenguajes"
                 },
                 {
                     "logo": "./assets/icons/css.png",
                     "conocimiento":"CSS",
-                    "progreso": "80"
+                    "progreso": "80",
+                    "tipo":"lenguajes"
                 },
                 {
                     "logo": "./assets/icons/typeScript.png",
                     "conocimiento":"Type Script",
-                    "progreso": "70"
+                    "progreso": "70",
+                    "tipo":"lenguajes"
                 },
                 {
                     "logo": "./assets/icons/angular.png",
                     "conocimiento":"Angular",
-                    "progreso": "50"
+                    "progreso": "50",
+                    "tipo":"frameworks"
                 },
                 {
                     "logo": "",
                     "conocimiento":"Java Script",
-                    "progreso": "40"
+                    "progreso": "40",
+                    "tipo":"lenguajes"
                 },
                 {
                     "logo": "",
                     "conocimiento":"Java",
-                    "progreso": "80"
+                    "progreso": "80",
+                    "tipo":"lenguajes"
                 },
                 {
                     "logo": "",
                     "conocimiento":"NetBeans (JPA, JSP)",
-                    "progreso": "25"
+                    "progreso": "25",
+                    "tipo":""
                 }
             ]
         },
