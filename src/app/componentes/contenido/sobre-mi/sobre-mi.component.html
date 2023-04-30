@@ -7,14 +7,15 @@
                 <h4>Sobre mi</h4>
             </div>
 
+            <!-- Button trigger modal -->
             <div class="col-1" style="padding: 0px;">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                    class="bi bi-pen botonEdit" viewBox="0 0 16 16" (click)="onClick()">
-                    <path
-                        d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
-                </svg>
-
+                <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                        class="bi bi-pen botonEdit" viewBox="0 0 16 16">
+                        <path
+                            d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
+                    </svg>
+                </button>
             </div>
 
         </div>
@@ -48,19 +49,64 @@
 <!-------------- Alerta edicion ------------>
 
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: rgb(41, 39, 39); border-radius: 15px;">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Seccion</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    style="color: white;"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
 
-<div class="fondoLogin" *ngIf="mensajeEdit" style="display: flex;">
+                    <div class="col-12">
+                        <input style="background-color: rgb(41, 39, 39); border-radius: 10px;" type="text" name="urlCv"
+                            id="urlCd" class="form-control inputEdicion" placeholder="Ingresa la Url del Curriculum"
+                            [(ngModel)]="urlCv">
+                    </div>
+
+                    <div class="col-12" style="margin-top: 15px;">
+                        <input style="background-color: rgb(41, 39, 39); border-radius: 10px;" type="text" name="urlCv"
+                            id="urlCd" class="form-control inputEdicion" placeholder="Ingresa la Url del Curriculum"
+                            [(ngModel)]="urlCv">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal"
+                    (click)="noEnviarMensaje()">Close</button>
+                <button type="button" class="btn btn-primary buttonSesion" (click)="enviarMensaje()">Save
+                    changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="fondoLogin" *ngIf="mensajeEdit" style="display: flex;">
 
     <div class="row tarjeta tarjetaLogin" style="margin-top: 10px;">
 
-        <div class="row">
-            <div class="col-11" style="padding-left: 0; margin-bottom: 15px;">
-                <h1 style="float: left; color: white;">Iniciar Sesion</h1>
+        <div class="row" style="padding: 0px;">
+            <div class="col-11">
+                <h4 style="float: left; color: white;">Editar seccion</h4>
             </div>
 
-            <div class="col-1" style="text-align: center; padding: 0;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-x-circle"
-                    viewBox="0 0 16 16" style="float: right; cursor: pointer; margin-left: 40px; margin-top: 10px;"
+            <div class="col-1" style="padding: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-x-circle"
+                    viewBox="0 0 16 16" style="float: right; cursor: pointer; margin-left: 40px;"
                     (click)="noEnviarMensaje()">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                     <path
@@ -69,37 +115,23 @@
             </div>
         </div>
 
-        <div class="form-floating mb-3" style="margin-top: 15px;">
-
-            <input type="email" class="form-control inputContacto" placeholder="url Curriculum"
-                formControlName="Url Curriculum" type="text" name="urlCv" id="urlCd" [(ngModel)]="urlCv">
-            <label class="lavelContacto" for="mail">Url Curriculum</label>
-
+        <div class="col-12" style="margin-top: 15px;">
+            <input style="background-color: rgb(41, 39, 39); border-radius: 10px;" type="text" name="urlCv" id="urlCd"
+                class="form-control inputEdicion" placeholder="Ingresa la Url del Curriculum" [(ngModel)]="urlCv">
         </div>
 
-        <div class="form-floating mb-3" style="margin-top: 10px;">
-            <input type="email" class="form-control inputContacto" placeholder="Imagen Cv"
-                formControlName="Url Imagen Cv" type="text" name="imagenCv" id="imagenCv" [(ngModel)]="imagenCv">
-            <label class="lavelContacto" for="password">Imagen Curriculum</label>
+        <div class="col-12" style="margin-top: 15px;">
+            <input style="background-color: rgb(41, 39, 39); border-radius: 10px;" type="text" name="urlCv" id="urlCd"
+                class="form-control inputEdicion" placeholder="Ingresa la Url del Curriculum" [(ngModel)]="urlCv">
         </div>
-
-        <p>
-            {{urlCv}}
-        </p>
-
-
-
 
         <div class="row">
             <div class="col-12" style="margin-top: 20px; padding: 0;">
                 <button routerLink="/sobreMi" aria-current="page" class="btn btn-primary buttonSesion" type="submit"
-                    style="margin-right: 10px;" (click)="noEnviarMensaje()">Iniciar sesion</button>
-
-                <button aria-current="page" class="btn btn-primary buttonSesion" type="button"
-                    (click)="noEnviarMensaje()">Crear cuenta</button>
+                    style="margin-right: 10px;" (click)="noEnviarMensaje()">Guardar</button>
             </div>
         </div>
 
     </div>
 
-</div>
+</div> -->

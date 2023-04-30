@@ -243,6 +243,20 @@ a {
   display: none;
 }
 
+/*---- Estilos edicion ----*/
+.inputEdicion{
+  background-color: rgb(58, 57, 57); 
+  border-color: rgb(161, 161, 161); 
+  color: white;
+}
+
+.botonEdit{
+  padding: 0px; 
+  float: right; 
+  color: white; 
+  border: none;
+}
+
 
 /*-------------- Experiencia Laboral ---------------*/
 

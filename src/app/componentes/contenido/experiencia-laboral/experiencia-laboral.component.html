@@ -20,30 +20,65 @@
         <div class="tarjetaExpe" *ngIf="botonEdit">
 
             <form>
-                
                 <div class="row">
+                    <div class="col-6">
+                        <h5 style="margin-bottom: 10px;">Agerga una nueva experiencia</h5>
+                    </div>
 
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" style="background-color: rgb(58, 57, 57);">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-                      </div>
+                    <div class="col-3">
+                        <h6 style="margin-bottom: 0px; margin-top: 8px;">Inicio</h6>
+                    </div>
+
+                    <div class="col-3">
+                        <h6 style="margin-bottom: 0px; margin-top: 8px;">Fin</h6>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 15px;">
+
+                    <div class="col-6" style="padding-right: 4px;">
+                        <input type="text" class="form-control inputEdicion" placeholder="Ingresa la experiencia">
+                    </div>
+
+                    <div class="col-3" style="padding-right: 4px; padding-left: 4px;">
+                        <input type="date" class="form-control inputEdicion" placeholder="Ingresa la Fecha de Inicio">
+                    </div>
+
+                    <div class="col-3" style="padding-left: 4px;">
+                        <input type="date" class="form-control inputEdicion" placeholder="Ingresa la Fecha de Fin">
+                    </div>
                 </div>
 
                 <div class="row">
 
+
                     <div class="col-6" style="padding-right: 4px;">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Recipient's username"
-                                aria-label="Recipient's username" aria-describedby="button-addon2" style="background-color: rgb(58, 57, 57);">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                            <input type="text" class="form-control inputEdicion"
+                                placeholder="Ingresar Puestos y Actividades" aria-label="Ingresar Puestos y Actividades"
+                                aria-describedby="button-addon2">
+                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">💼
+                                Add</button>
                         </div>
                     </div>
 
                     <div class="col-6" style="padding-left: 4px;">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Recipient's username"
-                                aria-label="Recipient's username" aria-describedby="button-addon2" style="background-color: rgb(58, 57, 57);">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2" >Button</button>
+                            <input type="text" class="form-control inputEdicion" placeholder="Ingresar Herramientas"
+                                aria-label="Ingresar Herramientas" aria-describedby="button-addon2">
+                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">🔧
+                                Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6" style="padding-right: 4px;">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control inputEdicion" placeholder="Adjunta una imagen"
+                                aria-label="Ingresar Herramientas" aria-describedby="button-addon2">
+                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">📷
+                                Image</button>
                         </div>
                     </div>
                 </div>
