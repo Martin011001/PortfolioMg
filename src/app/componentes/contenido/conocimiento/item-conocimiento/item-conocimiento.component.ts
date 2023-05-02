@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
+import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 @Component({
   selector: 'app-item-conocimiento',
@@ -8,10 +9,16 @@ import { Component, Input } from '@angular/core';
 export class ItemConocimientoComponent {
   
   color: String = "";
+  range:String = "";
 
+  conocimiento:String = "";
+  urlLogo:String = "";
+  tipoConocimiento:String = "";
+
+  @Output() idConocimiento:any;
   @Input() itemConocimiento:any = "";
 
-  constructor(){
+  constructor(private datosPorfolio:PorfolioService){
     
   }
 
@@ -27,6 +34,17 @@ export class ItemConocimientoComponent {
     }
 
     return  this.color;
+  }
+
+  editarConocimiento(id:String){
+    this.editarConocimientoPut("conocimiento/crear" + id);
+    
+  }
+
+  editarConocimientoPut(apiUrl: string): void {
+    this.datosPorfolio.putEdicion(apiUrl, this.itemConocimiento).subscribe(data => { 
+      window.location.reload();     
+    });
   }
 
 }

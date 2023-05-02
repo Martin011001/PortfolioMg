@@ -7,13 +7,14 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
   styleUrls: ['./sobre-mi.component.css']
 })
 export class SobreMiComponent {
-  miPorfolio:any;
-  mensajeEdit:boolean = false;
+  miPorfolio: any;
+  mensajeEdit: boolean = false;
 
-  urlCv:String = "";
-  imagenCv:String = "";
+  urlCv: String = "";
+  urlImage: String = "";
+  descripcion: String = "";
 
-  constructor(private datosPorfolio:PorfolioService){
+  constructor(private datosPorfolio: PorfolioService) {
 
   }
 
@@ -24,36 +25,44 @@ export class SobreMiComponent {
     });
   } */
 
-  ngOnInit(): void{
-    this.datosPorfolio.getContenido("sobreMi/traer").subscribe(data =>{
+  ngOnInit(): void {
+    this.datosPorfolio.getContenido("sobreMi/traer").subscribe(data => {
       console.log(data)
       this.miPorfolio = data[0];
+      this.setDescripcion(this.miPorfolio.texto);
+      this.setUrlCv(this.miPorfolio.urlCv);
+      this.setUrImage(this.miPorfolio.imageCv);
     });
   }
 
-  noEnviarMensaje(){
-    this.mensajeEdit = false;
+  editarSobreMi(apiUrl: string): void {
+    this.datosPorfolio.putEdicion(apiUrl, this.miPorfolio).subscribe(data => {
+      window.location.reload();
+    });
   }
 
-  enviarMensaje(){
-    this.mensajeEdit = false;
+  private setUrlCv(texto: String) {
+    this.urlCv = texto;
   }
 
-  getmensajeVer(){
-    return this.mensajeEdit
-  }
-  
-
-  onClick() {
-    this.mensajeEdit = true;
-    console.log("estoy en true");
-    
+  private setUrImage(texto: String) {
+    this.urlImage = texto;
   }
 
-
-  getVariable(){
-    console.log(this.imagenCv);
-    console.log(this.urlCv);
-    
+  private setDescripcion(texto: String) {
+    this.descripcion = texto;
   }
+
+  guardarCambios(id: String) {
+    if (id == this.miPorfolio.id) {
+      this.miPorfolio.texto = this.descripcion == "" ? this.miPorfolio.texto : this.descripcion;
+      this.miPorfolio.urlCv = this.urlCv == "" ? this.miPorfolio.urlCv : this.urlCv;
+      this.miPorfolio.imageCv = this.urlImage == "" ? this.miPorfolio.imageCv : this.urlImage;
+      this.editarSobreMi("sobreMi/editar/" + this.miPorfolio.id);
+    }
+
+  }
+
+
 }
+

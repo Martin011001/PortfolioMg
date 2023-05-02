@@ -52,7 +52,7 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content" style="background-color: rgb(41, 39, 39); border-radius: 15px;">
+        <div class="modal-content ventanaEdicion">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Seccion</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
@@ -62,76 +62,34 @@
                 <div class="row">
 
                     <div class="col-12">
-                        <input style="background-color: rgb(41, 39, 39); border-radius: 10px;" type="text" name="urlCv"
-                            id="urlCd" class="form-control inputEdicion" placeholder="Ingresa la Url del Curriculum"
+                        <label class="labelEdicion"><h6>Url del Curriculum</h6></label>
+                        <input type="text" name="urlCv"
+                            id="urlCv" class="form-control inputEdicion" placeholder="Ingresa la Url del Curriculum"
                             [(ngModel)]="urlCv">
                     </div>
 
                     <div class="col-12" style="margin-top: 15px;">
-                        <input style="background-color: rgb(41, 39, 39); border-radius: 10px;" type="text" name="urlCv"
-                            id="urlCd" class="form-control inputEdicion" placeholder="Ingresa la Url del Curriculum"
-                            [(ngModel)]="urlCv">
+                        <label class="labelEdicion"><h6>Url imagen Cv</h6></label>
+                        <input type="text" name="urlImage"
+                            id="urlImage" class="form-control inputEdicion" placeholder="Ingresa la Url de la foto de tu CV"
+                            [(ngModel)]="urlImage">
                     </div>
 
+                    <div class="col-12" style="margin-top: 15px;">
+                        <label class="labelEdicion"><h6>Descripción</h6></label>
+                        <textarea type="text" name="descripcion"
+                            id="descripcion" class="form-control inputEdicion" placeholder="Ingresa tu Descripción"
+                            [(ngModel)]="descripcion"></textarea>
+                    </div>
+                   
                 </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal"
-                    (click)="noEnviarMensaje()">Close</button>
-                <button type="button" class="btn btn-primary buttonSesion" (click)="enviarMensaje()">Save
-                    changes</button>
+                <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary buttonSesion" (click)="guardarCambios(miPorfolio.id)">Guardar Cambios</button>
             </div>
         </div>
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-<!-- <div class="fondoLogin" *ngIf="mensajeEdit" style="display: flex;">
-
-    <div class="row tarjeta tarjetaLogin" style="margin-top: 10px;">
-
-        <div class="row" style="padding: 0px;">
-            <div class="col-11">
-                <h4 style="float: left; color: white;">Editar seccion</h4>
-            </div>
-
-            <div class="col-1" style="padding: 0px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-x-circle"
-                    viewBox="0 0 16 16" style="float: right; cursor: pointer; margin-left: 40px;"
-                    (click)="noEnviarMensaje()">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path
-                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                </svg>
-            </div>
-        </div>
-
-        <div class="col-12" style="margin-top: 15px;">
-            <input style="background-color: rgb(41, 39, 39); border-radius: 10px;" type="text" name="urlCv" id="urlCd"
-                class="form-control inputEdicion" placeholder="Ingresa la Url del Curriculum" [(ngModel)]="urlCv">
-        </div>
-
-        <div class="col-12" style="margin-top: 15px;">
-            <input style="background-color: rgb(41, 39, 39); border-radius: 10px;" type="text" name="urlCv" id="urlCd"
-                class="form-control inputEdicion" placeholder="Ingresa la Url del Curriculum" [(ngModel)]="urlCv">
-        </div>
-
-        <div class="row">
-            <div class="col-12" style="margin-top: 20px; padding: 0;">
-                <button routerLink="/sobreMi" aria-current="page" class="btn btn-primary buttonSesion" type="submit"
-                    style="margin-right: 10px;" (click)="noEnviarMensaje()">Guardar</button>
-            </div>
-        </div>
-
-    </div>
-
-</div> -->

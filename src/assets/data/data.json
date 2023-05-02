@@ -124,37 +124,37 @@
                     "logo": "./assets/icons/html.png",
                     "conocimiento":"HTML",
                     "progreso": "80",
-                    "tipo":"lenguajes"
+                    "tipo":"Lenguajes"
                 },
                 {
                     "logo": "./assets/icons/css.png",
                     "conocimiento":"CSS",
                     "progreso": "80",
-                    "tipo":"lenguajes"
+                    "tipo":"Lenguajes"
                 },
                 {
                     "logo": "./assets/icons/typeScript.png",
                     "conocimiento":"Type Script",
                     "progreso": "70",
-                    "tipo":"lenguajes"
+                    "tipo":"Lenguajes"
                 },
                 {
                     "logo": "./assets/icons/angular.png",
                     "conocimiento":"Angular",
                     "progreso": "50",
-                    "tipo":"frameworks"
+                    "tipo":"Frameworks"
                 },
                 {
                     "logo": "",
                     "conocimiento":"Java Script",
                     "progreso": "40",
-                    "tipo":"lenguajes"
+                    "tipo":"Lenguajes"
                 },
                 {
                     "logo": "",
                     "conocimiento":"Java",
                     "progreso": "80",
-                    "tipo":"lenguajes"
+                    "tipo":"Lenguajes"
                 },
                 {
                     "logo": "",

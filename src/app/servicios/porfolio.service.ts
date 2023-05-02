@@ -21,6 +21,8 @@ export class PorfolioService {
     return this.http.get(apiUrl);
   }
 
-
+  public putEdicion(apiUrl:string, body:any): Observable<any>{
+    return this.http.put(apiUrl, body);
+  }
 
 }

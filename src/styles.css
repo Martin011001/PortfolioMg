@@ -245,9 +245,13 @@ a {
 
 /*---- Estilos edicion ----*/
 .inputEdicion{
-  background-color: rgb(58, 57, 57); 
+  background-color: rgb(41, 39, 39);
   border-color: rgb(161, 161, 161); 
   color: white;
+}
+
+.labelEdicion{
+  margin-left: 5px;
 }
 
 .botonEdit{
@@ -255,6 +259,16 @@ a {
   float: right; 
   color: white; 
   border: none;
+}
+
+.botonEdit:hover{
+  color: rgb(96, 130, 223);
+}
+
+.ventanaEdicion{
+  background-color: rgb(41, 39, 39); 
+  border-radius: 15px; 
+  margin-top: 50px;
 }
 
 
@@ -278,11 +292,17 @@ a {
 .btnSalidaExpe {
   float: right;
   cursor: pointer;
+  color: red;
+}
+
+.btnSalidaExpe:hover{
+  color: rgb(229, 114, 114);
 }
 
 .buttonEditForm{
   padding: 3px;
 }
+
 
 
 

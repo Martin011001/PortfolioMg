@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ItemLaboralComponent {
 
   @Input() itemExpe:any = "";
+  expe:String = "";
 
   constructor(){
     
