@@ -21,7 +21,6 @@ export class LoginComponent {
   form: FormGroup;
 
   constructor(private formBuilder:FormBuilder) {
-    
     this.form = this.formBuilder.group({
       mail:['', [Validators.required, Validators.email, Validators.maxLength(50)]],
       password:['',[Validators.required, Validators.minLength(8)]]

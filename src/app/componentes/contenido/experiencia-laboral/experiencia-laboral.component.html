@@ -21,71 +21,48 @@
 
             <form>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-6" style="padding-right: 5px;">
                         <h5 style="margin-bottom: 10px;">Agerga una nueva experiencia</h5>
-                    </div>
 
-                    <div class="col-3">
-                        <h6 style="margin-bottom: 0px; margin-top: 8px;">Inicio</h6>
-                    </div>
+                        <input type="text" class="form-control inputEdicion" placeholder="Ingresa la experiencia" style="margin-bottom: 16px;">
 
-                    <div class="col-3">
-                        <h6 style="margin-bottom: 0px; margin-top: 8px;">Fin</h6>
-                    </div>
-                </div>
-
-                <div class="row" style="margin-bottom: 15px;">
-
-                    <div class="col-6" style="padding-right: 4px;">
-                        <input type="text" class="form-control inputEdicion" placeholder="Ingresa la experiencia">
-                    </div>
-
-                    <div class="col-3" style="padding-right: 4px; padding-left: 4px;">
-                        <input type="date" class="form-control inputEdicion" placeholder="Ingresa la Fecha de Inicio">
-                    </div>
-
-                    <div class="col-3" style="padding-left: 4px;">
-                        <input type="date" class="form-control inputEdicion" placeholder="Ingresa la Fecha de Fin">
-                    </div>
-                </div>
-
-                <div class="row">
-
-
-                    <div class="col-6" style="padding-right: 4px;">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control inputEdicion"
                                 placeholder="Ingresar Puestos y Actividades" aria-label="Ingresar Puestos y Actividades"
                                 aria-describedby="button-addon2">
-                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">💼
-                                Add</button>
+                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">💼 Add</button>
                         </div>
-                    </div>
 
-                    <div class="col-6" style="padding-left: 4px;">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control inputEdicion" placeholder="Ingresar Herramientas"
-                                aria-label="Ingresar Herramientas" aria-describedby="button-addon2">
-                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">🔧
-                                Add</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6" style="padding-right: 4px;">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control inputEdicion" placeholder="Adjunta una imagen"
                                 aria-label="Ingresar Herramientas" aria-describedby="button-addon2">
-                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">📷
-                                Image</button>
+                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">📷 Image</button>
                         </div>
                     </div>
 
-                    <div class="col-6">
-                        <button class="btn btn-primary buttonSesion" style="float: right;" type="button" id="button-addon2">Agregar Experiencia</button>
-                    </div>
+                    <div class="col-6" style="padding-left: 5px;">
+                        <div class="row">
+                            <div class="col-6 filaFechas" style="padding-right: 5px;">
+                                <h6 style="margin-bottom: 0px; margin-top: 8px;">Inicio</h6>
+                                <input type="date" class="form-control inputEdicion"
+                                    placeholder="Ingresa la Fecha de Inicio">
+                            </div>
+                            <div class="col-6 filaFechas" style="padding-left: 5px;">
+                                <h6 style="margin-bottom: 0px; margin-top: 8px;">Fin</h6>
+                                <input type="date" class="form-control inputEdicion"
+                                    placeholder="Ingresa la Fecha de Fin">
+                            </div>
+                        </div>
 
+                        <div class="input-group mb-3" style="margin-top: 16px;">
+                            <input type="text" class="form-control inputEdicion" placeholder="Ingresar Herramientas"
+                                aria-label="Ingresar Herramientas" aria-describedby="button-addon2">
+                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">🔧 Add</button>
+                        </div>
+
+                        <button class="btn btn-primary buttonSesion" style="float: right;" type="button"id="button-addon2">Agregar Experiencia</button>
+
+                    </div>
                 </div>
 
             </form>
