@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 @Component({
@@ -7,44 +7,51 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
   styleUrls: ['./item-conocimiento.component.css']
 })
 export class ItemConocimientoComponent {
-  
+
   color: String = "";
-  range:String = "";
 
-  conocimiento:String = "";
-  urlLogo:String = "";
-  tipoConocimiento:String = "";
-
-  @Output() idConocimiento:any;
-  @Input() itemConocimiento:any = "";
-
-  constructor(private datosPorfolio:PorfolioService){
-    
+  idCapturado: String = "";
+  obj = {
+    "range": "",
+    "conocimiento": "",
+    "urlLogo": "",
+    "tipoConocimiento": ""
   }
 
-  colorProgreso(): String{
-    if(this.itemConocimiento.progreso <= 25 ){
-      this.color = "progress-bar bg-danger" 
-    }else if(this.itemConocimiento.progreso > 25 && this.itemConocimiento.progreso <= 50){
+  @Output() idConocimiento = new EventEmitter();
+  @Output() objetoEdit = new EventEmitter();
+
+  @Input() itemConocimiento: any = "";
+
+  constructor(private datosPorfolio: PorfolioService) {
+
+  }
+
+  colorProgreso(): String {
+    if (this.itemConocimiento.progreso <= 25) {
+      this.color = "progress-bar bg-danger"
+    } else if (this.itemConocimiento.progreso > 25 && this.itemConocimiento.progreso <= 50) {
       this.color = "progress-bar bg-info text-dark"
-    }else if(this.itemConocimiento.progreso > 50 && this.itemConocimiento.progreso <= 75){
+    } else if (this.itemConocimiento.progreso > 50 && this.itemConocimiento.progreso <= 75) {
       this.color = "progress-bar bg-warning text-dark"
-    }else{
+    } else {
       this.color = "progress-bar bg-success"
     }
-
-    return  this.color;
+    return this.color;
   }
 
-  editarConocimiento(id:String){
-    this.editarConocimientoPut("conocimiento/crear" + id);
+  capturarId(id: String) {
+    this.idCapturado = id;
+    this.idConocimiento.emit(id);
+    console.log(id);
     
   }
 
-  editarConocimientoPut(apiUrl: string): void {
-    this.datosPorfolio.putEdicion(apiUrl, this.itemConocimiento).subscribe(data => { 
-      window.location.reload();     
-    });
+  editarConocimientoPut() {
+    this.objetoEdit.emit(this.obj);
   }
+
+ 
+  
 
 }

@@ -276,6 +276,12 @@ a {
   padding: 0px; 
 }
 
+.titulofecha{
+  margin-bottom: 0px; 
+  margin-top: 8px; 
+  margin-left: 3px;
+}
+
 /*-------------- Experiencia Laboral ---------------*/
 
 .imgTrabajo {

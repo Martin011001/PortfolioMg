@@ -7,15 +7,18 @@
         </div>
 
         <div class="col-3" style="padding-right: 0;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white"
+
+            <button type="button" class="btn botonEdit" (click)="capturarId(itemConocimiento.id)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" 
                 class="bi bi-x-circle btnSalidaExpe" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                 <path
                     d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
             </svg>
+            </button>
             <!-- Button trigger modal -->
             <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                style="margin-right: 8px;" (click)="editarConocimiento(itemConocimiento.id)">
+                style="margin-right: 8px;" (click)="capturarId(itemConocimiento.id)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-gear"
                     viewBox="0 0 16 16" style="margin-bottom: 4px;">
                     <path
@@ -69,7 +72,7 @@
                             <h6>Conocimiento</h6>
                         </label>
                         <input type="text" name="urlCv" id="conocimientoEdit" class="form-control inputEdicion"
-                            placeholder="Ingresa el Conocimiento" [(ngModel)]="conocimiento">
+                            placeholder="Ingresa el Conocimiento" [(ngModel)]="obj.conocimiento">
                     </div>
 
                     <div class="col-12" style="margin-top: 15px;">
@@ -77,12 +80,12 @@
                             <h6>Ingresa la Url del Logo</h6>
                         </label>
                         <input type="text" name="urlLogo" id="urlLogo" class="form-control inputEdicion"
-                            placeholder="Ingresa la Url del Logo" [(ngModel)]="urlLogo">
+                            placeholder="Ingresa la Url del Logo" [(ngModel)]="obj.urlLogo">
                     </div>
 
                     <div class="col-12" style="margin-top: 15px;">
                         <select class="form-select inputEdicion" aria-label="Default select example" style="color: white;"
-                            [(ngModel)]="tipoConocimiento">
+                            [(ngModel)]="obj.tipoConocimiento">
                             <option selected>Seleccioná el tipo</option>
                             <option value="Framework">Framework</option>    
                             <option value="Lenguaje">Lenguaje</option>
@@ -92,18 +95,17 @@
 
                     <div class="col-12" style="margin-top: 15px;">
                         <label for="range1" class="form-label">
-                            <h6>Progreso del conocimiento {{ range + '%' }}</h6>
+                            <h6>Progreso del conocimiento {{ obj.range + '%' }}</h6>
                         </label>
-                        <input type="range" class="form-range" id="range1" min="0" max="100" [(ngModel)]="range">
+                        <input type="range" class="form-range" id="range1" min="0" max="100" [(ngModel)]="obj.range">
                     </div>
 
                 </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary buttonSesion">Save
-                    changes</button>
+                <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary buttonSesion" (click)="editarConocimientoPut()">Guardar cambios</button>
             </div>
         </div>
     </div>

@@ -41,5 +41,5 @@
     </div>
 
 
-    <app-item-conocimiento *ngFor="let item of filtro()" [itemConocimiento]="item"></app-item-conocimiento>
+    <app-item-conocimiento *ngFor="let item of filtro()" [itemConocimiento]="item" (idConocimiento)="capturarId($event)" (objetoEdit)="editarConocimiento($event)"></app-item-conocimiento>
 </div>
