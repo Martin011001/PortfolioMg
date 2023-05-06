@@ -11,7 +11,7 @@
                 <path
                     d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
             </svg>
-            <!-- Button trigger modal -->
+            <!-- Button Edit -->
             <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal"
                 style="margin-right: 8px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-gear"
@@ -55,7 +55,7 @@
 <!-------------- Alerta edicion ------------>
 
 
-<!-- Modal -->
+<!-- Modal Edit -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content ventanaEdicion">
@@ -69,45 +69,76 @@
 
                     <div class="col-12">
                         <input type="text" class="form-control inputEdicion" placeholder="Ingresa la experiencia"
-                            name="expe" id="expe" style="background-color: rgb(41, 39, 39);" [(ngModel)]="expe">
+                            name="descripcion" id="descripcion" [(ngModel)]="descripcion">
                     </div>
 
                 </div>
                 <div class="row">
-                    <div class="col-6" style="margin-top: 15px; padding-right: 6px;">
-                        <label for="" style="margin-left: 3px;"><h6>Inicio</h6></label>
+                    <div class="col-6 marginEditExpe" style="padding-right: 6px;">
+                        <label for="" style="margin-left: 3px;">
+                            <h6>Inicio</h6>
+                        </label>
                         <input type="date" class="form-control inputEdicion" name="fechaInicio" id="fechaInicio"
-                            placeholder="Ingresa fecha de Inicio" style="background-color: rgb(41, 39, 39);">
+                            placeholder="Ingresa fecha de Inicio" name="inicio" id="inicio" [(ngModel)]="inicio">
                     </div>
 
-                    <div class="col-6" style="margin-top: 15px; padding-left: 6px;">
-                        <label for="" style="margin-left: 3px;"><h6>Fin</h6></label>
+                    <div class="col-6 marginEditExpe" style="padding-left: 6px;">
+                        <label for="" style="margin-left: 3px;">
+                            <h6>Fin</h6>
+                        </label>
                         <input type="date" class="form-control inputEdicion" name="fechaFin" id="fechaFin"
-                            placeholder="Ingresa fecha de Fin" style="background-color: rgb(41, 39, 39);">
+                            placeholder="Ingresa fecha de Fin" name="fin" id="fin" [(ngModel)]="fin">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-6" style="margin-top: 15px; padding-right: 6px;">
+                    <div class="col-6 marginEditExpe" style="padding-right: 6px;">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control inputEdicion" placeholder="Puestos"
-                                style="background-color: rgb(41, 39, 39); ">
-                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">💼
+                            <input type="text" class="form-control inputEdicion" placeholder="Puestos" name="puesto"
+                                id="puestos" [(ngModel)]="puesto">
+                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2"
+                                (click)="agregarPuesto()">💼
                                 Add</button>
+                        </div>
+
+                        <div>
+                            <h6 style="margin-left: 5px;">Borrar Items
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-x-lg" viewBox="0 0 16 16" style="cursor: pointer;"
+                                    (click)="borrarPuesto(puesto)">
+                                    <path
+                                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                                </svg>
+                            </h6>
+                            <div *ngFor="let puesto of puestos" style="margin-left: 12px;">
+                                {{ puesto }}
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-6" style="margin-top: 15px; padding-left: 6px;">
+                    <div class="col-6 marginEditExpe" style="padding-left: 6px;">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control inputEdicion" placeholder="Herramientas" 
-                            style="background-color: rgb(41, 39, 39);">
-                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">🔧
+                            <input type="text" class="form-control inputEdicion" placeholder="herra" name="herra"
+                                id="herra" [(ngModel)]="herra">
+                            <button class="btn btn-primary buttonSesion" type="button" id="button-addon2"
+                                (click)="agregarHerramienta()">🔧
                                 Add</button>
+                        </div>
+                        <div>
+                            <h6 style="margin-left: 5px;">Borrar items
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-x-lg" viewBox="0 0 16 16" style="cursor: pointer;"
+                                    (click)="borrarHerramienta(herra)">
+                                    <path
+                                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                                </svg>
+                            </h6>
+                            <div *ngFor="let herra of herramientas" style="margin-left: 12px;">
+                                {{ herra }}
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <h1>{{ expe }}</h1>
 
 
             </div>

@@ -55,20 +55,19 @@ export class ConocimientoComponent {
     return lista;
   }
 
-
   public capturarId(id: any) {
     this.idConocimiento = id;
   }
 
+
   editarConocimiento(obj: any) {
-    console.log(obj);
-    
     let conocimientoBuscado: any = this.buscarConocimiento();
+
     if (conocimientoBuscado != null) {
-      if (obj.range != "") conocimientoBuscado.titulo = obj.range;
-      if (obj.conocimiento != "") conocimientoBuscado.img = obj.conocimiento;
-      if (obj.urlLogo != "") conocimientoBuscado.tipo = obj.urlLogo;
-      if (obj.tipoConocimiento != "") conocimientoBuscado.inicio = obj.tipoConocimiento;
+      if (obj.progreso != "") conocimientoBuscado.progreso = obj.progreso;
+      if (obj.conocimiento != "") conocimientoBuscado.conocimiento = obj.conocimiento;
+      if (obj.logo != "") conocimientoBuscado.logo = obj.logo;
+      if (obj.tipo != "") conocimientoBuscado.tipo = obj.tipo;
 
       this.datosPorfolio.putEdicion("conocimiento/editar/" + conocimientoBuscado.id, obj).subscribe(() => {
         console.log("ok");
@@ -76,14 +75,8 @@ export class ConocimientoComponent {
     }
     window.location.reload();
   }
-  
-  /* editarSobreMi(apiUrl: string): void {
-    this.datosPorfolio.putEdicion("conocimiento/editar/" + conocimientoBuscado.id, obj).subscribe(() => {
-      console.log("ok");
-    });
-  } */
 
-  public buscarConocimiento(): any {
+  private buscarConocimiento(): any {
     let conocimientoBuscado: any;
     let i = 0;
     while (i < this.conocimiento.length && conocimientoBuscado == null) {
@@ -96,6 +89,12 @@ export class ConocimientoComponent {
     return conocimientoBuscado;
   }
 
+  deleteConocimiento() {
+    this.datosPorfolio.deleteContenido("conocimiento/borrar/" + this.idConocimiento).subscribe(() => {
+      console.log("ok");
+    });
+    window.location.reload();
+  }
 
 
 

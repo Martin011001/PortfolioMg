@@ -268,7 +268,6 @@ a {
 .ventanaEdicion{
   background-color: rgb(41, 39, 39); 
   border-radius: 15px; 
-  margin-top: 50px;
 }
 
 .filaFechas{
@@ -281,7 +280,15 @@ a {
   margin-top: 8px; 
   margin-left: 3px;
 }
+ .marginEditExpe{
+  margin-top: 15px;
+ }
 
+ .itemEdicion{
+  border-radius: 6px;
+  padding: 5px;
+  background-color: rgb(58, 57, 57);
+ }
 /*-------------- Experiencia Laboral ---------------*/
 
 .imgTrabajo {
@@ -466,6 +473,9 @@ ul {
   margin-right: 5px;
 }
 
+.paddingCero{
+  padding: 0px;
+}
 
 
 /*-------------- color texto ---------------*/

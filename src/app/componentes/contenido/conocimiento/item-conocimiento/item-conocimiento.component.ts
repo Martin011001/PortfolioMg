@@ -12,19 +12,24 @@ export class ItemConocimientoComponent {
 
   idCapturado: String = "";
   obj = {
-    "range": "",
+    "progreso": "",
     "conocimiento": "",
-    "urlLogo": "",
-    "tipoConocimiento": ""
+    "logo": "",
+    "tipo": ""
   }
 
   @Output() idConocimiento = new EventEmitter();
   @Output() objetoEdit = new EventEmitter();
+  @Output() deleteItem = new EventEmitter();
 
   @Input() itemConocimiento: any = "";
 
   constructor(private datosPorfolio: PorfolioService) {
+    //this.setObj(this.itemConocimiento);
+  }
 
+  setObj(obj:any){
+    this.obj = obj;
   }
 
   colorProgreso(): String {
@@ -42,16 +47,17 @@ export class ItemConocimientoComponent {
 
   capturarId(id: String) {
     this.idCapturado = id;
-    this.idConocimiento.emit(id);
-    console.log(id);
-    
+    this.idConocimiento.emit(id);    
   }
 
   editarConocimientoPut() {
+    this.itemConocimiento = this.obj    
     this.objetoEdit.emit(this.obj);
   }
 
- 
+  deleteConocimiento(){
+    this.deleteItem.emit();
+  }
   
 
 }

@@ -25,4 +25,7 @@ export class PorfolioService {
     return this.http.put(apiUrl, body);
   }
 
+  public deleteContenido(apiUrl:string): Observable<any>{
+    return this.http.delete(apiUrl)
+  }
 }

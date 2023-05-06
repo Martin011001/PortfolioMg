@@ -1,12 +1,16 @@
 <div class="row tarjeta">
 
     <div class="col-11">
-        <h4>Conocimientos</h4>
+        <h3>Conocimientos</h3>
     </div>
 
     <div class="col-1">
-        <a class="botonEditar" style="float: right;"><img src="https://cdn-icons-png.flaticon.com/512/84/84380.png"
-                height="25" width="25"></a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
+            class="bi bi-plus-circle botonEdit" viewBox="0 0 16 16" style="cursor: pointer; padding-right: 4px;">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+        </svg>
     </div>
 
     <div class="row">
@@ -15,24 +19,24 @@
 
             <div class="botonFlitro">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" 
-                    [(ngModel)]="lenguajes" checked>
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                        [(ngModel)]="lenguajes" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Lenguajes</label>
                 </div>
             </div>
 
             <div class="botonFlitro">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" 
-                    [(ngModel)]="habilidadesBlandas" checked>
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                        [(ngModel)]="habilidadesBlandas" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Habilidades</label>
                 </div>
             </div>
 
             <div class="botonFlitro">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" 
-                    [(ngModel)]="frameworks" checked>
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                        [(ngModel)]="frameworks" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Frameworks</label>
                 </div>
             </div>
@@ -41,5 +45,7 @@
     </div>
 
 
-    <app-item-conocimiento *ngFor="let item of filtro()" [itemConocimiento]="item" (idConocimiento)="capturarId($event)" (objetoEdit)="editarConocimiento($event)"></app-item-conocimiento>
+    <app-item-conocimiento class="paddingCero" *ngFor="let item of filtro()" [itemConocimiento]="item"
+        (idConocimiento)="capturarId($event)" (objetoEdit)="editarConocimiento($event)"
+        (deleteItem)="deleteConocimiento()"></app-item-conocimiento>
 </div>
