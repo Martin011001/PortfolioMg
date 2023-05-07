@@ -13,7 +13,7 @@
             </svg>
             <!-- Button Edit -->
             <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                style="margin-right: 8px;">
+                style="margin-right: 8px;" (click)="capturarId(itemExpe.id)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-gear"
                     viewBox="0 0 16 16" style="margin-bottom: 4px;">
                     <path
@@ -143,8 +143,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary buttonSesion">Save changes</button>
+                <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary buttonSesion" (click)="editarExperiencia()">Guardar Cambios</button>
             </div>
         </div>
     </div>

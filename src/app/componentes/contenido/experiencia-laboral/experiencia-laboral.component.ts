@@ -13,6 +13,8 @@ export class ExperienciaLaboralComponent {
   miPorfolio: any;
   botonEdit: boolean = false;
 
+  idExperiencia:String = "";
+
   constructor(private datosPorfolio:PorfolioService){
     
   }
@@ -29,5 +31,64 @@ export class ExperienciaLaboralComponent {
   EditForm(): boolean{
     return this.botonEdit == false ? this.botonEdit = true : this.botonEdit = false;
   }
+
+  capturarId(id:String){
+    this.idExperiencia = id;
+  }
+
+  editarExperiencia(obj:any, herramientas:String[], puestos:String[]){
+    let experienciaBuscada = this.buscarExperiencia();
+    this.borrarItemsLista("herramienta/traer", "herramienta/borrar/");
+    this.borrarItemsLista("puesto/traer", "puesto/borrar/")
+  
+
+
+    this.datosPorfolio.putEdicion("experiencia/editar/" + experienciaBuscada.id, obj).subscribe(() => {
+      console.log("ok");
+    });
+  }
+
+
+  private buscarExperiencia(): any {
+    let experienciaBuscado: any;
+    let i = 0;
+    while (i < this.experiencia.length && experienciaBuscado == null) {
+      if (this.experiencia[i].id == this.idExperiencia) {
+        experienciaBuscado = this.experiencia[i];
+      } else {
+        i++;
+      }
+    }
+    return experienciaBuscado;
+  }
+
+  borrarItemsLista(apiUrl:string, apiUrlDelete:string){
+    let listaBorrar: any[] = []; 
+    this.datosPorfolio.getContenido(apiUrl).subscribe(data => {
+      listaBorrar = data;
+    });
+    listaBorrar.forEach(element => {
+      if(this.idExperiencia == element.experiencia.id){
+        this.datosPorfolio.deleteContenido(apiUrlDelete + this.idExperiencia);
+      }
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

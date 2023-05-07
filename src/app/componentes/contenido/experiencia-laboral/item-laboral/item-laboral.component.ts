@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-item-laboral',
@@ -8,16 +8,21 @@ import { Component, Input } from '@angular/core';
 export class ItemLaboralComponent {
 
   @Input() itemExpe: any = "";
+  
+  @Output() idExperiencia = new EventEmitter;
+  @Output() objExport:any = new EventEmitter;
 
   descripcion: String = "";
   imgTrabajo: String = "";
   inicio: String = "";
   fin: String = "";
+
   herra: String = "";
   puesto: String = "";
 
   puestos: String[] = [];
   herramientas: String[] = [];
+  
   mostrarBtnBorrar: boolean = false;
 
   obj: any = {
@@ -81,11 +86,16 @@ export class ItemLaboralComponent {
   }
 
 
+  capturarId(id:String){
+    this.idExperiencia.emit(id)
+  }
 
-
-
-
-
-
+  editarExperiencia(){
+    this.obj.descripcion = this.descripcion;
+    this.obj.imgTrabajo = this.imgTrabajo;
+    this.obj.fin = this.fin;
+    this.obj.inicio = this.inicio;
+    this.objExport.emit(this.obj, this.herramientas, this.puestos);
+  }
 
 }
