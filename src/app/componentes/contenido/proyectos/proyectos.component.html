@@ -5,10 +5,51 @@
             <h3>Proyectos</h3>
         </div>
         <div class="col-1">
-            <a class="botonEditar" style="float: right;"><img src="https://cdn-icons-png.flaticon.com/512/84/84380.png"
-                    height="25" width="25"></a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
+                class="bi bi-plus-circle botonEdit" viewBox="0 0 16 16" style="cursor: pointer; padding-right: 4px;"
+                (click)="editForm()">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path
+                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg>
         </div>
     </div>
+
+
+    <!--------------- tarjeta agregarItem -------------------->
+
+    <div class="tarjetaExpe" *ngIf="botonEdit">
+        <div class="row">
+            <h5 style="margin-bottom: 10px;">Agerga una nueva experiencia</h5>
+        </div>
+
+        <div class="row">
+            <div class="col-6" style="padding-right: 5px;">
+                <input type="text" class="form-control inputEdicion" placeholder="Ingresa el conocimiento"
+                    style="margin-bottom: 16px;" [(ngModel)]="detalle">
+            </div>
+
+            <div class="col-6" style="padding-left: 5px;">
+                <input type="text" class="form-control inputEdicion" placeholder="Ingresa Url del Logo"
+                    style="margin-bottom: 16px;" [(ngModel)]="detalle">
+
+                <select class="form-select inputEdicion" aria-label="Default select example"
+                    style="color: white; margin-bottom: 16px;" [(ngModel)]="detalle"
+                    placeholder="Ingresa el tipo">
+                    <option selected>Lenguaje</option>
+                    <option value="Framework">Framework</option>
+                    <option value="Habilidades Blandas">Habilidad Blanda</option>
+                </select>
+
+                <button class="btn btn-primary buttonSesion" style="float: right;" type="button"
+                    id="button-addon2">Agregar
+                    Educacion</button>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------------------------->
+
 
     <app-item-proyecto *ngFor="let proyectoItem of proyectos" [itemProyecto]="proyectoItem"></app-item-proyecto>
 

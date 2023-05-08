@@ -64,7 +64,7 @@ export class ConocimientoComponent {
     this.idConocimiento = id;
   }
 
-  agregarExperiencia(){
+  agregarConocimiento(){
     console.log(this.objCreate);
     
     this.datosPorfolio.postCreacion("conocimiento/crear", this.objCreate).subscribe(() => {

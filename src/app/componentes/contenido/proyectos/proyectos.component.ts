@@ -11,6 +11,12 @@ export class ProyectosComponent {
   proyectos: any;
   miPorfolio:any;
 
+  botonEdit: boolean = false;
+
+  detalle:String = "";
+  inicio:String = "";
+  fin:String = "";
+  
   constructor(private datosPorfolio:PorfolioService){
     
   }
@@ -22,4 +28,20 @@ export class ProyectosComponent {
       this.proyectos = data.contenido.tarjeta5.proyectos;
     });
   }
+
+  editForm(): boolean {
+    return this.botonEdit == false ? this.botonEdit = true : this.botonEdit = false;
+  }
+
+
+
+
+
+
+
+
+
+  
+  
 }
+

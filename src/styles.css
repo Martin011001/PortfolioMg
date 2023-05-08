@@ -247,8 +247,12 @@ a {
 /*---- Estilos edicion ----*/
 .inputEdicion {
   background-color: rgb(47, 46, 46);
-  border-color: rgb(161, 161, 161);
+  border-color: rgb(160, 159, 159);
   color: white;
+}
+
+.inputEdicion::placeholder{
+  color: rgb(179, 179, 179);
 }
 
 .labelEdicion {

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
+import { EducacionComponent } from '../educacion.component';
 
 
 @Component({
@@ -7,13 +8,9 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
   templateUrl: './item-educacion.component.html',
   styleUrls: ['./item-educacion.component.css']
 })
-export class ItemEducacionComponent {
+export class ItemEducacionComponent extends EducacionComponent{
 
   @Input() itemEdu: any = "";
-
-  constructor() {
-
-  }
 
   onDelete(){
     console.log("DELETE");
