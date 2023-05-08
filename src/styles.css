@@ -211,9 +211,10 @@ a {
   list-style: none;
 }
 
-.botonEdit{
- float: right;
- cursor: pointer;
+.botonEdit {
+  border-color: none;
+  float: right;
+  cursor: pointer;
 }
 
 
@@ -244,51 +245,61 @@ a {
 }
 
 /*---- Estilos edicion ----*/
-.inputEdicion{
-  background-color: rgb(41, 39, 39);
-  border-color: rgb(161, 161, 161); 
+.inputEdicion {
+  background-color: rgb(47, 46, 46);
+  border-color: rgb(161, 161, 161);
   color: white;
 }
 
-.labelEdicion{
+.labelEdicion {
   margin-left: 5px;
 }
 
-.botonEdit{
-  padding: 0px; 
-  float: right; 
-  color: white; 
+.botonEdit {
+  padding: 0px;
+  float: right;
+  color: white;
   border: none;
 }
 
-.botonEdit:hover{
+.botonEdit:hover {
   color: rgb(96, 130, 223);
 }
 
-.ventanaEdicion{
-  background-color: rgb(41, 39, 39); 
-  border-radius: 15px; 
+.ventanaEdicion {
+  background-color: rgb(41, 39, 39);
+  border-radius: 15px;
 }
 
-.filaFechas{
-  margin-top: 7px; 
-  padding: 0px; 
+.filaFechas {
+  margin-top: 7px;
+  padding: 0px;
 }
 
-.titulofecha{
-  margin-bottom: 0px; 
-  margin-top: 8px; 
+.titulofecha {
+  margin-bottom: 0px;
+  margin-top: 8px;
   margin-left: 3px;
 }
- .marginEditExpe{
-  margin-top: 15px;
- }
 
- .itemEdicion{
+.marginEditExpe {
+  margin-top: 15px;
+}
+
+.itemEdicion {
   border-radius: 6px;
   padding: 5px;
   background-color: rgb(58, 57, 57);
- }
+}
+
+.rangoCreate{
+  border: rgb(161, 161, 161) 1px solid;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 16px;
+  background-color: rgba(45, 45, 45, 0.934);
+}
 /*-------------- Experiencia Laboral ---------------*/
 
 .imgTrabajo {
@@ -300,7 +311,7 @@ a {
   /* border: solid 2px white; */
   padding: 10px;
   border-radius: 22px;
-  background-color: rgb(58, 57, 57);
+  background-color: rgba(72, 72, 72, 0.708);
   margin-bottom: 30px;
 }
 
@@ -312,11 +323,11 @@ a {
   color: red;
 }
 
-.btnSalidaExpe:hover{
+.btnSalidaExpe:hover {
   color: rgb(229, 114, 114);
 }
 
-.buttonEditForm{
+.buttonEditForm {
   padding: 3px;
 }
 
@@ -473,7 +484,7 @@ ul {
   margin-right: 5px;
 }
 
-.paddingCero{
+.paddingCero {
   padding: 0px;
 }
 

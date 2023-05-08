@@ -29,4 +29,8 @@ export class PorfolioService {
     return this.http.delete(apiUrl)
   }
 
+  public postCreacion(apiUrl:string, body:any): Observable<any>{
+    return this.http.post(apiUrl, body)
+  }
+
 }

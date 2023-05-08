@@ -13,7 +13,6 @@ export class ConocimientoComponent {
 
   miPorfolio: any;
   conocimiento: any;
-  range1: String = "";
 
   frameworks: boolean = true;
   lenguajes: boolean = true;
@@ -21,8 +20,10 @@ export class ConocimientoComponent {
   buscado: string = "";
 
   idConocimiento: String = "";
-  objetoEdit: any = {};
+  objCreate: any = {};
 
+  
+  botonEdit:boolean = false;
 
   constructor(private datosPorfolio: PorfolioService) {
 
@@ -55,10 +56,22 @@ export class ConocimientoComponent {
     return lista;
   }
 
+  editForm(): boolean {
+    return this.botonEdit == false ? this.botonEdit = true : this.botonEdit = false;
+  }
+
   public capturarId(id: any) {
     this.idConocimiento = id;
   }
 
+  agregarExperiencia(){
+    console.log(this.objCreate);
+    
+    this.datosPorfolio.postCreacion("conocimiento/crear", this.objCreate).subscribe(() => {
+      console.log("ok");
+    });
+    window.location.reload();
+  }
 
   editarConocimiento(obj: any) {
     let conocimientoBuscado: any = this.buscarConocimiento();

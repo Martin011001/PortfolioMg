@@ -71,7 +71,7 @@
                                 <h6>Conocimiento</h6>
                             </label>
                             <input type="text" name="urlCv" id="conocimientoEdit" class="form-control inputEdicion"
-                                placeholder="Ingresa el Conocimiento" [(ngModel)]="obj.conocimiento">
+                                placeholder="Ingresa el Conocimiento" [(ngModel)]="conocimiento">
                         </div>
 
                         <div class="col-12" style="margin-top: 15px;">
@@ -79,25 +79,24 @@
                                 <h6>Ingresa la Url del Logo</h6>
                             </label>
                             <input type="text" name="urlLogo" id="urlLogo" class="form-control inputEdicion"
-                                placeholder="Ingresa la Url del Logo" [(ngModel)]="obj.logo">
+                                placeholder="Ingresa la Url del Logo" [(ngModel)]="logo">
                         </div>
 
                         <div class="col-12" style="margin-top: 15px;">
                             <select class="form-select inputEdicion" aria-label="Default select example"
-                                style="color: white;" [(ngModel)]="obj.tipo">
-                                <option selected>Seleccioná el tipo</option>
+                                style="color: white;" [(ngModel)]="tipo">
+                                <option selected>Lenguaje</option>
                                 <option value="Framework">Framework</option>
-                                <option value="Lenguaje">Lenguaje</option>
                                 <option value="Habilidades Blandas">Habilidad Blanda</option>
                             </select>
                         </div>
 
                         <div class="col-12" style="margin-top: 15px;">
-                            <label for="range1" class="form-label">
-                                <h6>Progreso del conocimiento {{ obj.progreso + '%' }}</h6>
+                            <label for="range" class="form-label">
+                                <h6>Progreso del conocimiento {{ progreso + '%' }}</h6>
                             </label>
-                            <input type="range" class="form-range" id="range1" min="0" max="100"
-                                [(ngModel)]="obj.progreso">
+                            <input type="range" class="form-range" id="range" min="0" max="100"
+                                [(ngModel)]="progreso">
                         </div>
 
                     </div>

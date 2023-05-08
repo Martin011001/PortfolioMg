@@ -1,6 +1,6 @@
 import { Component, Output } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
-import { Experiencia } from './interfaz-experiencia';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-experiencia-laboral',
@@ -13,37 +13,96 @@ export class ExperienciaLaboralComponent {
   miPorfolio: any;
   botonEdit: boolean = false;
 
-  idExperiencia:String = "";
+  idExperiencia: String = "";
 
-  constructor(private datosPorfolio:PorfolioService){
-    
+
+  //--------hijo y Padre------------
+
+  descripcion: String = "";
+  imgTrabajo: String = "";
+  inicio: DatePipe = new DatePipe('en-US');
+  fin: DatePipe = new DatePipe('en-US');
+
+
+  herraTexto:String = "";
+  puestoTexto:String = "";
+
+  puestos: String[] = [];
+  herramientas: String[] = [];
+  idexpe: String = "";
+
+  obj: any = {
+    "descripcion": "",
+    "imgTrabajo": "",
+    "inicio": "",
+    "fin": ""
   }
 
-  ngOnInit(): void{
+  herramienta: any = {
+    "nombre": "",
+    "experiencia": {
+      "id": 0
+    }
+  }
+  puesto: any = {
+    "nombre": "",
+    "experiencia": {
+      "id": 0
+    }
+
+  }
+
+  //------------------------------
+
+
+  constructor(private datosPorfolio: PorfolioService) {
+
+  }
+
+
+  ngOnInit(): void {
     this.datosPorfolio.obtenerdatos().subscribe(data => {
       console.log(data)
-      
+
       this.miPorfolio = data.contenido.tarjeta2;
       this.experiencia = data.contenido.tarjeta2.trabajos;
     });
   }
 
-  EditForm(): boolean{
+  editForm(): boolean {
     return this.botonEdit == false ? this.botonEdit = true : this.botonEdit = false;
   }
 
-  capturarId(id:String){
+  capturarId(id: String) {
     this.idExperiencia = id;
   }
 
-  editarExperiencia(obj:any, herramientas:String[], puestos:String[]){
+  deleteExpe(id:String){
+    this.datosPorfolio.deleteContenido("experiencia/borrar/" + id).subscribe(() => {
+      console.log("ok");
+    });
+  }
+
+  agregarExperiencia(){
+    this.setobj();
+    this.datosPorfolio.postCreacion("experiencia/crear/", this.obj).subscribe(() => {
+      console.log("ok");
+    });
+  }
+
+  editarExperiencia() {
+    this.setobj(); 
     let experienciaBuscada = this.buscarExperiencia();
+    const herramientas = this.herramientas.map(item =>  {
+      return {nombre:item, experiencia:{id:this.idexpe}}
+    })
+
     this.borrarItemsLista("herramienta/traer", "herramienta/borrar/");
-    this.borrarItemsLista("puesto/traer", "puesto/borrar/")
-  
+    this.borrarItemsLista("puesto/traer", "puesto/borrar/");
+    this.agregarLista("herramienta/crear", this.herramientas);
 
 
-    this.datosPorfolio.putEdicion("experiencia/editar/" + experienciaBuscada.id, obj).subscribe(() => {
+    this.datosPorfolio.putEdicion("experiencia/editar/" + experienciaBuscada.id, this.obj).subscribe(() => {
       console.log("ok");
     });
   }
@@ -62,21 +121,60 @@ export class ExperienciaLaboralComponent {
     return experienciaBuscado;
   }
 
-  borrarItemsLista(apiUrl:string, apiUrlDelete:string){
-    let listaBorrar: any[] = []; 
+  private setobj(){
+  this.obj.descripcion = this.descripcion;
+  this.obj.imgTrabajo = this.imgTrabajo;
+  this.obj.inicio = this.inicio;
+  this.obj.fin = this.fin;
+  }
+
+  borrarItemsLista(apiUrl: string, apiUrlDelete: string) {
+    let listaBorrar: any[] = [];
     this.datosPorfolio.getContenido(apiUrl).subscribe(data => {
       listaBorrar = data;
     });
     listaBorrar.forEach(element => {
-      if(this.idExperiencia == element.experiencia.id){
+      if (this.idExperiencia == element.experiencia.id) {
         this.datosPorfolio.deleteContenido(apiUrlDelete + this.idExperiencia);
       }
     });
   }
 
+  agregarLista(apiUrl: string, herramientas: any[]) {
+    herramientas.forEach(element => {
+      this.datosPorfolio.postCreacion(apiUrl, element);
+      console.log("ok");
+    });
+
+  }
 
 
 
+  //--------hijo y Padre------------
+
+  agregarHerramienta() {
+   this.herramientas.push(this.herraTexto)
+    console.log(this.herramientas);
+    
+  }
+
+  borrarHerramienta() {
+    this.herramientas.pop();
+  }
+
+
+  agregarPuesto() {
+    this.puestos.push(this.puestoTexto)
+    console.log(this.puestos);
+
+  }
+
+  borrarPuesto() {
+    this.puestos.pop();
+  }
+
+
+  //------------------------------
 
 
 

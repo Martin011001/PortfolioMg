@@ -1,16 +1,23 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
+import { ConocimientoComponent } from '../conocimiento.component';
 
 @Component({
   selector: 'app-item-conocimiento',
   templateUrl: './item-conocimiento.component.html',
   styleUrls: ['./item-conocimiento.component.css']
 })
-export class ItemConocimientoComponent {
+export class ItemConocimientoComponent{
 
   color: String = "";
 
   idCapturado: String = "";
+
+  progreso: string = "";
+  conocimiento: string = "";
+  logo: string = "";
+  tipo:string = "";
+
   obj = {
     "progreso": "",
     "conocimiento": "",
@@ -25,11 +32,21 @@ export class ItemConocimientoComponent {
   @Input() itemConocimiento: any = "";
 
   constructor(private datosPorfolio: PorfolioService) {
-    //this.setObj(this.itemConocimiento);
+
   }
 
-  setObj(obj:any){
-    this.obj = obj;
+  ngOnInit(){
+    this.progreso = this.itemConocimiento.progreso;
+    this.conocimiento = this.itemConocimiento.conocimiento;
+    this.logo = this.itemConocimiento.logo;
+    this.tipo = this.itemConocimiento.tipo;
+  }
+
+  setObj(){
+    this.obj.progreso = this.progreso;
+    this.obj.conocimiento = this.conocimiento;
+    this.obj.logo = this.logo;
+    this.obj.tipo = this.tipo;
   }
 
   colorProgreso(): String {
@@ -51,7 +68,8 @@ export class ItemConocimientoComponent {
   }
 
   editarConocimientoPut() {
-    this.itemConocimiento = this.obj    
+    this.setObj();
+    this.itemConocimiento = this.obj;  
     this.objetoEdit.emit(this.obj);
   }
 

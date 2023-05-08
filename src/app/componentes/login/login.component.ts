@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Injectable, Input, Output } from '@angular/core';
-import { NavComponent } from '../nav/nav.component';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import { Validators} from '@angular/forms';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class LoginComponent {
   buttonCrear:String = "none";
   form: FormGroup;
 
-  constructor(private formBuilder:FormBuilder) {
+  constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService) {
     this.form = this.formBuilder.group({
       mail:['', [Validators.required, Validators.email, Validators.maxLength(50)]],
       password:['',[Validators.required, Validators.minLength(8)]]
@@ -45,8 +45,12 @@ export class LoginComponent {
 
 
   onEnviar(event: Event){
-    // Detenemos la propagación o ejecución del compotamiento submit de un form
+    
     event.preventDefault; 
+    /* this.autenticacionService.iniciarSecion(this.form.value).subscribe(data => {
+      console.log("DATA:" + JSON.stringify(data));
+      //this.ruta.navigate(['/porfolio'])
+    }) */
  
     if (this.form.valid){
       // Llamamos a nuestro servicio para enviar los datos al servidor
