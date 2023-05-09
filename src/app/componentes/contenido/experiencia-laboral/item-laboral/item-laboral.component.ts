@@ -6,14 +6,14 @@ import { ExperienciaLaboralComponent } from '../experiencia-laboral.component';
   templateUrl: './item-laboral.component.html',
   styleUrls: ['./item-laboral.component.css']
 })
-export class ItemLaboralComponent extends ExperienciaLaboralComponent{
-  
+export class ItemLaboralComponent extends ExperienciaLaboralComponent {
+
   @Input() itemExpe: any = "";
 
   mostrarBtnBorrar: boolean = false;
 
 
-  override editarExperiencia(){
+  override editarExperiencia() {
     this.itemExpe.descripcion = this.descripcion;
     this.itemExpe.imgTrabajo = this.imgTrabajo;
     this.itemExpe.inicio = this.inicio;
@@ -24,6 +24,34 @@ export class ItemLaboralComponent extends ExperienciaLaboralComponent{
     this.fin = this.itemExpe.fin; */
     super.editarExperiencia()
   }
+
+  buscarHerramientas(id: string): String[] {
+    let listaDevolver: String[] = [];
+    for (let i = 0; i < this.herramientaData.length; i++) {
+      if (this.herramientaData[i].experiencia_id == id) {
+        listaDevolver.push(this.herramientaData[i].nombre);
+      } 
+    }
+    console.log("Lista Herramientasssssssssssssssssssssssssssssssssss");
+    console.log(listaDevolver);
+
+    return listaDevolver;
+  }
+
+  buscarPuestos(id: string): String[] {
+    let listaDevolver: String[] = [];
+    for (let i = 0; i < this.puestoData.length; i++) {
+      if (this.puestoData[i].experiencia_id == id) {
+        listaDevolver.push(this.puestoData[i].nombre);
+      } 
+    }
+    console.log("Lista Puestooooooooooooooooooo");
+    console.log(listaDevolver);
+    
+    return listaDevolver;
+  }
+
+
 
 
 }

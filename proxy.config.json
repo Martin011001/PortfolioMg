@@ -14,5 +14,26 @@
         "target":"http://localhost:8080",
         "secure":"false",
         "logLevel":"debug"
+    },
+    "/herramienta/*":{
+        "target":"http://localhost:8080",
+        "secure":"false",
+        "logLevel":"debug"
+    },
+    "/puestos/*":{
+        "target":"http://localhost:8080",
+        "secure":"false",
+        "logLevel":"debug"
+    },
+    "/experiencias/*":{
+        "target":"http://localhost:8080",
+        "secure":"false",
+        "logLevel":"debug"
+    },
+
+    "/user/*":{
+        "target":"http://localhost:8080",
+        "secure":"false",
+        "logLevel":"debug"
     }
 }

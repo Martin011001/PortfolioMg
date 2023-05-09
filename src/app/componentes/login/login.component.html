@@ -22,21 +22,21 @@
             <div class="form-floating mb-3" style="margin-top: 15px;">
 
                 <input type="email" class="form-control inputContacto" placeholder="name@example.com"
-                    formControlName="mail">
+                    formControlName="email">
                 <label class="lavelContacto" for="mail">Email address</label>
 
-                <div *ngIf="mail?.errors  && mail?.touched">
-                    <p *ngIf="mail?.hasError('required')" class="error errorContacto">
+                <div *ngIf="email?.errors  && email?.touched">
+                    <p *ngIf="email?.hasError('required')" class="error errorContacto">
                         El email es requerido.
                     </p>
-                    <p *ngIf="mail?.hasError('email')" class="error errorContacto">
+                    <p *ngIf="email?.hasError('email')" class="error errorContacto">
                         El formato del email debe ser válido.
                     </p>
                 </div>
             </div>
 
             <div class="form-floating mb-3" style="margin-top: 10px;">
-                <input type="email" class="form-control inputContacto" placeholder="name@example.com"
+                <input type="password" class="form-control inputContacto" placeholder="name@example.com"
                     formControlName="password">
                 <label class="lavelContacto" for="password">Contraseña</label>
 

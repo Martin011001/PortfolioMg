@@ -22,7 +22,7 @@ export class LoginComponent {
 
   constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService) {
     this.form = this.formBuilder.group({
-      mail:['', [Validators.required, Validators.email, Validators.maxLength(50)]],
+      email:['', [Validators.required, Validators.email, Validators.maxLength(50)]],
       password:['',[Validators.required, Validators.minLength(8)]]
     });
   }
@@ -31,26 +31,24 @@ export class LoginComponent {
     return this.form.get("password");
   }
  
-  get mail(){
-   return this.form.get("mail");
+  get email(){
+   return this.form.get("email");
   }
 
   get passwordValid(){
     return this.password?.touched && !this.password?.valid;
   }
 
-  get mailValid() {
+  get emailValid() {
     return false
   }
 
 
   onEnviar(event: Event){
     
-    event.preventDefault; 
-    /* this.autenticacionService.iniciarSecion(this.form.value).subscribe(data => {
-      console.log("DATA:" + JSON.stringify(data));
-      //this.ruta.navigate(['/porfolio'])
-    }) */
+    this.autenticacionService.iniciarSesion(this.form.value).subscribe(data=>{
+      console.log("Data:" +JSON.stringify(data));
+    })
  
     if (this.form.valid){
       // Llamamos a nuestro servicio para enviar los datos al servidor

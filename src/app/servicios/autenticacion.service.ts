@@ -8,20 +8,21 @@ import { map } from 'rxjs/operators'
 })
 export class AutenticacionService {
 
-  /* url="";
-  currentUserSubject: BehaviorSubject<any>
+  url = "user/login"
+  currentUserSubject: BehaviorSubject<any>;
 
-  constructor(private http:HttpClient) { 
-    console.log("El servicio de autenticacion esta correcto");
-    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse('currentUser') || '{}')
+  constructor(private http: HttpClient) {
+    console.log("El servicio corre she bien");
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem("currenUser") || "{}"))
   }
 
-  iniciarSecion(credenciales:any): Observable<any>{
-    return this.http.post(this.url, credenciales).pipe(map(data =>{
-      sessionStorage.setItem('currentUser', JSON.stringify(data))
-      
-      
-      return data
-    }))
-  } */
+  iniciarSesion(credenciales: any): Observable<any> {
+    return this.http.post(this.url, credenciales)
+    /* .pipe(map(data=>{
+      sessionStorage.setItem("currenUser", JSON.stringify(data)); */
+  }
 }
+
+
+
+

@@ -32,7 +32,7 @@
 
             <div>
                 <ul class="ListaLaboral">
-                    <li *ngFor="let item of itemExpe.puestos" class="itemsLaboral">{{item}}</li>
+                    <li *ngFor="let item of buscarPuestos(itemExpe.id)" class="itemsLaboral">{{item}}</li>
                 </ul>
             </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="col-4">
             <h6 class="tituloitems">🔧 Herramientas:</h6>
             <ul class="ListaLaboral">
-                <li *ngFor="let itemDos of itemExpe.herramientas" class="itemsLaboral">{{itemDos}}</li>
+                <li *ngFor="let itemDos of buscarHerramientas(itemExpe.id)" class="itemsLaboral">{{itemDos}}</li>
             </ul>
         </div>
 

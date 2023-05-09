@@ -9,7 +9,10 @@ import { DatePipe } from '@angular/common';
 })
 export class ExperienciaLaboralComponent {
 
-  experiencia: any;
+  puestoData: any;
+  herramientaData:any;
+  experiencia:any;
+
   miPorfolio: any;
   botonEdit: boolean = false;
 
@@ -60,12 +63,27 @@ export class ExperienciaLaboralComponent {
   }
 
 
-  ngOnInit(): void {
+/*   ngOnInit(): void {
     this.datosPorfolio.obtenerdatos().subscribe(data => {
       console.log(data)
 
       this.miPorfolio = data.contenido.tarjeta2;
       this.experiencia = data.contenido.tarjeta2.trabajos;
+    });
+  } */
+
+  ngOnInit(): void {
+    this.datosPorfolio.getContenido("experiencias/traer").subscribe(data => {
+      console.log(data)
+      this.experiencia = data;
+    });
+    this.datosPorfolio.getContenido("herramienta/traer").subscribe(data => {
+      console.log(data)
+      this.herramientaData = data;
+    });
+    this.datosPorfolio.getContenido("puestos/traer").subscribe(data => {
+      console.log(data)
+      this.puestoData = data;
     });
   }
 
@@ -78,14 +96,14 @@ export class ExperienciaLaboralComponent {
   }
 
   deleteExpe(id:String){
-    this.datosPorfolio.deleteContenido("experiencia/borrar/" + id).subscribe(() => {
+    this.datosPorfolio.deleteContenido("experiencias/borrar/" + id).subscribe(() => {
       console.log("ok");
     });
   }
 
   agregarExperiencia(){
     this.setobj();
-    this.datosPorfolio.postCreacion("experiencia/crear/", this.obj).subscribe(() => {
+    this.datosPorfolio.postCreacion("experiencias/crear/", this.obj).subscribe(() => {
       console.log("ok");
     });
   }
@@ -98,11 +116,10 @@ export class ExperienciaLaboralComponent {
     })
 
     this.borrarItemsLista("herramienta/traer", "herramienta/borrar/");
-    this.borrarItemsLista("puesto/traer", "puesto/borrar/");
+    this.borrarItemsLista("puestos/traer", "puesto/borrar/");
     this.agregarLista("herramienta/crear", this.herramientas);
 
-
-    this.datosPorfolio.putEdicion("experiencia/editar/" + experienciaBuscada.id, this.obj).subscribe(() => {
+    this.datosPorfolio.putEdicion("experiencias/editar/" + experienciaBuscada.id, this.obj).subscribe(() => {
       console.log("ok");
     });
   }
@@ -134,7 +151,7 @@ export class ExperienciaLaboralComponent {
       listaBorrar = data;
     });
     listaBorrar.forEach(element => {
-      if (this.idExperiencia == element.experiencia.id) {
+      if (this.idExperiencia == element.experiencia_id) {
         this.datosPorfolio.deleteContenido(apiUrlDelete + this.idExperiencia);
       }
     });
