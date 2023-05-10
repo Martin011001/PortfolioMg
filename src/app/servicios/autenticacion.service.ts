@@ -9,11 +9,11 @@ import { map } from 'rxjs/operators'
 export class AutenticacionService {
 
   url = "user/login"
-  currentUserSubject: BehaviorSubject<any>;
+  //currentUserSubject: BehaviorSubject<any>;
 
   constructor(private http: HttpClient) {
     console.log("El servicio corre she bien");
-    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem("currenUser") || "{}"))
+    //this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem("currenUser") || "{}"))
   }
 
   iniciarSesion(credenciales: any): Observable<any> {

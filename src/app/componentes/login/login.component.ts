@@ -16,6 +16,7 @@ export class LoginComponent {
   @Output() salir = new EventEmitter;
   @Output() irAlNav = new EventEmitter;
 
+  respuesta:String = "";
 
   buttonCrear:String = "none";
   form: FormGroup;
@@ -45,9 +46,9 @@ export class LoginComponent {
 
 
   onEnviar(event: Event){
-    
     this.autenticacionService.iniciarSesion(this.form.value).subscribe(data=>{
-      console.log("Data:" +JSON.stringify(data));
+      //console.log("Data:" +JSON.stringify(data));
+      this.respuesta = data;
     })
  
     if (this.form.valid){

@@ -13,17 +13,17 @@ export class ItemLaboralComponent extends ExperienciaLaboralComponent {
   mostrarBtnBorrar: boolean = false;
 
 
-  override editarExperiencia() {
+/*   override editarExperiencia() {
     this.itemExpe.descripcion = this.descripcion;
     this.itemExpe.imgTrabajo = this.imgTrabajo;
     this.itemExpe.inicio = this.inicio;
     this.itemExpe.fin = this.fin;
-    /* this.descripcion= this.itemExpe.descripcion;
+    this.descripcion= this.itemExpe.descripcion;
     this.imgTrabajo = this.itemExpe.imgTrabajo;
     this.inicio = this.itemExpe.inicio;
-    this.fin = this.itemExpe.fin; */
+    this.fin = this.itemExpe.fin; 
     super.editarExperiencia()
-  }
+  } */
 
   buscarHerramientas(id: string): String[] {
     let listaDevolver: String[] = [];
@@ -32,9 +32,6 @@ export class ItemLaboralComponent extends ExperienciaLaboralComponent {
         listaDevolver.push(this.herramientaData[i].nombre);
       } 
     }
-    console.log("Lista Herramientasssssssssssssssssssssssssssssssssss");
-    console.log(listaDevolver);
-
     return listaDevolver;
   }
 
@@ -44,10 +41,7 @@ export class ItemLaboralComponent extends ExperienciaLaboralComponent {
       if (this.puestoData[i].experiencia_id == id) {
         listaDevolver.push(this.puestoData[i].nombre);
       } 
-    }
-    console.log("Lista Puestooooooooooooooooooo");
-    console.log(listaDevolver);
-    
+    }    
     return listaDevolver;
   }
 

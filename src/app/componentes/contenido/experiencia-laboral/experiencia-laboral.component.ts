@@ -10,14 +10,15 @@ import { DatePipe } from '@angular/common';
 export class ExperienciaLaboralComponent {
 
   puestoData: any;
-  herramientaData:any;
-  experiencia:any;
+  herramientaData: any;
+  experiencia: any;
 
   miPorfolio: any;
   botonEdit: boolean = false;
 
   idExperiencia: String = "";
 
+  listaBorrar: any[] = [];
 
   //--------hijo y Padre------------
 
@@ -27,12 +28,11 @@ export class ExperienciaLaboralComponent {
   fin: DatePipe = new DatePipe('en-US');
 
 
-  herraTexto:String = "";
-  puestoTexto:String = "";
+  herraTexto: String = "";
+  puestoTexto: String = "";
 
   puestos: String[] = [];
   herramientas: String[] = [];
-  idexpe: String = "";
 
   obj: any = {
     "descripcion": "",
@@ -63,14 +63,14 @@ export class ExperienciaLaboralComponent {
   }
 
 
-/*   ngOnInit(): void {
-    this.datosPorfolio.obtenerdatos().subscribe(data => {
-      console.log(data)
-
-      this.miPorfolio = data.contenido.tarjeta2;
-      this.experiencia = data.contenido.tarjeta2.trabajos;
-    });
-  } */
+  /*   ngOnInit(): void {
+      this.datosPorfolio.obtenerdatos().subscribe(data => {
+        console.log(data)
+  
+        this.miPorfolio = data.contenido.tarjeta2;
+        this.experiencia = data.contenido.tarjeta2.trabajos;
+      });
+    } */
 
   ngOnInit(): void {
     this.datosPorfolio.getContenido("experiencias/traer").subscribe(data => {
@@ -81,7 +81,7 @@ export class ExperienciaLaboralComponent {
       console.log(data)
       this.herramientaData = data;
     });
-    this.datosPorfolio.getContenido("puestos/traer").subscribe(data => {
+    this.datosPorfolio.getContenido("puesto/traer").subscribe(data => {
       console.log(data)
       this.puestoData = data;
     });
@@ -95,13 +95,13 @@ export class ExperienciaLaboralComponent {
     this.idExperiencia = id;
   }
 
-  deleteExpe(id:String){
+  deleteExpe(id: String) {
     this.datosPorfolio.deleteContenido("experiencias/borrar/" + id).subscribe(() => {
       console.log("ok");
     });
   }
 
-  agregarExperiencia(){
+  agregarExperiencia() {
     this.setobj();
     this.datosPorfolio.postCreacion("experiencias/crear/", this.obj).subscribe(() => {
       console.log("ok");
@@ -109,15 +109,23 @@ export class ExperienciaLaboralComponent {
   }
 
   editarExperiencia() {
-    this.setobj(); 
+
+    this.setobj();
     let experienciaBuscada = this.buscarExperiencia();
-    const herramientas = this.herramientas.map(item =>  {
-      return {nombre:item, experiencia:{id:this.idexpe}}
+
+    const herramientas = this.herramientas.map(item => {
+      return { nombre: item, experiencia_id: this.idExperiencia }
+    })
+
+    const puestos = this.herramientas.map(item => {
+      return { nombre: item, experiencia_id: this.idExperiencia }
     })
 
     this.borrarItemsLista("herramienta/traer", "herramienta/borrar/");
-    this.borrarItemsLista("puestos/traer", "puesto/borrar/");
-    this.agregarLista("herramienta/crear", this.herramientas);
+    this.borrarItemsLista("puesto/traer", "puesto/borrar/");
+
+    this.agregarLista("herramienta/crear", herramientas);
+    this.agregarLista("puesto/crear", puestos);
 
     this.datosPorfolio.putEdicion("experiencias/editar/" + experienciaBuscada.id, this.obj).subscribe(() => {
       console.log("ok");
@@ -138,31 +146,45 @@ export class ExperienciaLaboralComponent {
     return experienciaBuscado;
   }
 
-  private setobj(){
-  this.obj.descripcion = this.descripcion;
-  this.obj.imgTrabajo = this.imgTrabajo;
-  this.obj.inicio = this.inicio;
-  this.obj.fin = this.fin;
+  private setobj() {
+    this.obj.descripcion = this.descripcion;
+    this.obj.imgTrabajo = this.imgTrabajo;
+    this.obj.inicio = this.inicio;
+    this.obj.fin = this.fin;
   }
 
   borrarItemsLista(apiUrl: string, apiUrlDelete: string) {
-    let listaBorrar: any[] = [];
     this.datosPorfolio.getContenido(apiUrl).subscribe(data => {
-      listaBorrar = data;
-    });
-    listaBorrar.forEach(element => {
-      if (this.idExperiencia == element.experiencia_id) {
-        this.datosPorfolio.deleteContenido(apiUrlDelete + this.idExperiencia);
-      }
+      this.listaBorrar = data;
+      console.log(this.listaBorrar);
+      this.borrarLista(apiUrlDelete);
     });
   }
 
-  agregarLista(apiUrl: string, herramientas: any[]) {
-    herramientas.forEach(element => {
-      this.datosPorfolio.postCreacion(apiUrl, element);
-      console.log("ok");
-    });
+  private borrarLista(apiUrlDelete: string) {
+    console.log(this.listaBorrar);
+    for (let index = 0; index < this.listaBorrar.length; index++) {
+      const element = this.listaBorrar[index];
 
+      if (this.idExperiencia == element.experiencia_id) {
+        console.log("hola");
+        this.datosPorfolio.deleteContenido(apiUrlDelete + element.id).subscribe(data => {
+          console.log("ok");
+        });
+      }
+    } 
+  }
+
+  agregarLista(apiUrl: string, lista: any[]) {
+    console.log("LISTA QUE ME IMPORTAAAAAAAAAA");
+    
+    console.log(lista);
+    
+    lista.forEach(element => {
+      this.datosPorfolio.postCreacion(apiUrl, element).subscribe(data => {
+        console.log("ok");
+      });;
+    });
   }
 
 
@@ -170,9 +192,7 @@ export class ExperienciaLaboralComponent {
   //--------hijo y Padre------------
 
   agregarHerramienta() {
-   this.herramientas.push(this.herraTexto)
-    console.log(this.herramientas);
-    
+    this.herramientas.push(this.herraTexto)
   }
 
   borrarHerramienta() {
@@ -182,8 +202,6 @@ export class ExperienciaLaboralComponent {
 
   agregarPuesto() {
     this.puestos.push(this.puestoTexto)
-    console.log(this.puestos);
-
   }
 
   borrarPuesto() {
