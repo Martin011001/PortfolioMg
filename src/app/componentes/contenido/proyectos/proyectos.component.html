@@ -18,30 +18,39 @@
 
     <!--------------- tarjeta agregarItem -------------------->
 
-    <div class="tarjetaExpe" *ngIf="botonEdit">
-        <div class="row">
-            <h5 style="margin-bottom: 10px;">Agerga una nueva experiencia</h5>
-        </div>
-
+     <div class="tarjetaExpe" style="padding-bottom: 20px;" *ngIf="botonEdit">
         <div class="row">
             <div class="col-6" style="padding-right: 5px;">
+                <h5 style="margin-bottom: 10px;">Agerga una nueva experiencia</h5>
                 <input type="text" class="form-control inputEdicion" placeholder="Ingresa el conocimiento"
-                    style="margin-bottom: 16px;" [(ngModel)]="detalle">
+                    style="margin-bottom: 16px;" [(ngModel)]="descripcion">
+
+                <input type="text" class="form-control inputEdicion" placeholder="✳ Ingresa la Carrera" name="Carrera"
+                    id="Carrera" style="margin-bottom: 16px;" [(ngModel)]="descripcion">
             </div>
 
             <div class="col-6" style="padding-left: 5px;">
-                <input type="text" class="form-control inputEdicion" placeholder="Ingresa Url del Logo"
-                    style="margin-bottom: 16px;" [(ngModel)]="detalle">
+                <div class="row">
+                    <div class="col-6 paddingCero" style="padding-right: 6px; margin-top: 5px;">
+                        <label for="" style="margin-left: 3px;">
+                            <h6>Inicio</h6>
+                        </label>
+                        <input type="date" class="form-control inputEdicion" name="fechaInicio" id="fechaInicio"
+                            placeholder="Ingresa fecha de Inicio" name="descripcion" id="descripcion" [(ngModel)]="descripcion">
+                    </div>
 
-                <select class="form-select inputEdicion" aria-label="Default select example"
-                    style="color: white; margin-bottom: 16px;" [(ngModel)]="detalle"
-                    placeholder="Ingresa el tipo">
-                    <option selected>Lenguaje</option>
-                    <option value="Framework">Framework</option>
-                    <option value="Habilidades Blandas">Habilidad Blanda</option>
-                </select>
+                    <div class="col-6 paddingCero" style="padding-left: 6px; margin-top: 5px;">
+                        <label for="" style="margin-left: 3px;">
+                            <h6>Fin</h6>
+                        </label>
+                        <input type="date" class="form-control inputEdicion" name="fechaFin" id="fechaFin"
+                            placeholder="Ingresa fecha de Fin" name="descripcion" id="descripcion" [(ngModel)]="descripcion">
+                    </div>
 
-                <button class="btn btn-primary buttonSesion" style="float: right;" type="button"
+                    <input type="text" class="form-control inputEdicion" placeholder="Ingresa Url de la Institucion"
+                        name="urlInstitucion" id="urlInstitucion" style="margin-top: 16px;" [(ngModel)]="descripcion">
+                </div>
+                <button class="btn btn-primary buttonSesion" style="float: right; margin-top: 16px;" type="button"
                     id="button-addon2">Agregar
                     Educacion</button>
             </div>
@@ -49,7 +58,6 @@
     </div>
 
     <!--------------------------------------------->
-
 
     <app-item-proyecto *ngFor="let proyectoItem of proyectos" [itemProyecto]="proyectoItem"></app-item-proyecto>
 

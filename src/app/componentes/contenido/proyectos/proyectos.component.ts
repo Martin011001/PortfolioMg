@@ -9,19 +9,27 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
 export class ProyectosComponent {
 
   proyectos: any;
-  miPorfolio:any;
+  miPorfolio: any;
 
   botonEdit: boolean = false;
 
-  detalle:String = "";
-  inicio:String = "";
-  fin:String = "";
-  
-  constructor(private datosPorfolio:PorfolioService){
-    
+  //--------- variables Padre/Hijo -------------
+
+  titulo: String = "";
+  detalle: String = "";
+  descripcion: String = "";
+  inicio: String = "";
+  fin: String = "";
+
+
+  //----------------------
+
+
+  constructor(private datosPorfolio: PorfolioService) {
+
   }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.datosPorfolio.obtenerdatos().subscribe(data => {
       console.log(data)
       this.miPorfolio = data.contenido.tarjeta5;
@@ -41,7 +49,7 @@ export class ProyectosComponent {
 
 
 
-  
-  
+
+
 }
 
