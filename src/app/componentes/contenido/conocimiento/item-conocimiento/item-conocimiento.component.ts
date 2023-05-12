@@ -7,23 +7,18 @@ import { ConocimientoComponent } from '../conocimiento.component';
   templateUrl: './item-conocimiento.component.html',
   styleUrls: ['./item-conocimiento.component.css']
 })
-export class ItemConocimientoComponent{
+export class ItemConocimientoComponent {
 
   color: String = "";
 
   idCapturado: String = "";
 
-  progreso: string = "";
+  progreso: string = "50";
   conocimiento: string = "";
   logo: string = "";
-  tipo:string = "";
+  tipo: string = "";
 
-  obj = {
-    "progreso": "",
-    "conocimiento": "",
-    "logo": "",
-    "tipo": ""
-  }
+
 
   @Output() idConocimiento = new EventEmitter();
   @Output() objetoEdit = new EventEmitter();
@@ -32,22 +27,16 @@ export class ItemConocimientoComponent{
   @Input() itemConocimiento: any = "";
 
   constructor(private datosPorfolio: PorfolioService) {
-
+    this.setVariables()
   }
 
-  ngOnInit(){
+  private setVariables() {
     this.progreso = this.itemConocimiento.progreso;
     this.conocimiento = this.itemConocimiento.conocimiento;
     this.logo = this.itemConocimiento.logo;
     this.tipo = this.itemConocimiento.tipo;
   }
 
-  setObj(){
-    this.obj.progreso = this.progreso;
-    this.obj.conocimiento = this.conocimiento;
-    this.obj.logo = this.logo;
-    this.obj.tipo = this.tipo;
-  }
 
   colorProgreso(): String {
     if (this.itemConocimiento.progreso <= 25) {
@@ -64,18 +53,17 @@ export class ItemConocimientoComponent{
 
   capturarId(id: String) {
     this.idCapturado = id;
-    this.idConocimiento.emit(id);    
+    this.idConocimiento.emit(id);
   }
 
   editarConocimientoPut() {
-    this.setObj();
-    this.itemConocimiento = this.obj;  
-    this.objetoEdit.emit(this.obj);
+    let obj = { "progreso": this.progreso, "conocimiento": this.conocimiento, "logo": this.logo, "tipo": this.tipo }
+    this.objetoEdit.emit(obj);
   }
 
-  deleteConocimiento(){
+  deleteConocimiento() {
     this.deleteItem.emit();
   }
-  
+
 
 }

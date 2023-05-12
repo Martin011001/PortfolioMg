@@ -53,8 +53,6 @@
 
     <!-------------- Alerta edicion ------------>
 
-
-    <!-- Modal Edit -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content ventanaEdicion">
@@ -95,8 +93,7 @@
                             <label for="range" class="form-label">
                                 <h6>Progreso del conocimiento {{ progreso + '%' }}</h6>
                             </label>
-                            <input type="range" class="form-range" id="range" min="0" max="100"
-                                [(ngModel)]="progreso">
+                            <input type="range" class="form-range" id="range" min="0" max="100" [(ngModel)]="progreso">
                         </div>
 
                     </div>
@@ -111,8 +108,10 @@
         </div>
     </div>
 
+    <!-------------- Alerta edicion ------------>
 
-    <!-- Modal Delete -->
+
+    <!------------ Modal Delete ------------>
 
     <div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabelDelete"
         aria-hidden="true">
@@ -132,3 +131,5 @@
             </div>
         </div>
     </div>
+
+    <!------------ Modal Delete ------------>

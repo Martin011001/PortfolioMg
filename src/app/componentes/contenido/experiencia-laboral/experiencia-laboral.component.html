@@ -28,7 +28,7 @@
 
                     <div class="input-group mb-3">
                         <input type="text" class="form-control inputEdicion"
-                            placeholder="Ingresar Puestos y Actividades" aria-label="Ingresar Puestos y Actividades"
+                            placeholder="✳ Ingresar Puestos y Actividades" aria-label="Ingresar Puestos y Actividades"
                             aria-describedby="button-addon2" [(ngModel)]="puestoTexto">
                         <button class="btn btn-primary buttonSesion" type="button" id="button-addon2"
                             (click)="agregarPuesto()">💼 Add</button>
@@ -36,7 +36,7 @@
 
                     <div class="input-group mb-3">
                         <input type="text" class="form-control inputEdicion" placeholder="Adjunta una imagen"
-                            aria-label="Ingresar Herramientas" aria-describedby="button-addon2">
+                            aria-label="Ingresar Herramientas" aria-describedby="button-addon2" [(ngModel)]="imgTrabajo">
                         <button class="btn btn-primary buttonSesion" type="button" id="button-addon2">📷 Image</button>
                     </div>
 
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="input-group mb-3" style="margin-top: 16px;">
-                        <input type="text" class="form-control inputEdicion" placeholder="Ingresar Herramientas"
+                        <input type="text" class="form-control inputEdicion" placeholder="✳ Ingresar Herramientas"
                             aria-label="Ingresar Herramientas" aria-describedby="button-addon2"
                             [(ngModel)]="herraTexto">
                         <button class="btn btn-primary buttonSesion" type="button" id="button-addon2"
@@ -94,7 +94,7 @@
                     </div>
 
                     <button class="btn btn-primary buttonSesion" style="float: right;" type="button"
-                        id="button-addon2">Agregar Experiencia</button>
+                        id="button-addon2"(click)="agregarExperiencia()">Agregar Experiencia</button>
 
                 </div>
             </div>
@@ -105,6 +105,6 @@
     <!--------------------------------------------->
 
 
-    <app-item-laboral *ngFor="let expe of experiencia" [itemExpe]="expe"></app-item-laboral>
+    <app-item-laboral *ngFor="let expe of experiencia" [itemExpe]="expe" (capturarIdHijo)="capturarId($event)"></app-item-laboral>
 
 </div>

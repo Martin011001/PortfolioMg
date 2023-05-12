@@ -19,8 +19,9 @@ export class ConocimientoComponent {
   habilidadesBlandas: boolean = false;
   buscado: string = "";
 
-  idConocimiento: String = "";
-  objCreate: any = {};
+  idConocimiento: Number = 0;
+  objCreate = { "progreso": "50", "conocimiento": "", "logo": "", "tipo": "" }
+
 
   
   botonEdit:boolean = false;
@@ -60,7 +61,7 @@ export class ConocimientoComponent {
     return this.botonEdit == false ? this.botonEdit = true : this.botonEdit = false;
   }
 
-  public capturarId(id: any) {
+  public capturarId(id: Number) {
     this.idConocimiento = id;
   }
 
@@ -70,7 +71,9 @@ export class ConocimientoComponent {
     this.datosPorfolio.postCreacion("conocimiento/crear", this.objCreate).subscribe(() => {
       console.log("ok");
     });
-    window.location.reload();
+    setTimeout(function () {
+      window.location.reload();
+    }, 3000);
   }
 
   editarConocimiento(obj: any) {
@@ -86,7 +89,9 @@ export class ConocimientoComponent {
         console.log("ok");
       });
     }
-    window.location.reload();
+    setTimeout(function () {
+      window.location.reload();
+    }, 3000);
   }
 
   private buscarConocimiento(): any {
@@ -106,7 +111,9 @@ export class ConocimientoComponent {
     this.datosPorfolio.deleteContenido("conocimiento/borrar/" + this.idConocimiento).subscribe(() => {
       console.log("ok");
     });
-    window.location.reload();
+    setTimeout(function () {
+      window.location.reload();
+    }, 3000);
   }
 
 
