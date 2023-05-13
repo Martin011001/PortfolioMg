@@ -1,6 +1,7 @@
 import { Component, Output } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
+
 @Component({
   selector: 'app-experiencia-laboral',
   templateUrl: './experiencia-laboral.component.html',
@@ -19,13 +20,10 @@ export class ExperienciaLaboralComponent {
 
   listaBorrar: any[] = [];
 
-  //--------hijo y Padre------------
-
   descripcion: String = "";
   imgTrabajo: String = "";
   inicio: String = "";
   fin: String = "";
-
 
   herraTexto: String = "";
   puestoTexto: String = "";
@@ -56,7 +54,6 @@ export class ExperienciaLaboralComponent {
 
   //------------------------------
 
-
   constructor(private datosPorfolio: PorfolioService) {
 
   }
@@ -80,13 +77,12 @@ export class ExperienciaLaboralComponent {
     return this.botonEdit == false ? this.botonEdit = true : this.botonEdit = false;
   }
 
-  public capturarId(id: any){
-    this.idExperiencia = id;
+  capturarId(id: Number) {
     console.log(id);
+    this.idExperiencia = id;
   }
 
   agregarExperiencia() {
-
     this.setobj();
 
     this.datosPorfolio.postCreacion("experiencias/crear", this.obj).subscribe(response => {
@@ -115,16 +111,18 @@ export class ExperienciaLaboralComponent {
     }, 3000); */
   }
 
-  editarExperiencia() {
+  editarExperiencia(obj: any) {
     console.log(this.idExperiencia);
+    let herramientasNombres: String[] = obj.herramientas;
+    let puestosNombres: String[] = obj.puestos;
 
     this.obj = this.buscarExperiencia();
     this.setobj();
 
-    const herramientas = this.herramientas.map(item => {
+    const herramientas = herramientasNombres.map(item => {
       return { nombre: item, experiencia_id: this.idExperiencia }
     })
-    const puestos = this.puestos.map(item => {
+    const puestos = puestosNombres.map(item => {
       return { nombre: item, experiencia_id: this.idExperiencia }
     })
     if (herramientas.length > 0) {
@@ -136,7 +134,7 @@ export class ExperienciaLaboralComponent {
       this.agregarLista("puesto/crear", puestos);
     }
 
-    this.datosPorfolio.putEdicion("experiencias/editar/" + this.obj.id, this.obj).subscribe(() => {
+    this.datosPorfolio.putEdicion("experiencias/editar/" + this.idExperiencia, this.obj.objEdit).subscribe(() => {
       console.log("ok");
     });
   }
@@ -162,7 +160,6 @@ export class ExperienciaLaboralComponent {
     if (this.fin != "") this.obj.fin = this.fin;
   }
 
-
   private borrarLista(apiUrlDelete: string, lista: any[]) {
     for (let index = 0; index < lista.length; index++) {
       const element = lista[index];
@@ -176,46 +173,43 @@ export class ExperienciaLaboralComponent {
 
   agregarLista(apiUrl: string, lista: any[]) {
     lista.forEach(element => {
-      this.datosPorfolio.postCreacion(apiUrl, element).subscribe(data => {
+      console.log(lista);
+      this.datosPorfolio.postCreacion(apiUrl, element).subscribe(() => {
         console.log("ok");
-      });;
+      });
     });
   }
 
-  deleteExpe() {
+  deleteExpe(id: String) {
     console.log(this.idExperiencia);
     this.datosPorfolio.deleteContenido("experiencias/borrar/" + this.idExperiencia).subscribe(() => {
 
       this.borrarLista("herramienta/borrar/", this.herramientaData)
       this.borrarLista("puesto/borrar/", this.puestoData)
     });
+
     /* window.location.reload(); */
   }
 
 
-  //--------hijo y Padre------------
+  //--------Logica add elemnts a listas------------
 
   agregarHerramienta() {
     if (this.herraTexto != "") this.herramientas.push(this.herraTexto);
     this.herraTexto = "";
   }
-
   borrarHerramienta() {
     this.herramientas.pop();
   }
-
-
   agregarPuesto() {
     if (this.puestoTexto != "") this.puestos.push(this.puestoTexto);
     this.puestoTexto = "";
   }
-
   borrarPuesto() {
     this.puestos.pop();
   }
 
-
-  //------------------------------
+  //--------Logica add elemnts a listas------------
 
 
 

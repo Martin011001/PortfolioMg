@@ -21,12 +21,12 @@
     <div class="tarjetaExpe" style="padding-bottom: 20px;" *ngIf="botonEdit">
         <div class="row">
             <div class="col-6" style="padding-right: 5px;">
-                <h5 style="margin-bottom: 10px;">Agerga una nueva experiencia</h5>
-                <input type="text" class="form-control inputEdicion" placeholder="Ingresa el conocimiento"
+                <h5 style="margin-bottom: 10px;">Agerga una nueva Educación</h5>
+                <input type="text" class="form-control inputEdicion" placeholder="Ingresa una descripcion"
                     style="margin-bottom: 16px;" [(ngModel)]="descripcion">
 
-                <input type="text" class="form-control inputEdicion" placeholder="✳ Ingresa la Carrera" name="Carrera"
-                    id="Carrera" style="margin-bottom: 16px;" [(ngModel)]="carrera">
+                <input type="text" class="form-control inputEdicion" placeholder="✳ Ingresa la Carrera" name="carrera"
+                    id="carrera" style="margin-bottom: 16px;" [(ngModel)]="carrera">
 
                 <input type="text" class="form-control inputEdicion" placeholder="✳ Ingresa el titulo" name="titulo"
                     id="titulo" [(ngModel)]="titulo">
@@ -51,11 +51,11 @@
                     </div>
 
                     <input type="text" class="form-control inputEdicion" placeholder="Ingresa Url de la Institucion"
-                        name="urlInstitucion" id="urlInstitucion" style="margin-top: 16px;" [(ngModel)]="urlInstitucion">
+                        name="urlInstitucion" id="urlInstitucion" style="margin-top: 16px;"
+                        [(ngModel)]="imgInstitucion">
                 </div>
-                {{ urlInstitucion }}
                 <button class="btn btn-primary buttonSesion" style="float: right; margin-top: 16px;" type="button"
-                    id="button-addon2">Agregar
+                    id="button-addon2" (click)="agregarEducacion()">Agregar
                     Educacion</button>
             </div>
         </div>
@@ -63,6 +63,7 @@
 
     <!--------------------------------------------->
 
-    <app-item-educacion *ngFor="let edu of estudio" [itemEdu]="edu"></app-item-educacion>
+    <app-item-educacion *ngFor="let edu of estudio" [itemEdu]="edu" (idEducacionHijo)="capturarId($event)"
+        (objEdit)="editarEducacion($event)" (objDelete)="deleteEducacion()"></app-item-educacion>
 
 </div>

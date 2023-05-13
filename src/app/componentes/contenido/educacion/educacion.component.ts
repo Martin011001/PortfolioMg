@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 @Component({
@@ -12,31 +12,33 @@ export class EducacionComponent {
   miPorfolio: any;
 
   descripcion: String = "";
-  urlInstitucion: String = "";
+  imgInstitucion: String = "";
   inicio: String = "";
   fin: String = "";
   carrera: String = "";
   titulo: String = "";
 
   obj: any = {
-    "descripcion": this.descripcion,
-    "urlInstitucion": this.urlInstitucion,
-    "inicio": this.inicio,
-    "fin": this.fin
+    "descripcion": "",
+    "imgInstitucion": "",
+    "titulo": "",
+    "carrera": "",
+    "inicio": "",
+    "fin": ""
   }
 
   botonEdit: boolean = false;
-  idEdu: String = "";
+
+  idEducacion: Number = 0;
 
   constructor(private datosPorfolio: PorfolioService) {
 
   }
 
   ngOnInit(): void {
-    this.datosPorfolio.obtenerdatos().subscribe(data => {
+    this.datosPorfolio.getContenido("educacion/traer").subscribe(data => {
       console.log(data)
-      this.miPorfolio = data.contenido.tarjeta3;
-      this.estudio = data.contenido.tarjeta3.estudios;
+      this.estudio = data;
     });
   }
 
@@ -44,36 +46,51 @@ export class EducacionComponent {
     return this.botonEdit == false ? this.botonEdit = true : this.botonEdit = false;
   }
 
-  capturarId(id: String) {
-    this.idEdu = id;
+  capturarId(id: Number) {
+    console.log(id);
+    this.idEducacion = id;
+    console.log(this.idEducacion);
   }
 
-  agregarEducacion(){
+  agregarEducacion() {
     console.log(this.obj);
-    
+    this.setObj();
     this.datosPorfolio.postCreacion("educacion/crear", this.obj).subscribe(() => {
       console.log("ok");
     });
-    window.location.reload();
+    /* window.location.reload(); */
   }
 
   deleteEducacion() {
-    this.datosPorfolio.deleteContenido("educacion/borrar/" + this.idEdu).subscribe(() => {
+    console.log(this.idEducacion);
+
+    this.datosPorfolio.deleteContenido("educacion/borrar/" + this.idEducacion).subscribe(() => {
       console.log("ok");
     });
-    window.location.reload();
+    /* window.location.reload(); */
   }
 
-  editarEducacion() {
+  setObj() {
+    this.obj.descripcion = this.descripcion,
+      this.obj.imgInstitucion = this.imgInstitucion,
+      this.obj.titulo = this.titulo,
+      this.obj.carrera = this.carrera,
+      this.obj.inicio = this.inicio,
+      this.obj.fin = this.fin
+  }
+
+  editarEducacion(objEdit:any) {
     let eduBuscada: any = this.buscarConocimiento();
 
     if (eduBuscada != null) {
-      if (this.descripcion != "") eduBuscada.descripcion = this.descripcion;
-      if (this.urlInstitucion != "") eduBuscada.urlInstitucion = this.urlInstitucion;
-      if (this.inicio != "") eduBuscada.inicio = this.inicio;
-      if (this.fin != "") eduBuscada.fin = this.fin;
+      if (objEdit.descripcion != "") eduBuscada.descripcion = objEdit.descripcion;
+      if (objEdit.imgInstitucion != "") eduBuscada.imgInstitucion = objEdit.imgInstitucion;
+      if (objEdit.carrera != "") eduBuscada.carrera = objEdit.carrera;
+      if (objEdit.titulo != "") eduBuscada.titulo = objEdit.titulo;
+      if (objEdit.inicio != "") eduBuscada.inicio = objEdit.inicio;
+      if (objEdit.fin != "") eduBuscada.fin = objEdit.fin;
 
-      this.datosPorfolio.putEdicion("educacion/editar/" + eduBuscada.id, this.obj).subscribe(() => {
+      this.datosPorfolio.putEdicion("educacion/editar/" + eduBuscada.id, eduBuscada).subscribe(() => {
         console.log("ok");
       });
     }
@@ -83,7 +100,7 @@ export class EducacionComponent {
     let EduBuscada: any;
     let i = 0;
     while (i < this.estudio.length && EduBuscada == null) {
-      if (this.estudio[i].id == this.idEdu) {
+      if (this.estudio[i].id == this.idEducacion) {
         EduBuscada = this.estudio[i];
       } else {
         i++;

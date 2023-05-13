@@ -10,6 +10,15 @@ export class EncabezadoComponent {
   miPorfolio:any;
   imagenes:any = ["hola"];
 
+  nombre:String = "";
+  apellido:String = "";
+  trabajoActual:String = "";
+  ubicacion:String = "";
+  imgPerfil:String = "";
+  empresa:String = "";
+  estudio:String = "";
+
+
   constructor(private datosPorfolio:PorfolioService){
 
   }

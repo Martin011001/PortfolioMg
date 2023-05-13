@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
-import { ConocimientoComponent } from '../conocimiento.component';
 
 @Component({
   selector: 'app-item-conocimiento',
@@ -64,6 +63,8 @@ export class ItemConocimientoComponent {
   deleteConocimiento() {
     this.deleteItem.emit();
   }
+
+
 
 
 }

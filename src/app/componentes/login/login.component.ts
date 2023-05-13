@@ -16,7 +16,7 @@ export class LoginComponent {
   @Output() salir = new EventEmitter;
   @Output() irAlNav = new EventEmitter;
 
-  respuesta:String = "";
+  respuesta:any;
 
   buttonCrear:String = "none";
   form: FormGroup;

@@ -6,18 +6,27 @@
         </div>
 
         <div class="col-3" style="padding-right: 0;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white"
-                class="bi bi-x-circle btnSalidaExpe" viewBox="0 0 16 16" (click)="deleteEducacion()">
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                <path
-                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-            </svg>
+            <!-- Button Delete -->
+            <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"
+                (click)="capturarId(itemEdu.id)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white"
+                    class="bi bi-x-circle btnSalidaExpe" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+            <!-- Button Delete -->
+
             <!-- Button trigger modal -->
-            <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-right: 8px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-gear" (click)="capturarId(itemEdu.id)"
-                    viewBox="0 0 16 16" style="margin-bottom: 4px;">
-                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
-                    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+            <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                style="margin-right: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-gear"
+                    (click)="capturarId(itemEdu.id)" viewBox="0 0 16 16" style="margin-bottom: 4px;">
+                    <path
+                        d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                    <path
+                        d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
                 </svg>
             </button>
         </div>
@@ -26,16 +35,13 @@
     <div class="row">
         <div class="col-7">
             <h6 class="tituloitems">Carrera:</h6>
-
-            <div>
-                <ul class="ListaLaboral">
-                    <li *ngFor="let item of itemEdu.puestos" class="itemsLaboral">{{item}}</li>
-                </ul>
-            </div>
+            <ul class="ListaLaboral">
+                <li class="itemsLaboral">{{itemEdu.carrera}}</li>
+            </ul>
 
             <h6 class="tituloitems">Titulo:</h6>
             <ul class="ListaLaboral">
-                <li *ngFor="let itemDos of itemEdu.herramientas" class="itemsLaboral">{{itemDos}}</li>
+                <li class="itemsLaboral">{{itemEdu.titulo}}</li>
             </ul>
         </div>
 
@@ -46,9 +52,7 @@
 </div>
 
 
-
 <!-------------- Alerta edicion ------------>
-
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -87,7 +91,7 @@
                 <div class="row">
                     <div class="col-12" style="margin-top: 16px;">
                         <input type="text" class="form-control inputEdicion" placeholder="Ingresa Url de la Institucion"
-                            name="urlInstitucion" id="urlInstitucion" [(ngModel)]="titulo">
+                            name="urlInstitucion" id="urlInstitucion" [(ngModel)]="imgInstitucion">
                     </div>
 
                     <div class="col-12" style="margin-top: 16px;">
@@ -104,8 +108,33 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary buttonSesion" (click)="editarEducacion()">Guardar Cambios</button>
+                <button type="button" class="btn btn-primary buttonSesion" (click)="editarEducacion()">Guardar
+                    Cambios</button>
             </div>
         </div>
     </div>
 </div>
+
+<!-------------- Alerta edicion ------------>
+
+
+<!------------ Modal Delete ------------>
+
+<div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabelDelete"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ventanaEdicion">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Estas seguro de eliminar?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    style="color: white;"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary buttonSesion" (click)="deleteEducacion()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------ Modal Delete ------------>

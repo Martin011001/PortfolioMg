@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { EducacionComponent } from '../educacion.component';
 
 
@@ -8,12 +7,32 @@ import { EducacionComponent } from '../educacion.component';
   templateUrl: './item-educacion.component.html',
   styleUrls: ['./item-educacion.component.css']
 })
-export class ItemEducacionComponent extends EducacionComponent{
+export class ItemEducacionComponent {
 
   @Input() itemEdu: any = "";
+  @Output() idEducacionHijo = new EventEmitter();
+  @Output() objEdit = new EventEmitter();
+  @Output() objDelete = new EventEmitter();
 
-  onDelete(){
-    console.log("DELETE");
-    
+  descripcion: String = "";
+  imgInstitucion: String = "";
+  inicio: String = "";
+  fin: String = "";
+  carrera: String = "";
+  titulo: String = "";
+
+  capturarId(id:String){
+    this.idEducacionHijo.emit(id)
   }
+
+  editarEducacion(){
+    let obj = {"descripcion":this.descripcion, "titulo":this.titulo, "carrera":this.carrera,
+              "imgInstitucion":this.imgInstitucion, "inicio":this.inicio, "fin":this.fin}
+    this.objEdit.emit(obj);
+  }
+
+  deleteEducacion(){
+    this.objDelete.emit();
+  }
+
 }

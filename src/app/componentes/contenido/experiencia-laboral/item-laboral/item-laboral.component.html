@@ -7,7 +7,7 @@
         <div class="col-3" style="padding-right: 0;">
             <!-- Button Delete -->
             <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"
-                (click)="capturarIdHijo(itemExpe.id)">
+                (click)="capturarId(itemExpe.id)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white"
                     class="bi bi-x-circle btnSalidaExpe" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -19,7 +19,7 @@
 
             <!-- Button Edit -->
             <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                style="margin-right: 8px;" (click)="capturarIdHijo(itemExpe.id)">
+                style="margin-right: 8px;" (click)="capturarId(itemExpe.id)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-gear"
                     viewBox="0 0 16 16" style="margin-bottom: 4px;">
                     <path
@@ -35,25 +35,21 @@
     <div class="row" style="margin-top: 20px;">
         <div class="col-5">
             <h6 class="tituloitems">💼 Puesto y actividad:</h6>
-
-            <div>
-                <ul class="ListaLaboral">
-                    <li *ngFor="let item of buscarPuestos(itemExpe.id)" class="itemsLaboral">{{item}}</li>
-                </ul>
-            </div>
+            <ul class="ListaLaboral">
+                <li *ngFor="let item of buscarPuestos(itemExpe.id)" class="itemsLaboral">{{item}}</li>
+            </ul>
         </div>
 
         <div class="col-4">
             <h6 class="tituloitems">🔧 Herramientas:</h6>
             <ul class="ListaLaboral">
-                <li *ngFor="let itemDos of buscarHerramientas(itemExpe.id)" class="itemsLaboral">{{itemDos}}</li>
+                <li *ngFor="let item of buscarHerramientas(itemExpe.id)" class="itemsLaboral">{{item}}</li>
             </ul>
         </div>
 
-        <div class="col-3" style="text-align: center;">
+        <div class="col-3" style="text-align: center; margin-bottom: 10px;">
             <img class="imgTrabajo" [src]="itemExpe.imgTrabajo" height="100" width="100">
         </div>
-
     </div>
 </div>
 
@@ -148,7 +144,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary buttonSesion" (click)="editarExperiencia()">Guardar
+                <button type="button" class="btn btn-primary buttonSesion" (click)="editExperienciaHijo()">Guardar
                     Cambios</button>
             </div>
         </div>
@@ -172,7 +168,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-primary buttonSesion"
-                    (click)="deleteExpe()">Eliminar</button>
+                    (click)="deleteExperienciaHijo()">Eliminar</button>
             </div>
         </div>
     </div>

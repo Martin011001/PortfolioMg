@@ -304,6 +304,21 @@ a {
   margin-bottom: 16px;
   background-color: rgba(45, 45, 45, 0.934);
 }
+
+.fotoEdit{
+  width: 130px;
+  height: 130px;
+  border-radius: 150px;
+  border: 5px solid rgba(233, 229, 229, 0.738);
+}
+
+.fotoEditBtn{
+  position: absolute;
+  border-radius: 50px;
+  margin-top: 10px;
+  background-color: rgb(61, 57, 57);
+  margin-left: 230px;
+}
 /*-------------- Experiencia Laboral ---------------*/
 
 .imgTrabajo {

@@ -61,7 +61,7 @@ export class ConocimientoComponent {
     return this.botonEdit == false ? this.botonEdit = true : this.botonEdit = false;
   }
 
-  public capturarId(id: Number) {
+  public capturarId(id: Number) {    
     this.idConocimiento = id;
   }
 

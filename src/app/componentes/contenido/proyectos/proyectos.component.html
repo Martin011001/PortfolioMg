@@ -1,5 +1,5 @@
 <div class="container tarjeta">
-    
+
     <div class="row">
         <div class="col-11" style="margin-bottom: 30px;">
             <h3>Proyectos</h3>
@@ -18,47 +18,32 @@
 
     <!--------------- tarjeta agregarItem -------------------->
 
-     <div class="tarjetaExpe" style="padding-bottom: 20px;" *ngIf="botonEdit">
+    <div class="tarjetaExpe" style="padding-bottom: 20px;" *ngIf="botonEdit">
         <div class="row">
             <div class="col-6" style="padding-right: 5px;">
                 <h5 style="margin-bottom: 10px;">Agerga una nueva experiencia</h5>
-                <input type="text" class="form-control inputEdicion" placeholder="Ingresa el conocimiento"
-                    style="margin-bottom: 16px;" [(ngModel)]="descripcion">
+                <input type="text" class="form-control inputEdicion" placeholder="Ingresa el Titulo de tu proyecto"
+                    style="margin-bottom: 16px;" [(ngModel)]="titulo">
 
-                <input type="text" class="form-control inputEdicion" placeholder="✳ Ingresa la Carrera" name="Carrera"
-                    id="Carrera" style="margin-bottom: 16px;" [(ngModel)]="descripcion">
+                <input type="text" class="form-control inputEdicion" placeholder="Ingresa la descripcion"
+                    name="descripcion" id="descripcion" style="margin-bottom: 16px;" [(ngModel)]="descripcion">
             </div>
 
             <div class="col-6" style="padding-left: 5px;">
-                <div class="row">
-                    <div class="col-6 paddingCero" style="padding-right: 6px; margin-top: 5px;">
-                        <label for="" style="margin-left: 3px;">
-                            <h6>Inicio</h6>
-                        </label>
-                        <input type="date" class="form-control inputEdicion" name="fechaInicio" id="fechaInicio"
-                            placeholder="Ingresa fecha de Inicio" name="descripcion" id="descripcion" [(ngModel)]="descripcion">
-                    </div>
+                <input type="text" class="form-control inputEdicion" placeholder="✳ Ingresa el detalle" name="detalle"
+                    id="detalle" style="margin-top: 33px;" [(ngModel)]="detalle">
 
-                    <div class="col-6 paddingCero" style="padding-left: 6px; margin-top: 5px;">
-                        <label for="" style="margin-left: 3px;">
-                            <h6>Fin</h6>
-                        </label>
-                        <input type="date" class="form-control inputEdicion" name="fechaFin" id="fechaFin"
-                            placeholder="Ingresa fecha de Fin" name="descripcion" id="descripcion" [(ngModel)]="descripcion">
-                    </div>
-
-                    <input type="text" class="form-control inputEdicion" placeholder="Ingresa Url de la Institucion"
-                        name="urlInstitucion" id="urlInstitucion" style="margin-top: 16px;" [(ngModel)]="descripcion">
-                </div>
                 <button class="btn btn-primary buttonSesion" style="float: right; margin-top: 16px;" type="button"
-                    id="button-addon2">Agregar
-                    Educacion</button>
+                    id="button-addon2" (click)="agregarProyecto()">Agregar
+                    Proyecto</button>
             </div>
         </div>
     </div>
 
     <!--------------------------------------------->
 
-    <app-item-proyecto *ngFor="let proyectoItem of proyectos" [itemProyecto]="proyectoItem"></app-item-proyecto>
+    <app-item-proyecto *ngFor="let proyectoItem of proyectos" [itemProyecto]="proyectoItem"
+        (idProyectoHijo)="capturarId($event)" (objEdit)="editarProyecto($event)"
+        (objDelete)="deleteProyecto()"></app-item-proyecto>
 
 </div>
