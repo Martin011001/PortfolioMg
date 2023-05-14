@@ -90,5 +90,5 @@
 
     <app-item-conocimiento class="paddingCero" *ngFor="let item of filtro()" [itemConocimiento]="item"
         (idConocimiento)="capturarId($event)" (objetoEdit)="editarConocimiento($event)"
-        (deleteItem)="deleteConocimiento()" [admin]="user.admin"></app-item-conocimiento>
+        (deleteItem)="deleteConocimiento()" [admin]="user.vista"></app-item-conocimiento>
 </div>

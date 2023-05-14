@@ -109,6 +109,6 @@
 
     <app-item-laboral *ngFor="let expe of experiencia" [itemExpe]="expe" [herramientaData]="herramientaData"
         [puestoData]="puestoData" (idHijo)="capturarId($event)" (deleteExperiencia)="deleteExpe($event)"
-        (editExperiencia)="editarExperiencia($event)" [admin]="user.admin"></app-item-laboral>
+        (editExperiencia)="editarExperiencia($event)" [admin]="user.vista"></app-item-laboral>
 
 </div>

@@ -44,6 +44,6 @@
 
     <app-item-proyecto *ngFor="let proyectoItem of proyectos" [itemProyecto]="proyectoItem"
         (idProyectoHijo)="capturarId($event)" (objEdit)="editarProyecto($event)"
-        (objDelete)="deleteProyecto()" [admin]="user.admin"></app-item-proyecto>
+        (objDelete)="deleteProyecto()" [admin]="user.vista"></app-item-proyecto>
 
 </div>
