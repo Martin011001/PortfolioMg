@@ -10,6 +10,7 @@ import { API_URL } from 'src/config';
 export class PorfolioService {
 
   private apiUrlBase = API_URL
+  private apiUrlBasePrueba = "https://portafolio-martin-gagliardi-2669.onrender.com/"
 
   constructor(private http:HttpClient) { }
 
@@ -18,19 +19,19 @@ export class PorfolioService {
   }
 
   public getContenido(apiUrl:string): Observable<any>{
-    return this.http.get(this.apiUrlBase + apiUrl);
+    return this.http.get(this.apiUrlBasePrueba + apiUrl);
   }
 
   public putEdicion(apiUrl:string, body:any): Observable<any>{
-    return this.http.put(apiUrl, body);
+    return this.http.put(this.apiUrlBasePrueba + apiUrl, body);
   }
 
   public deleteContenido(apiUrl:string): Observable<any>{
-    return this.http.delete(apiUrl)
+    return this.http.delete(this.apiUrlBasePrueba + apiUrl)
   }
 
   public postCreacion(apiUrl:string, body:any): Observable<any>{
-    return this.http.post(apiUrl, body)
+    return this.http.post(this.apiUrlBasePrueba + apiUrl, body)
   }
 
 }

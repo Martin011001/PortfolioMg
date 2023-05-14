@@ -21,12 +21,12 @@
         "logLevel":"debug"
     },
     "/puesto/*":{
-        "target":"https://portafolio-martin-gagliardi-2669.onrender.com",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
         "secure":"false",
         "logLevel":"debug"
     },
     "/experiencias/*":{
-        "target":"https://portafolio-martin-gagliardi-2669.onrender.com",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
         "secure":"false",
         "logLevel":"debug"
     },
