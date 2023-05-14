@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 @Component({
   selector: 'app-item-proyecto',
@@ -8,13 +9,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ItemProyectoComponent{
 
   @Input() itemProyecto: any = "";
+  @Input() admin: any = "";
   @Output() idProyectoHijo = new EventEmitter();
   @Output() objEdit = new EventEmitter();
   @Output() objDelete = new EventEmitter();
 
+
   titulo: String = "";
   detalle: String = "";
   descripcion: String = "";
+
+  constructor(private datosPorfolio: PorfolioService) {
+
+  }
 
   capturarId(id:String){
     this.idProyectoHijo.emit(id)
@@ -28,4 +35,6 @@ export class ItemProyectoComponent{
   deleteProyecto(){
     this.objDelete.emit();
   }
+
+  
 }

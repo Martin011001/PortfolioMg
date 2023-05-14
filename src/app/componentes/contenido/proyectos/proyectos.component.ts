@@ -20,6 +20,9 @@ export class ProyectosComponent {
   detalle: string = "";
   descripcion: string = "";
 
+  mostrar: boolean = false;
+  user = { "vista": false, "admin": false };
+
   constructor(private datosPorfolio: PorfolioService) {
 
   }
@@ -29,6 +32,7 @@ export class ProyectosComponent {
       console.log(data)
       this.proyectos = data;
     });
+    this.mostrarUser();
   }
 
   capturarId(id: Number) {
@@ -42,14 +46,15 @@ export class ProyectosComponent {
   }
 
   agregarProyecto() {
-    console.log(this.objCreate);
-    this.setObj();
-    this.datosPorfolio.postCreacion("proyecto/crear", this.objCreate).subscribe(() => {
-      console.log("ok");
-    });
-    /* setTimeout(function () {
-      window.location.reload();
-    }, 3000); */
+    if (this.user.admin) {
+      this.setObj();
+      this.datosPorfolio.postCreacion("proyecto/crear", this.objCreate).subscribe(() => {
+        console.log("ok");
+      });
+      setTimeout(function () {
+        window.location.reload();
+      }, 2000);
+    }
   }
 
   setObj() {
@@ -61,7 +66,7 @@ export class ProyectosComponent {
   editarProyecto(obj: any) {
     let proyectoBuscado: any = this.buscarproyecto();
 
-    if (proyectoBuscado != null) {
+    if (proyectoBuscado != null && this.user.admin) {
       if (obj.titulo != "") proyectoBuscado.titulo = obj.titulo;
       if (obj.detalle != "") proyectoBuscado.detalle = obj.detalle;
       if (obj.descripcion != "") proyectoBuscado.descripcion = obj.descripcion;
@@ -72,7 +77,7 @@ export class ProyectosComponent {
     }
     setTimeout(function () {
       window.location.reload();
-    }, 3000);
+    }, 2000);
   }
 
   private buscarproyecto(): any {
@@ -89,15 +94,22 @@ export class ProyectosComponent {
   }
 
   deleteProyecto() {
-    this.datosPorfolio.deleteContenido("proyecto/borrar/" + this.idProyecto).subscribe(() => {
-      console.log("ok");
-    });
-    setTimeout(function () {
-      window.location.reload();
-    }, 3000);
+    if (this.user.admin) {
+      this.datosPorfolio.deleteContenido("proyecto/borrar/" + this.idProyecto).subscribe(() => {
+        console.log("ok");
+      });
+      setTimeout(function () {
+        window.location.reload();
+      }, 2000);
+    }
   }
 
 
-
+  mostrarUser(): any {
+    let permisos = this.datosPorfolio.validators()
+    this.user.admin = permisos.admin;
+    this.user.vista = permisos.vista;
+    this.mostrar = permisos.vista;
+  }
 }
 

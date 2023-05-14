@@ -64,6 +64,6 @@
     <!--------------------------------------------->
 
     <app-item-educacion *ngFor="let edu of estudio" [itemEdu]="edu" (idEducacionHijo)="capturarId($event)"
-        (objEdit)="editarEducacion($event)" (objDelete)="deleteEducacion()"></app-item-educacion>
+        (objEdit)="editarEducacion($event)" (objDelete)="deleteEducacion()" [admin]="user.admin"></app-item-educacion>
 
 </div>

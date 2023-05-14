@@ -7,7 +7,7 @@
 
         <div class="col-3" style="padding-right: 0;">
             <!-- Button Delete -->
-            <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"
+            <button *ngIf="admin" type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModalDelete"
                 (click)="capturarId(itemEdu.id)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white"
                     class="bi bi-x-circle btnSalidaExpe" viewBox="0 0 16 16">
@@ -19,7 +19,7 @@
             <!-- Button Delete -->
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            <button *ngIf="admin" type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal"
                 style="margin-right: 8px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-gear"
                     (click)="capturarId(itemEdu.id)" viewBox="0 0 16 16" style="margin-bottom: 4px;">

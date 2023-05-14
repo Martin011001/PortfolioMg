@@ -22,10 +22,10 @@ export class ConocimientoComponent {
   idConocimiento: Number = 0;
   objCreate = { "progreso": "50", "conocimiento": "", "logo": "", "tipo": "" }
 
-
+  botonEdit: boolean = false;
+  mostrar:boolean = false;
+  user = { "vista": false, "admin": false };
   
-  botonEdit:boolean = false;
-
   constructor(private datosPorfolio: PorfolioService) {
 
   }
@@ -43,6 +43,7 @@ export class ConocimientoComponent {
       console.log(data)
       this.conocimiento = data;
     });
+    this.mostrarUser();
   }
 
   filtro(): any[] {
@@ -61,37 +62,35 @@ export class ConocimientoComponent {
     return this.botonEdit == false ? this.botonEdit = true : this.botonEdit = false;
   }
 
-  public capturarId(id: Number) {    
+  public capturarId(id: Number) {
     this.idConocimiento = id;
   }
 
-  agregarConocimiento(){
+  agregarConocimiento() {
     console.log(this.objCreate);
-    
+
     this.datosPorfolio.postCreacion("conocimiento/crear", this.objCreate).subscribe(() => {
       console.log("ok");
     });
     setTimeout(function () {
       window.location.reload();
-    }, 3000);
+    }, 2000);
   }
 
   editarConocimiento(obj: any) {
     let conocimientoBuscado: any = this.buscarConocimiento();
+    if (obj.progreso != "") conocimientoBuscado.progreso = obj.progreso;
+    if (obj.conocimiento != "") conocimientoBuscado.conocimiento = obj.conocimiento;
+    if (obj.logo != "") conocimientoBuscado.logo = obj.logo;
+    if (obj.tipo != "") conocimientoBuscado.tipo = obj.tipo;
 
-    if (conocimientoBuscado != null) {
-      if (obj.progreso != "") conocimientoBuscado.progreso = obj.progreso;
-      if (obj.conocimiento != "") conocimientoBuscado.conocimiento = obj.conocimiento;
-      if (obj.logo != "") conocimientoBuscado.logo = obj.logo;
-      if (obj.tipo != "") conocimientoBuscado.tipo = obj.tipo;
+    this.datosPorfolio.putEdicion("conocimiento/editar/" + conocimientoBuscado.id, obj).subscribe(() => {
+      console.log("ok");
+    });
 
-      this.datosPorfolio.putEdicion("conocimiento/editar/" + conocimientoBuscado.id, obj).subscribe(() => {
-        console.log("ok");
-      });
-    }
     setTimeout(function () {
       window.location.reload();
-    }, 3000);
+    }, 2000);
   }
 
   private buscarConocimiento(): any {
@@ -113,12 +112,17 @@ export class ConocimientoComponent {
     });
     setTimeout(function () {
       window.location.reload();
-    }, 3000);
+    }, 2000);
   }
 
-
-
-
+  mostrarUser():any{
+    let permisos = this.datosPorfolio.validators()
+    this.user.admin = permisos.admin;
+    this.user.vista = permisos.vista;
+    this.mostrar = permisos.vista;
+   }
 }
+
+
 
 

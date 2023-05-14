@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 @Component({
   selector: 'app-item-laboral',
@@ -11,10 +12,12 @@ export class ItemLaboralComponent {
   @Input() herramientaData: any = "";
   @Input() puestoData: any = "";
 
+  @Input() admin: any = "";
+
   @Output() deleteExperiencia = new EventEmitter();
   @Output() editExperiencia = new EventEmitter();
   @Output() idHijo = new EventEmitter();
-
+  
   mostrarBtnBorrar: boolean = false;
 
   descripcion: String = "";
@@ -29,6 +32,10 @@ export class ItemLaboralComponent {
   herramientas: String[] = [];
 
 
+  constructor(private datosPorfolio: PorfolioService) {
+
+  }
+  
   buscarHerramientas(id: string): String[] {
     let listaDevolver: String[] = [];
     for (let i = 0; i < this.herramientaData.length; i++) {
@@ -61,37 +68,31 @@ export class ItemLaboralComponent {
     let herramientas = this.herramientas
     let puestos = this.puestos;
     let objEdit = { "descripcion": this.descripcion, "imgTrabajo": this.imgTrabajo, "inicio": this.inicio, "fin": this.fin };
-    this.editExperiencia.emit({objEdit, herramientas, puestos})
+    this.editExperiencia.emit({ objEdit, herramientas, puestos })
   }
 
 
-//--------Logica add elemnts a listas------------
+  //--------Logica add elemnts a listas------------
 
-agregarHerramienta() {
-  if (this.herraTexto != "") this.herramientas.push(this.herraTexto);
-  this.herraTexto = "";
-}
-borrarHerramienta() {
-  this.herramientas.pop();
-}
-agregarPuesto() {
-  if (this.puestoTexto != "") this.puestos.push(this.puestoTexto);
-  this.puestoTexto = "";
-}
-borrarPuesto() {
-  this.puestos.pop();
-}
+  agregarHerramienta() {
+    if (this.herraTexto != "") this.herramientas.push(this.herraTexto);
+    this.herraTexto = "";
+  }
+  borrarHerramienta() {
+    this.herramientas.pop();
+  }
+  agregarPuesto() {
+    if (this.puestoTexto != "") this.puestos.push(this.puestoTexto);
+    this.puestoTexto = "";
+  }
+  borrarPuesto() {
+    this.puestos.pop();
+  }
 
-//--------Logica add elemnts a listas------------
-
-
+  //--------Logica add elemnts a listas------------
 
 
-
-
-
-
-
+  
 
 
 

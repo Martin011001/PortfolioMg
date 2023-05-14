@@ -19,7 +19,7 @@
             <!-- Button Delete -->
             <div class="row">
                 <div class="col-12" style="padding: 0px;">
-                    <button type="button" class="btn botonEdit" data-bs-toggle="modal"
+                    <button *ngIf="admin" type="button" class="btn botonEdit" data-bs-toggle="modal"
                         data-bs-target="#exampleModalDelete" (click)="capturarId(itemConocimiento.id)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white"
                             class="bi bi-x-circle btnSalidaExpe" viewBox="0 0 16 16">
@@ -35,7 +35,7 @@
             <!-- Button Edit -->
             <div class="row">
                 <div class="col-12 paddingCero" style="padding-top: 10px;">
-                    <button type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    <button *ngIf="admin" type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         (click)="capturarId(itemConocimiento.id)" style="float: bottom;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
                             class="bi bi-gear" viewBox="0 0 16 16">

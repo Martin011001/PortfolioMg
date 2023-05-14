@@ -9,6 +9,9 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
 export class SobreMiComponent {
   miPorfolio: any;
   mensajeEdit: boolean = false;
+  
+  mostrar:boolean = false;
+  user = { "vista": false, "admin": false };
 
   urlCv: String = "";
   urlImage: String = "";
@@ -18,13 +21,6 @@ export class SobreMiComponent {
 
   }
 
-  /* ngOnInit(): void{
-    this.datosPorfolio.obtenerdatos().subscribe(data =>{
-      console.log(data)
-      this.miPorfolio = data.contenido.tarjeta1;
-    });
-  } */
-
   ngOnInit(): void {
     this.datosPorfolio.getContenido("sobreMi/traer").subscribe(data => {
       console.log(data)
@@ -33,12 +29,15 @@ export class SobreMiComponent {
       this.setUrlCv(this.miPorfolio.urlCv);
       this.setUrImage(this.miPorfolio.imageCv);
     });
+    this.mostrarUser()
   }
 
   editarSobreMi(apiUrl: string): void {
     this.datosPorfolio.putEdicion(apiUrl, this.miPorfolio).subscribe(data => {
-      window.location.reload();
     });
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
   }
 
   private setUrlCv(texto: String) {
@@ -54,7 +53,7 @@ export class SobreMiComponent {
   }
 
   guardarCambios(id: String) {
-    if (id == this.miPorfolio.id) {
+    if (id == this.miPorfolio.id && this.user.admin) {
       this.miPorfolio.texto = this.descripcion == "" ? this.miPorfolio.texto : this.descripcion;
       this.miPorfolio.urlCv = this.urlCv == "" ? this.miPorfolio.urlCv : this.urlCv;
       this.miPorfolio.imageCv = this.urlImage == "" ? this.miPorfolio.imageCv : this.urlImage;
@@ -63,6 +62,12 @@ export class SobreMiComponent {
 
   }
 
+ mostrarUser():any{
+  let permisos = this.datosPorfolio.validators()
+  this.user.admin = permisos.admin;
+  this.user.vista = permisos.vista;
+  this.mostrar = permisos.vista;
+ }
 
 }
 

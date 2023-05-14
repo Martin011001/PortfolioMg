@@ -78,8 +78,8 @@
                     <option value="Habilidades Blandas">Habilidad Blanda</option>
                 </select>
 
-                <button class="btn btn-primary buttonSesion" style="float: right;" type="button"
-                    id="button-addon2" (click)="agregarConocimiento()">Agregar
+                <button class="btn btn-primary buttonSesion" style="float: right;" type="button" id="button-addon2"
+                    (click)="agregarConocimiento()">Agregar
                     Conocimiento</button>
             </div>
         </div>
@@ -90,5 +90,5 @@
 
     <app-item-conocimiento class="paddingCero" *ngFor="let item of filtro()" [itemConocimiento]="item"
         (idConocimiento)="capturarId($event)" (objetoEdit)="editarConocimiento($event)"
-        (deleteItem)="deleteConocimiento()"></app-item-conocimiento>
+        (deleteItem)="deleteConocimiento()" [admin]="user.admin"></app-item-conocimiento>
 </div>

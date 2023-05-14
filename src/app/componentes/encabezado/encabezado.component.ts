@@ -34,9 +34,6 @@ export class EncabezadoComponent {
 
     this.datosPorfolio.getContenido("interes/traer").subscribe(data => {
       this.intereses = data;
-      console.log(this.intereses);
-      console.log("acaaaaaaaaaaaaaaaaaaa");
-      console.log(this.intereses[0].nombre);
     });
   }
 
@@ -57,6 +54,9 @@ export class EncabezadoComponent {
     this.datosPorfolio.putEdicion(apiUrl, this.miPorfolio).subscribe(data => {
       window.location.reload();
     });
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
   }
 
   private setVariables() {

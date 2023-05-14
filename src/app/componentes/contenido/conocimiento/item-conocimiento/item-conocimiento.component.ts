@@ -24,6 +24,7 @@ export class ItemConocimientoComponent {
   @Output() deleteItem = new EventEmitter();
 
   @Input() itemConocimiento: any = "";
+  @Input() admin: any = "";
 
   constructor(private datosPorfolio: PorfolioService) {
     this.setVariables()
@@ -53,6 +54,7 @@ export class ItemConocimientoComponent {
   capturarId(id: String) {
     this.idCapturado = id;
     this.idConocimiento.emit(id);
+
   }
 
   editarConocimientoPut() {
@@ -63,8 +65,5 @@ export class ItemConocimientoComponent {
   deleteConocimiento() {
     this.deleteItem.emit();
   }
-
-
-
 
 }

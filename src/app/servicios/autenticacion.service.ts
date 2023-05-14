@@ -7,11 +7,10 @@ import { Observable } from 'rxjs'
 })
 export class AutenticacionService {
 
-  url = "user/login"
+  url = "https://portafolio-martin-gagliardi-2669.onrender.com/user/login"
   //currentUserSubject: BehaviorSubject<any>;
 
   constructor(private http: HttpClient) {
-    console.log("El servicio corre she bien");
     //this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem("currenUser") || "{}"))
   }
 

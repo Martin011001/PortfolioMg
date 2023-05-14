@@ -30,6 +30,8 @@ export class EducacionComponent {
   botonEdit: boolean = false;
 
   idEducacion: Number = 0;
+  mostrar:boolean = false;
+  user = { "vista": false, "admin": false };
 
   constructor(private datosPorfolio: PorfolioService) {
 
@@ -40,6 +42,7 @@ export class EducacionComponent {
       console.log(data)
       this.estudio = data;
     });
+    this.mostrarUser();
   }
 
   editForm(): boolean {
@@ -58,7 +61,9 @@ export class EducacionComponent {
     this.datosPorfolio.postCreacion("educacion/crear", this.obj).subscribe(() => {
       console.log("ok");
     });
-    /* window.location.reload(); */
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
   }
 
   deleteEducacion() {
@@ -67,7 +72,9 @@ export class EducacionComponent {
     this.datosPorfolio.deleteContenido("educacion/borrar/" + this.idEducacion).subscribe(() => {
       console.log("ok");
     });
-    /* window.location.reload(); */
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
   }
 
   setObj() {
@@ -94,6 +101,9 @@ export class EducacionComponent {
         console.log("ok");
       });
     }
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
   }
 
   private buscarConocimiento(): any {
@@ -109,9 +119,12 @@ export class EducacionComponent {
     return EduBuscada;
   }
 
-
-
-
+  mostrarUser():any{
+    let permisos = this.datosPorfolio.validators()
+    this.user.admin = permisos.admin;
+    this.user.vista = permisos.vista;
+    this.mostrar = permisos.vista;
+   }
 
 
 }

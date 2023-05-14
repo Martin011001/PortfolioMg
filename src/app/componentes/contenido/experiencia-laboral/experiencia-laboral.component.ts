@@ -52,6 +52,9 @@ export class ExperienciaLaboralComponent {
 
   }
 
+  mostrar:boolean = false;
+  user = { "vista": false, "admin": false };
+
   //------------------------------
 
   constructor(private datosPorfolio: PorfolioService) {
@@ -71,6 +74,7 @@ export class ExperienciaLaboralComponent {
       console.log(data)
       this.puestoData = data;
     });
+    this.mostrarUser();
   }
 
   editForm(): boolean {
@@ -83,8 +87,8 @@ export class ExperienciaLaboralComponent {
   }
 
   agregarExperiencia() {
-    this.setobj();
 
+    this.setobj();
     this.datosPorfolio.postCreacion("experiencias/crear", this.obj).subscribe(response => {
       console.log("ok");
 
@@ -106,9 +110,9 @@ export class ExperienciaLaboralComponent {
 
     });
 
-    /* setTimeout(function () {
+    setTimeout(function () {
       window.location.reload();
-    }, 3000); */
+    }, 2000);
   }
 
   editarExperiencia(obj: any) {
@@ -188,7 +192,9 @@ export class ExperienciaLaboralComponent {
       this.borrarLista("puesto/borrar/", this.puestoData)
     });
 
-    /* window.location.reload(); */
+    setTimeout(function () {
+      window.location.reload();
+    }, 2000);
   }
 
 
@@ -212,15 +218,12 @@ export class ExperienciaLaboralComponent {
   //--------Logica add elemnts a listas------------
 
 
-
-
-
-
-
-
-
-
-
+  mostrarUser(): any {
+    let permisos = this.datosPorfolio.validators()
+    this.user.admin = permisos.admin;
+    this.user.vista = permisos.vista;
+    this.mostrar = permisos.vista;
+  }
 
 
 

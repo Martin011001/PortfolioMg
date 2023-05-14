@@ -1,4 +1,4 @@
-<div class="row menuOpciones" [ngClass]="{ 'fixed': isFixed }" (scroll)="onScroll($event)">
+<!-- <div class="row menuOpciones" [ngClass]="{ 'fixed': isFixed }" (scroll)="onScroll($event)">
 
   <div class="col-12" style="padding: 0;">
 
@@ -70,6 +70,30 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</div> -->
+
+<div class="row menuOpciones" [ngClass]="{ 'fixed': isFixed }" (scroll)="onScroll($event)">
+  <div class="col-12" style="padding: 0;">
+    <div class="menuNavegacion">
+      <button routerLink="/Sobre-Mi" aria-current="page" class="ov-btn-slide-left" type="button">Inicio</button>
+    </div>
+    <div class="menuNavegacion">
+      <button routerLink="/Experiencia" aria-current="page" class="ov-btn-slide-left" type="button">Experiencia</button>
+    </div>
+    <div class="menuNavegacion">
+      <button routerLink="/Conocimientos" aria-current="page" class="ov-btn-slide-left"
+        type="button">Conocimiento</button>
+    </div>
+    <div class="menuNavegacion">
+      <button routerLink="/Educacion" aria-current="page" class="ov-btn-slide-left" type="button">Educacion</button>
+    </div>
+    <div class="menuNavegacion">
+      <button routerLink="/Proyectos" aria-current="page" class="ov-btn-slide-left" type="button">Proyectos</button>
+    </div>
+    <div class="menuNavegacion">
+      <button routerLink="/Contacto" aria-current="page" class="ov-btn-slide-left" type="button">Contacto</button>
     </div>
   </div>
 </div>

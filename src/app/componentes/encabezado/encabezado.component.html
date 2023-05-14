@@ -1,4 +1,4 @@
-<header>
+<header class="rowHeader">
 
     <div class="fondoEncabezado">
 
@@ -42,7 +42,7 @@
                 <h6 style="font-weight: 250;">{{miPorfolio.ubicacion}}</h6>
             </div>
 
-            <div class="col-4 floatPiso" style="padding-right: 25px;">
+            <div class="col-4 floatPiso ocultar" style="padding-right: 25px;">
 
                 <h4 style="margin-bottom: 0; padding-top: 10px;">Intereses</h4>
 
@@ -58,7 +58,7 @@
                 </button>
             </div>
 
-            <div class="col-3 floatPiso">
+            <div class="col-3 floatPiso ocultar">
                 <ul class="articuloHeader">
 
                     <h4 style="margin-bottom: 0; padding-top: 10px;">Actalmente en</h4>
@@ -89,12 +89,12 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-5">
                         <div style="text-align: center; margin-bottom: 15px;">
-                            <img class="fotoEdit" [src]="miPorfolio.encabezado.perfilImage">
+                            <img class="fotoEdit" [src]="miPorfolio.imgPerfil">
                         </div>
                     </div>
-                    <div class="col-8" style="margin-top: 20px;">
+                    <div class="col-7" style="margin-top: 20px;">
                         <div class="col-12" style="margin-bottom: 10px;">
                             <input type="text" class="form-control inputEdicion" placeholder="Ingresa tu nombre"
                                 name="nombre" id="nombre" [(ngModel)]="nombre">

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Injectable, Input, Output } from '@angular/cor
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import { Validators} from '@angular/forms';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class LoginComponent {
   buttonCrear:String = "none";
   form: FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService) {
+  constructor(private formBuilder:FormBuilder, private autenticacionService:AutenticacionService, private datosPorfolio: PorfolioService) {
     this.form = this.formBuilder.group({
       email:['', [Validators.required, Validators.email, Validators.maxLength(50)]],
       password:['',[Validators.required, Validators.minLength(8)]]
@@ -49,6 +50,7 @@ export class LoginComponent {
     this.autenticacionService.iniciarSesion(this.form.value).subscribe(data=>{
       //console.log("Data:" +JSON.stringify(data));
       this.respuesta = data;
+      this.datosPorfolio.infouser(data)
     })
  
     if (this.form.valid){
