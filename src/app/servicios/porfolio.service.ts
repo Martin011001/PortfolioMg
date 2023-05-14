@@ -1,7 +1,7 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs'
-import { SobreMiComponent } from '../componentes/contenido/sobre-mi/sobre-mi.component';
+import { API_URL } from 'src/config';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { SobreMiComponent } from '../componentes/contenido/sobre-mi/sobre-mi.com
 
 export class PorfolioService {
 
-  //private apiUrl = 'sobreMi/traer'
+  private apiUrlBase = API_URL
 
   constructor(private http:HttpClient) { }
 
@@ -18,7 +18,7 @@ export class PorfolioService {
   }
 
   public getContenido(apiUrl:string): Observable<any>{
-    return this.http.get(apiUrl);
+    return this.http.get(this.apiUrlBase + apiUrl);
   }
 
   public putEdicion(apiUrl:string, body:any): Observable<any>{
