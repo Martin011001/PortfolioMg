@@ -8,6 +8,7 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
 })
 export class EncabezadoComponent {
   miPorfolio: any;
+  intereses: any;
   imagenes: any = ["hola"];
 
   nombre: String = "";
@@ -23,11 +24,19 @@ export class EncabezadoComponent {
 
   }
 
+
   ngOnInit(): void {
-    this.datosPorfolio.obtenerdatos().subscribe(data => {
-      console.log(data + "Aca estamos en data")
-      this.miPorfolio = data;
-      this.setVariables(); 
+    this.datosPorfolio.getContenido("personas/traer").subscribe(data => {
+      console.log(data)
+      this.miPorfolio = data[0];
+      this.setVariables();
+    });
+
+    this.datosPorfolio.getContenido("interes/traer").subscribe(data => {
+      this.intereses = data;
+      console.log(this.intereses);
+      console.log("acaaaaaaaaaaaaaaaaaaa");
+      console.log(this.intereses[0].nombre);
     });
   }
 
