@@ -1,48 +1,48 @@
 {
     "/sobreMi/*":{
-        "target":"http://localhost:8080",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
         "secure":"false",
         "logLevel":"debug"
     },
 
     "/conocimientoSaber/*":{
-        "target":"http://localhost:8080",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
         "secure":"false",
         "logLevel":"debug"
     },
     "/conocimiento/*":{
-        "target":"http://localhost:8080",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
         "secure":"false",
         "logLevel":"debug"
     },
     "/herramienta/*":{
-        "target":"http://localhost:8080",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
         "secure":"false",
         "logLevel":"debug"
     },
     "/puesto/*":{
-        "target":"http://localhost:8080",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com",
         "secure":"false",
         "logLevel":"debug"
     },
     "/experiencias/*":{
-        "target":"http://localhost:8080",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com",
         "secure":"false",
         "logLevel":"debug"
     },
 
     "/user/*":{
-        "target":"http://localhost:8080",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
         "secure":"false",
         "logLevel":"debug"
     },
     "/educacion/*":{
-        "target":"http://localhost:8080",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
         "secure":"false",
         "logLevel":"debug"
     },
     "/proyecto/*":{
-        "target":"http://localhost:8080",
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
         "secure":"false",
         "logLevel":"debug"
     }
