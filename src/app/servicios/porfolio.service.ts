@@ -12,7 +12,7 @@ export class PorfolioService {
   private apiUrlBase = API_URL
   private apiUrlBasePrueba = "https://portafolio-martin-gagliardi-2669.onrender.com/"
 
-  user = { "vista": true, "admin": false };
+  user = { "vista": false, "admin": false };
 
   constructor(private http: HttpClient) { }
 
