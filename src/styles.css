@@ -566,6 +566,11 @@ body {
   transition: all 0.35s;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
+
 /*----------------- Responsive Queries ------------------*/
 
 
