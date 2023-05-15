@@ -19,6 +19,8 @@ export class EncabezadoComponent {
   empresa: String = "";
   estudio: String = "";
 
+  mostrar:boolean = false;
+  user = { "vista": false, "admin": false };
 
   constructor(private datosPorfolio: PorfolioService) {
 
@@ -35,6 +37,8 @@ export class EncabezadoComponent {
     this.datosPorfolio.getContenido("interes/traer").subscribe(data => {
       this.intereses = data;
     });
+
+    this.mostrarUser()
   }
 
   guardarCambios(id: String) {
@@ -69,4 +73,11 @@ export class EncabezadoComponent {
     this.estudio = this.miPorfolio.estudio;
   }
 
+
+  mostrarUser():any{
+    let permisos = this.datosPorfolio.validators()
+    this.user.admin = permisos.admin;
+    this.user.vista = permisos.vista;
+    this.mostrar = permisos.vista;
+   }
 }
