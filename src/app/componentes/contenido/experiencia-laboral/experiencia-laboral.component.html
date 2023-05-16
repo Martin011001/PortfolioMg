@@ -6,7 +6,7 @@
             <h3>Experiencia Laboral</h3>
         </div>
 
-        <div class="col-1 paddingCero">
+        <div class="col-1 paddingCero" *ngIf="user.vista">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
                 class="bi bi-plus-circle botonEdit" viewBox="0 0 16 16" style="cursor: pointer; margin-right: 10px;"
                 (click)="editForm()">

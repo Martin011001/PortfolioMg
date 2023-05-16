@@ -42,7 +42,7 @@ export class EncabezadoComponent {
   }
 
   guardarCambios(id: String) {
-    if (id == this.miPorfolio.id) {
+    if (id == this.miPorfolio.id && this.user.admin) {
       this.miPorfolio.nombre = this.nombre == "" ? this.miPorfolio.nombre : this.nombre;
       this.miPorfolio.apellido = this.apellido == "" ? this.miPorfolio.apellido : this.apellido;
       this.miPorfolio.trabajoActual = this.trabajoActual == "" ? this.miPorfolio.trabajoActual : this.trabajoActual;
@@ -51,6 +51,9 @@ export class EncabezadoComponent {
       this.miPorfolio.empresa = this.empresa == "" ? this.miPorfolio.empresa : this.empresa;
       this.miPorfolio.estudio = this.estudio == "" ? this.miPorfolio.estudio : this.estudio;
       this.editarPersona("persona/editar/" + this.miPorfolio.id);
+    }else{
+      console.log("El usuario no es admin");
+      
     }
   }
 

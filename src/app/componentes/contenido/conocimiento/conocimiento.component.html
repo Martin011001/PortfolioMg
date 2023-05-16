@@ -4,7 +4,7 @@
         <h3>Conocimientos</h3>
     </div>
 
-    <div class="col-1">
+    <div class="col-1" *ngIf="user.vista">
         <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor"
             class="bi bi-plus-circle botonEdit" viewBox="0 0 16 16" style="cursor: pointer; padding-right: 4px;"
             (click)="editForm()">
@@ -49,7 +49,7 @@
 
     <div class="tarjetaExpe" *ngIf="botonEdit">
         <div class="row">
-            <h5 style="margin-bottom: 10px;">Agerga una nueva experiencia</h5>
+            <h5 style="margin-bottom: 10px;">Agerga una nuevo conocimiento</h5>
         </div>
 
         <div class="row">

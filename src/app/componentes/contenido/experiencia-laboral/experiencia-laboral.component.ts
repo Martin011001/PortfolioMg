@@ -1,11 +1,20 @@
 import { Component, Output } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 
 @Component({
   selector: 'app-experiencia-laboral',
   templateUrl: './experiencia-laboral.component.html',
-  styleUrls: ['./experiencia-laboral.component.css']
+  styleUrls: ['./experiencia-laboral.component.css'],
+  animations: [
+    trigger('slideDownAnimation', [
+      state('void', style({ height: '0' })),
+      transition(':enter, :leave', [
+        animate('0.3s ease-out')
+      ])
+    ])
+  ]
 })
 export class ExperienciaLaboralComponent {
 
