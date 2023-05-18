@@ -25,6 +25,7 @@ export class ConocimientoComponent {
   botonEdit: boolean = false;
   mostrar:boolean = false;
   user = { "vista": false, "admin": false };
+  loading: boolean = false;
   
   constructor(private datosPorfolio: PorfolioService) {
 
@@ -67,12 +68,12 @@ export class ConocimientoComponent {
   }
 
   agregarConocimiento() {
+    this.loading = true;
     console.log(this.objCreate);
-
     this.datosPorfolio.postCreacion("conocimiento/crear", this.objCreate).subscribe(() => {
       console.log("ok");
     });
-    setTimeout(function () {
+    setTimeout( () => {
       window.location.reload();
     }, 2000);
   }

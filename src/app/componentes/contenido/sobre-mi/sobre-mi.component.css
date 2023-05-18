@@ -3,7 +3,7 @@
     border: solid 2px white; 
     border-radius: 22px;
     cursor: pointer;
-
+    float: left;
 }
 
 .vistaPreviaCv:hover{
@@ -27,5 +27,10 @@
 
 .colCv{
     text-align: center;
-    padding: 12px;
+    padding: 15px;
+    padding-right: 0px;
+}
+
+.tituloVistaPreviaCv{
+    margin-right: 55px;
 }
