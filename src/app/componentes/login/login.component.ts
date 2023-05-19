@@ -50,7 +50,7 @@ export class LoginComponent {
     this.autenticacionService.iniciarSesion(this.form.value).subscribe(data=>{
       //console.log("Data:" +JSON.stringify(data));
       this.respuesta = data;
-      this.datosPorfolio.infouser(data)
+      this.datosPorfolio.infouser(data);
     })
  
     if (this.form.valid){

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
-
 @Component({
   selector: 'app-conocimiento',
   templateUrl: './conocimiento.component.html',
@@ -25,10 +24,11 @@ export class ConocimientoComponent {
   botonEdit: boolean = false;
   mostrar:boolean = false;
   user = { "vista": false, "admin": false };
+
+
   loading: boolean = false;
   
   constructor(private datosPorfolio: PorfolioService) {
-
   }
 
   /* ngOnInit(): void{
