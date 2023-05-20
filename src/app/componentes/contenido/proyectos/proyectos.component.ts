@@ -22,6 +22,7 @@ export class ProyectosComponent {
 
   mostrar: boolean = false;
   user = { "vista": false, "admin": false };
+  loading: boolean = false;
 
   constructor(private datosPorfolio: PorfolioService) {
 
@@ -46,6 +47,7 @@ export class ProyectosComponent {
   }
 
   agregarProyecto() {
+    this.loading = true;
     if (this.user.admin) {
       this.setObj();
       this.datosPorfolio.postCreacion("proyecto/crear", this.objCreate).subscribe(() => {
@@ -64,6 +66,7 @@ export class ProyectosComponent {
   }
 
   editarProyecto(obj: any) {
+    this.loading = true;
     let proyectoBuscado: any = this.buscarproyecto();
 
     if (proyectoBuscado != null && this.user.admin) {
@@ -94,6 +97,7 @@ export class ProyectosComponent {
   }
 
   deleteProyecto() {
+    this.loading = true;
     if (this.user.admin) {
       this.datosPorfolio.deleteContenido("proyecto/borrar/" + this.idProyecto).subscribe(() => {
         console.log("ok");

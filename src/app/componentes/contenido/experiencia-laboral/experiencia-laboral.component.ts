@@ -63,6 +63,7 @@ export class ExperienciaLaboralComponent {
 
   mostrar:boolean = false;
   user = { "vista": false, "admin": false };
+  loading: boolean = false;
 
   //------------------------------
 
@@ -96,7 +97,7 @@ export class ExperienciaLaboralComponent {
   }
 
   agregarExperiencia() {
-
+    this.loading = true;
     this.setobj();
     this.datosPorfolio.postCreacion("experiencias/crear", this.obj).subscribe(response => {
       console.log("ok");
@@ -121,10 +122,11 @@ export class ExperienciaLaboralComponent {
 
     setTimeout(function () {
       window.location.reload();
-    }, 2000);
+    }, 4500);
   }
 
   editarExperiencia(obj: any) {
+    this.loading = true;
     console.log(this.idExperiencia);
     let herramientasNombres: String[] = obj.herramientas;
     let puestosNombres: String[] = obj.puestos;
@@ -150,6 +152,10 @@ export class ExperienciaLaboralComponent {
     this.datosPorfolio.putEdicion("experiencias/editar/" + this.idExperiencia, this.obj.objEdit).subscribe(() => {
       console.log("ok");
     });
+
+    setTimeout(function () {
+      window.location.reload();
+    }, 4500);
   }
 
 
@@ -194,6 +200,7 @@ export class ExperienciaLaboralComponent {
   }
 
   deleteExpe(id: String) {
+    this.loading = true;
     console.log(this.idExperiencia);
     this.datosPorfolio.deleteContenido("experiencias/borrar/" + this.idExperiencia).subscribe(() => {
 

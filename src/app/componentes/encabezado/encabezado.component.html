@@ -76,6 +76,11 @@
     </div>
 </header>
 
+<div class="spinner" *ngIf="loading">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
 
 <!-------------- Alerta edicion ------------>
 
@@ -133,8 +138,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary buttonSesion"
-                    (click)="guardarCambios(miPorfolio.id)">Guardar
-                    cambios</button>
+                data-bs-dismiss="modal" (click)="guardarCambios(miPorfolio.id)">Guardar cambios</button>
             </div>
         </div>
     </div>

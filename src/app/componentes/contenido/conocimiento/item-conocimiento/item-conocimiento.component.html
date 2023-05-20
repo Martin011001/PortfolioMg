@@ -35,8 +35,8 @@
             <!-- Button Edit -->
             <div class="row">
                 <div class="col-12 paddingCero" style="padding-top: 10px;">
-                    <button *ngIf="admin" type="button" class="btn botonEdit" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        (click)="capturarId(itemConocimiento.id)" style="float: bottom;">
+                    <button *ngIf="admin" type="button" class="btn botonEdit" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" (click)="capturarId(itemConocimiento.id)" style="float: bottom;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
                             class="bi bi-gear" viewBox="0 0 16 16">
                             <path
@@ -52,8 +52,6 @@
         </div>
 
     </div>
-
-
 
     <!-------------- Alerta edicion ------------>
 
@@ -90,6 +88,7 @@
                                 <option selected>Lenguaje</option>
                                 <option value="Framework">Framework</option>
                                 <option value="Habilidades Blandas">Habilidad Blanda</option>
+                                <option value="Herramientas">Herramienta</option>
                             </select>
                         </div>
 
@@ -105,8 +104,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary buttonSesion" (click)="editarConocimientoPut()">Guardar
-                        cambios</button>
+                    <button type="button" class="btn btn-primary buttonSesion" data-bs-dismiss="modal"
+                        (click)="editarConocimientoPut()">Guardar cambios</button>
                 </div>
             </div>
         </div>
@@ -130,7 +129,7 @@
                     <button type="button" class="btn btn-secondary buttonSesion"
                         data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary buttonSesion"
-                        (click)="deleteConocimiento()">Eliminar</button>
+                    data-bs-dismiss="modal" (click)="deleteConocimiento()">Eliminar</button>
                 </div>
             </div>
         </div>

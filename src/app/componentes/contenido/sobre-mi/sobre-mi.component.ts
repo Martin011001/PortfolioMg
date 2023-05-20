@@ -12,6 +12,7 @@ export class SobreMiComponent {
   
   mostrar:boolean = false;
   user = { "vista": false, "admin": false };
+  loading: boolean = false;
 
   urlCv: String = "";
   urlImage: String = "";
@@ -33,6 +34,7 @@ export class SobreMiComponent {
   }
 
   editarSobreMi(apiUrl: string): void {
+    this.loading = true;
     this.datosPorfolio.putEdicion(apiUrl, this.miPorfolio).subscribe(data => {
     });
     setTimeout(function () {

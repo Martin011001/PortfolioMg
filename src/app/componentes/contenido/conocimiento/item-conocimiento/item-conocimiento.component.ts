@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 @Component({
   selector: 'app-item-conocimiento',
@@ -7,6 +6,13 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
   styleUrls: ['./item-conocimiento.component.css']
 })
 export class ItemConocimientoComponent {
+
+  @Output() idConocimiento = new EventEmitter();
+  @Output() objetoEdit = new EventEmitter();
+  @Output() deleteItem = new EventEmitter();
+
+  @Input() itemConocimiento: any = "";
+  @Input() admin: any = "";
 
   color: String = "";
 
@@ -16,27 +22,6 @@ export class ItemConocimientoComponent {
   conocimiento: string = "";
   logo: string = "";
   tipo: string = "";
-
-
-
-  @Output() idConocimiento = new EventEmitter();
-  @Output() objetoEdit = new EventEmitter();
-  @Output() deleteItem = new EventEmitter();
-
-  @Input() itemConocimiento: any = "";
-  @Input() admin: any = "";
-
-  constructor(private datosPorfolio: PorfolioService) {
-    this.setVariables()
-  }
-
-  private setVariables() {
-    this.progreso = this.itemConocimiento.progreso;
-    this.conocimiento = this.itemConocimiento.conocimiento;
-    this.logo = this.itemConocimiento.logo;
-    this.tipo = this.itemConocimiento.tipo;
-  }
-
 
   colorProgreso(): String {
     if (this.itemConocimiento.progreso <= 25) {

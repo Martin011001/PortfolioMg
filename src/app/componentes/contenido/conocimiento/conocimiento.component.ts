@@ -8,18 +8,17 @@ import { PorfolioService } from 'src/app/servicios/porfolio.service';
 })
 export class ConocimientoComponent {
 
-
-
   miPorfolio: any;
   conocimiento: any;
 
   frameworks: boolean = true;
+  herramientas: boolean = true;
   lenguajes: boolean = true;
   habilidadesBlandas: boolean = false;
   buscado: string = "";
 
   idConocimiento: Number = 0;
-  objCreate = { "progreso": "50", "conocimiento": "", "logo": "", "tipo": "" }
+  objCreate = { "progreso": "50", "conocimiento": "", "logo": "", "tipo": "Lenguaje" }
 
   botonEdit: boolean = false;
   mostrar:boolean = false;
@@ -31,14 +30,6 @@ export class ConocimientoComponent {
   constructor(private datosPorfolio: PorfolioService) {
   }
 
-  /* ngOnInit(): void{
-    this.datosPorfolio.obtenerdatos().subscribe(data =>{
-      console.log(data)
-      this.miPorfolio = data;
-      this.conocimiento = data.contenido.tarjeta4.conocimientos;
-    });
-  } */
-
   ngOnInit(): void {
     this.datosPorfolio.getContenido("conocimientoSaber/traer").subscribe(data => {
       console.log(data)
@@ -48,11 +39,11 @@ export class ConocimientoComponent {
   }
 
   filtro(): any[] {
-
     let lista: any[] = [];
+
     for (let i = 0; i < this.conocimiento.length; i++) {
       const element = this.conocimiento[i];
-      if (element.tipo === "Lenguaje" && this.lenguajes || element.tipo === "Framework" && this.frameworks || element.tipo === "Habilidades Blandas" && this.habilidadesBlandas || element.tipo === "Lenguajes" && this.lenguajes) {
+      if (element.tipo === "Lenguaje" && this.lenguajes || element.tipo === "Framework" && this.frameworks || element.tipo === "Habilidades Blandas" && this.habilidadesBlandas || element.tipo === "Lenguajes" && this.lenguajes || element.tipo === "Herramientas" && this.herramientas) {
         lista.push(element);
       }
     }
@@ -79,6 +70,7 @@ export class ConocimientoComponent {
   }
 
   editarConocimiento(obj: any) {
+    this.loading = true;
     let conocimientoBuscado: any = this.buscarConocimiento();
     if (obj.progreso != "") conocimientoBuscado.progreso = obj.progreso;
     if (obj.conocimiento != "") conocimientoBuscado.conocimiento = obj.conocimiento;
@@ -108,6 +100,7 @@ export class ConocimientoComponent {
   }
 
   deleteConocimiento() {
+    this.loading = true;
     this.datosPorfolio.deleteContenido("conocimiento/borrar/" + this.idConocimiento).subscribe(() => {
       console.log("ok");
     });

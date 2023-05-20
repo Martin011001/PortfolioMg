@@ -14,6 +14,8 @@
         </svg>
     </div>
 
+    <!--------------- Filtros -------------------->
+
     <div class="row">
 
         <div class="col-12" style="margin-top: 20px; margin-bottom: 10px; padding: 0px;">
@@ -41,16 +43,24 @@
                     <label class="form-check-label" for="flexSwitchCheckChecked">Frameworks</label>
                 </div>
             </div>
-        </div>
 
+            <div class="botonFlitro">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                        [(ngModel)]="herramientas" checked>
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Herramientas</label>
+                </div>
+            </div>
+        </div>
     </div>
+    <!--------------- Filtros -------------------->
 
     <div class="spinner" *ngIf="loading">
         <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
-    
+
 
     <!--------------- tarjeta agregarItem -------------------->
 
@@ -83,6 +93,7 @@
                     <option selected>Lenguaje</option>
                     <option value="Framework">Framework</option>
                     <option value="Habilidades Blandas">Habilidad Blanda</option>
+                    <option value="Herramientas">Herramienta</option>
                 </select>
 
                 <button class="btn btn-primary buttonSesion" style="float: right;" type="button" id="button-addon2"

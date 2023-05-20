@@ -42,6 +42,12 @@
 
 </div>
 
+<div class="spinner" *ngIf="loading">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
 <!-------------- Alerta edicion ------------>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -85,7 +91,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary buttonSesion" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary buttonSesion"
-                    (click)="guardarCambios(miPorfolio.id)">Guardar Cambios</button>
+                data-bs-dismiss="modal" (click)="guardarCambios(miPorfolio.id)">Guardar Cambios</button>
             </div>
         </div>
     </div>

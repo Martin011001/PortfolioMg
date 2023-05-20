@@ -30,8 +30,10 @@ export class EducacionComponent {
   botonEdit: boolean = false;
 
   idEducacion: Number = 0;
-  mostrar:boolean = false;
+  mostrar: boolean = false;
   user = { "vista": false, "admin": false };
+
+  loading: boolean = false;
 
   constructor(private datosPorfolio: PorfolioService) {
 
@@ -56,6 +58,7 @@ export class EducacionComponent {
   }
 
   agregarEducacion() {
+    this.loading = true;
     console.log(this.obj);
     this.setObj();
     this.datosPorfolio.postCreacion("educacion/crear", this.obj).subscribe(() => {
@@ -67,6 +70,7 @@ export class EducacionComponent {
   }
 
   deleteEducacion() {
+    this.loading = true;
     console.log(this.idEducacion);
 
     this.datosPorfolio.deleteContenido("educacion/borrar/" + this.idEducacion).subscribe(() => {
@@ -86,7 +90,8 @@ export class EducacionComponent {
       this.obj.fin = this.fin
   }
 
-  editarEducacion(objEdit:any) {
+  editarEducacion(objEdit: any) {
+    this.loading = true;
     let eduBuscada: any = this.buscarConocimiento();
 
     if (eduBuscada != null) {
@@ -119,12 +124,12 @@ export class EducacionComponent {
     return EduBuscada;
   }
 
-  mostrarUser():any{
+  mostrarUser(): any {
     let permisos = this.datosPorfolio.validators()
     this.user.admin = permisos.admin;
     this.user.vista = permisos.vista;
     this.mostrar = permisos.vista;
-   }
+  }
 
 
 }

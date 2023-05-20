@@ -45,5 +45,10 @@
         "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
         "secure":"false",
         "logLevel":"debug"
+    },
+    "/personas/*":{
+        "target":"https://portafolio-martin-gagliardi-2669.onrender.com/",
+        "secure":"false",
+        "logLevel":"debug"
     }
 }

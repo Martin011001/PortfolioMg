@@ -21,11 +21,11 @@ export class EncabezadoComponent {
 
   mostrar:boolean = false;
   user = { "vista": false, "admin": false };
+  loading: boolean = false;
 
   constructor(private datosPorfolio: PorfolioService) {
 
   }
-
 
   ngOnInit(): void {
     this.datosPorfolio.getContenido("personas/traer").subscribe(data => {
@@ -50,7 +50,7 @@ export class EncabezadoComponent {
       this.miPorfolio.imgPerfil = this.imgPerfil == "" ? this.miPorfolio.imgPerfil : this.imgPerfil;
       this.miPorfolio.empresa = this.empresa == "" ? this.miPorfolio.empresa : this.empresa;
       this.miPorfolio.estudio = this.estudio == "" ? this.miPorfolio.estudio : this.estudio;
-      this.editarPersona("persona/editar/" + this.miPorfolio.id);
+      this.editarPersona("personas/editar/" + this.miPorfolio.id);
     }else{
       console.log("El usuario no es admin");
       
@@ -58,6 +58,7 @@ export class EncabezadoComponent {
   }
 
   editarPersona(apiUrl: string) {
+    this.loading = true;
     this.datosPorfolio.putEdicion(apiUrl, this.miPorfolio).subscribe(data => {
       window.location.reload();
     });
@@ -75,7 +76,6 @@ export class EncabezadoComponent {
     this.empresa = this.miPorfolio.empresa;
     this.estudio = this.miPorfolio.estudio;
   }
-
 
   mostrarUser():any{
     let permisos = this.datosPorfolio.validators()

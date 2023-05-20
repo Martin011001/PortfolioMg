@@ -1,6 +1,4 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { EducacionComponent } from '../educacion.component';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
 
 
 @Component({
@@ -16,6 +14,7 @@ export class ItemEducacionComponent {
   @Output() idEducacionHijo = new EventEmitter();
   @Output() objEdit = new EventEmitter();
   @Output() objDelete = new EventEmitter();
+  @Output() loadingSpinner = new EventEmitter();
 
   descripcion: String = "";
   imgInstitucion: String = "";
@@ -24,24 +23,20 @@ export class ItemEducacionComponent {
   carrera: String = "";
   titulo: String = "";
 
-  constructor(private datosPorfolio: PorfolioService) {
-
-  }
-
-  capturarId(id:String){
+  capturarId(id: String) {
     this.idEducacionHijo.emit(id)
   }
 
-  editarEducacion(){
-    let obj = {"descripcion":this.descripcion, "titulo":this.titulo, "carrera":this.carrera,
-              "imgInstitucion":this.imgInstitucion, "inicio":this.inicio, "fin":this.fin}
+  editarEducacion() {
+    let obj = {
+      "descripcion": this.descripcion, "titulo": this.titulo, "carrera": this.carrera,
+      "imgInstitucion": this.imgInstitucion, "inicio": this.inicio, "fin": this.fin
+    }
     this.objEdit.emit(obj);
   }
 
-  deleteEducacion(){
+  deleteEducacion() {
     this.objDelete.emit();
   }
-
-  
 
 }
